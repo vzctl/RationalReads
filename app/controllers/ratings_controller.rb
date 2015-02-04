@@ -3,20 +3,23 @@ class RatingsController < ApplicationController
   before_action :require_login
 
   def create
-    @rating = Rating.new(rating_params)
-    @rating.user_id = current_user.id
+    @rating = current_user.rating(rating_params["work_id"])
+    @work = Work.find(rating_params["work_id"])
 
-    rating = current_user.already_rated?(@rating.work_id)
-    if (rating)
-      @rating = Rating.find(rating)
+    if @rating
       if @rating.update(rating_params)
-        render json: @rating, status: 200
+        rating_data = @rating.generate_data(@work, "update")
+        render json: rating_data, status: 200
       else
         render json: @rating.errors.full_messages, status: 422
       end
     else
+      @rating = Rating.new(rating_params)
+      @rating.user_id = current_user.id
+
       if @rating.save
-        render json: @rating, status: 200
+        rating_data = @rating.generate_data(@work, "create")
+        render json: rating_data, status: 200
       else
         render json: @rating.errors.full_messages, status: 422
       end
@@ -25,7 +28,7 @@ class RatingsController < ApplicationController
 
   def require_login
     unless signed_in?
-      render json: "You must be logged in to rate works."
+      render json: "Log in first!"
     end
   end
 

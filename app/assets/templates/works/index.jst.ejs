@@ -15,10 +15,10 @@
           <div class="stars col-md-3">
             <div id="<%= work.get("id") %>"></div>
           </div>
-          <div class="avg-rating col-md-2">
+          <div id="avg-rating<%= work.get("id") %>" class="avg-rating col-md-2">
             <%= work.get("average_rating") %>
           </div>
-          <div class="ratings col-md-3">
+          <div id="num-ratings<%= work.get("id") %>" class="ratings col-md-3">
           <%= work.get("ratings") %> ratings
           </div>
           <div class="review col-md-2">

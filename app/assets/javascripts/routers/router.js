@@ -3,38 +3,42 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     // this.navBar = $("#navbar");
     // this.footer = $("#footer");
     this.$rootEl = $('#main');
-    this.works = new RationalReads.Collections.Works();
-
-    var that = this;
-
-    this.works.fetch({
-      success: function () {
-        console.log(that.works);
-      }
-    });
   },
 
   routes: {
     '': 'home',
+    'my-books': 'read'
   },
 
   home: function () {
-    var indexView = new RationalReads.Views.WorksIndex({
-        fullscreen: true,
-        collection: this.works
-      });
+    var posts = new RationalReads.Collections.Works();
 
-    this._swapView(indexView);
+    posts.fetch({
+      success: function () {
+        var indexView = new RationalReads.Views.WorksIndex({
+            fullscreen: true,
+            collection: posts
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
   },
 
-  boardShow: function (id) {
-    // var board = TrelloClone.Collections.boards.getOrFetch(id);
-    //
-    // var view = new TrelloClone.Views.BoardShow({
-    //   model: board
-    // });
-    //
-    // this._swapView(view);
+  read: function () {
+    var posts = new RationalReads.Collections.Works();
+
+    posts.fetch({
+      success: function () {
+        var readPosts = posts.read();
+        var indexView = new RationalReads.Views.ReadWorks({
+            fullscreen: true,
+            collection: readPosts
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
   },
 
   _swapView: function (view) {

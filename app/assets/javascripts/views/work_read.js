@@ -1,9 +1,8 @@
-RationalReads.Views.WorksIndex = Backbone.View.extend({
-  template: JST['works/index'],
+RationalReads.Views.ReadWorks = Backbone.View.extend({
+  template: JST['works/read'],
 
   initialize: function (options) {
     this.listenTo(this.collection, 'sync', this.render);
-    this.fullscreen = options.fullscreen;
   },
 
   render: function () {
@@ -12,12 +11,12 @@ RationalReads.Views.WorksIndex = Backbone.View.extend({
     });
 
     this.$el.html(content);
-    this.collection.sort();
+    this.collection.sort({read: true});
     var that = this;
     this.collection.each(function (model) {
       var $work = that.$el.find("div #" + model.get("id"))
       $work.raty({
-        score: model.get("average_rating"),
+        score: model.get("user_rating"),
         click : function (score) {
           that.submitRating(score, model.get("id"));
         }

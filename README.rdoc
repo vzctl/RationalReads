@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+#Issues
+1.  In both work_index and work_read, many functions duplicated
+2.  In Your Bookshelf, the items are sorted by avg rating rather than your rating
