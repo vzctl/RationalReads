@@ -4,9 +4,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, presence: true
   validates :username, uniqueness: true, presence: true
 
-  has_many :boards
-  has_many :card_assignments
-  has_many :board_memberships
+  has_many :ratings
 
   attr_reader :password
   after_initialize :ensure_session_token
