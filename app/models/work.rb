@@ -16,7 +16,10 @@ class Work < ActiveRecord::Base
      sum += rating.rating
    end
 
-   sum.to_f / ratings.length
+   full_rating = sum.to_f / ratings.length
+   rounded_rating = (full_rating * 100).round / 100.0
+
+   rounded_rating
  end
 
 end

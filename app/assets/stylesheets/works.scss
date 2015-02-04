@@ -1,3 +1,41 @@
 // Place all the styles related to the Works controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inner-work {
+  margin-bottom: 15px;
+  background-color: pink;
+  border-radius: 5px;
+  padding:10px;
+}
+
+.inner-work:nth-child(2) {
+  // FIX ME LATER, SELECTOR NOT WORKING!!
+  margin-right:15px;
+  padding:1000px;
+}
+
+.work .title{
+  font-weight:bold;
+  font-size: 22px;
+  margin-bottom:4px;
+  line-height:24px;
+}
+
+.work .author {
+  font-size:80%;
+  margin-bottom:4px;
+}
+
+#main h1 {
+}
+
+.stats {
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.stats div {
+  margin:0px;
+  padding-right:0px;
+}

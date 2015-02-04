@@ -29,6 +29,18 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def already_rated?(work_id)
+    ratings = self.ratings
+
+    ratings.each do |rating|
+      if rating.work_id ==== work_id
+        return rating.id
+      end
+    end
+
+    return false
+  end
+
   protected
 
   def ensure_session_token

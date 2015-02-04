@@ -22,3 +22,13 @@ rating1 = Rating.create({work_id: 1, user_id: 1, rating: 4})
 rating2 = Rating.create({work_id: 1, user_id: 2, rating: 5})
 rating3 = Rating.create({work_id: 1, user_id: 3, rating: 1})
 rating4 = Rating.create({work_id: 1, user_id: 4, rating: 1})
+
+rating5 = Rating.create({work_id: 2, user_id: 1, rating: 2})
+rating6 = Rating.create({work_id: 2, user_id: 2, rating: 2})
+rating7 = Rating.create({work_id: 2, user_id: 3, rating: 1})
+rating8 = Rating.create({work_id: 2, user_id: 4, rating: 1})
+
+rating9 = Rating.create({work_id: 3, user_id: 1, rating: 4})
+rating10 = Rating.create({work_id: 3, user_id: 3, rating: 4})
+rating11 = Rating.create({work_id: 3, user_id: 3, rating: 5})
+rating12 = Rating.create({work_id: 3, user_id: 4, rating: 5})
