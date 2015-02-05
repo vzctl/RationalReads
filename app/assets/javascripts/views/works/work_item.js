@@ -5,15 +5,19 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   templateRead: JST['works/read_item'],
-  templateFull: JST['works/full_item'],
+  templateFull: JST['works/index_item'],
+  templateShow: JST['works/show_item'],
 
   render: function () {
-    if (this.type === "fullscreen") {
+    if (this.type === "index") {
       var content = this.templateFull({work: this.model});
       var displayRating = this.model.get("average_rating");
-    } else {
+    } else if (this.type === "list") {
       var content = this.templateRead({work: this.model});
       var displayRating = this.model.get("user_rating");
+    } else {
+      var content = this.templateShow({work: this.model});
+      var displayRating = this.model.get("average_rating");
     }
 
     this.$el.html(content);

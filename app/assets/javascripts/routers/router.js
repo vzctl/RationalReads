@@ -7,7 +7,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'home',
-    'my-books': 'read'
+    'my-books': 'read',
+    'works/:id': 'show'
   },
 
   home: function () {
@@ -37,6 +38,21 @@ RationalReads.Routers.Router = Backbone.Router.extend({
         this._swapView(indexView);
       }.bind(this)
     })
+  },
+
+  show: function (id) {
+    var post = new RationalReads.Models.Work({id: id});
+
+    post.fetch({
+      success: function () {
+        var showView = new RationalReads.Views.WorksShow({
+            model: post
+          });
+
+        this._swapView(showView);
+      }.bind(this)
+    })
+
   },
 
   _swapView: function (view) {

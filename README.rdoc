@@ -31,3 +31,13 @@ Please feel free to use a different markup language if you do not plan to run
 1.  In both work_index and work_read, many functions duplicated
 2.  In Your Bookshelf, the items are sorted by avg rating rather than your rating
 3.  Instead of replacing starts with, e.g. "Rating updating!", just flash it instead (so, gone, updated, back)
+4.  Limit number of characters displayed in read_item and full_item
+5.  Is the rating backbone model getting used? [done - yes, it is, for the create action]
+6.  Add comments instantaneously, instead of waiting for the comment to save
+
+
+#Next Steps
+1.  Create comment rails model and controller
+2.  Create comments in the console
+3.  Display the comments
+4.  Get the comments create to work

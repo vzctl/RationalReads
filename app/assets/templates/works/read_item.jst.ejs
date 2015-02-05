@@ -1,5 +1,5 @@
 <div class="row">
-  <p class="title col-md-3"> <%= work.get("name") %> </p>
+  <p class="title col-md-3"> <a href="#/works/<%= work.get("id") %>"> <%= work.get("name") %> </a></p>
   <p class="author col-md-2"> by <%= work.get("author") %> </p>
   <div class="avg-rating col-md-1">
     <%= work.get("average_rating") %>

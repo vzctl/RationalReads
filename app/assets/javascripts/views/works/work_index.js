@@ -3,7 +3,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
-    this.style = "fullscreen";
+    this.style = "index";
   },
 
   render: function () {
