@@ -14,8 +14,11 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
         model: this.model,
         style: this.style
       });
+
+    var comment = new RationalReads.Models.Comment();
     var newReview = new RationalReads.Views.ReviewForm({
-        // model: review,
+        model: comment,
+        work: this.model
       });
     this.addSubview('#work-info', workShow)
     this.addSubview('#review-form', newReview)

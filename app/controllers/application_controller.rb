@@ -26,6 +26,12 @@ class ApplicationController < ActionController::Base
     session[:token] = nil
   end
 
+  def require_login
+    unless signed_in?
+      render json: "Log in first!"
+    end
+  end
+
   def require_signed_in!
     redirect_to new_session_url unless signed_in?
   end

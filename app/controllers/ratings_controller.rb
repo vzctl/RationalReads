@@ -11,7 +11,7 @@ class RatingsController < ApplicationController
         rating_data = @rating.generate_data(@work, "update")
         render json: rating_data, status: 200
       else
-        render json: @rating.errors.full_messages, status: 422
+        render json: @rating.errors.full_messages, status: 406
       end
     else
       @rating = Rating.new(rating_params)
@@ -21,14 +21,8 @@ class RatingsController < ApplicationController
         rating_data = @rating.generate_data(@work, "create")
         render json: rating_data, status: 200
       else
-        render json: @rating.errors.full_messages, status: 422
+        render json: @rating.errors.full_messages, status: 406
       end
-    end
-  end
-
-  def require_login
-    unless signed_in?
-      render json: "Log in first!"
     end
   end
 

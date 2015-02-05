@@ -50,7 +50,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
           $raty.html($ratingResponse);
         }.bind(this),
         error: function (model, response) {
-          this._updateStatsAfterError(response, id)
+          this._updateStatsAfterError(response)
         }.bind(this)
       }
     )
