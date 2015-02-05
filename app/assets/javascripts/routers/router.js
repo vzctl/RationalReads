@@ -16,7 +16,6 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     posts.fetch({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
-            fullscreen: true,
             collection: posts
           });
 
@@ -32,7 +31,6 @@ RationalReads.Routers.Router = Backbone.Router.extend({
       success: function () {
         var readPosts = posts.read();
         var indexView = new RationalReads.Views.ReadWorks({
-            fullscreen: true,
             collection: readPosts
           });
 

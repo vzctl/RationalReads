@@ -1,4 +1,4 @@
-<h1>Your Bookshelf</h3>
+<h1>Your Bookshelf</h1>
 
 <div class="row read-header">
   <p class="col-md-3">Title</p>
@@ -7,20 +7,3 @@
   <p class="col-md-1">Ratings</p>
   <p class="col-md-3">Your Rating</p>
 </div>
-
-<% var count = 0 %>
-<% works.each(function (work) { %>
-<div class="row">
-  <p class="title col-md-3"> <%= work.get("name") %> </p>
-  <p class="author col-md-2"> by <%= work.get("author") %> </p>
-  <div id="avg-rating<%= work.get("id") %>" class="avg-rating col-md-1">
-    <%= work.get("average_rating") %>
-  </div>
-  <div id="num-ratings<%= work.get("id") %>" class="ratings col-md-1">
-    <%= work.get("ratings") %> ratings
-  </div>
-  <div class="stars col-md-3">
-    <div id="<%= work.get("id") %>"></div>
-  </div>
-</div>
-<% }); %>
