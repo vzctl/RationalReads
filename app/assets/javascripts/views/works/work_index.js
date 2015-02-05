@@ -1,16 +1,22 @@
 RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
-  template: JST['works/index'],
+  indexTemplate: JST['works/index'],
+  recommendationsTemplate: JST['works/recommendations'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.collection, 'sync', this.render);
     this.style = "index";
+    this.type = options.type;
   },
 
   render: function () {
-    this.$el.html(this.template());
+    if (this.type === "all") {
+      this.$el.html(this.indexTemplate());
+    } else {
+      this.$el.html(this.recommendationsTemplate());
+    }
     this.$el.append("<div id='index'>")
     this.collection.sort()
-    
+
     this.collection.each( function (work) {
       var subItem = new RationalReads.Views.WorkItem({
         model: work,

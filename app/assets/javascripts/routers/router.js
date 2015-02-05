@@ -7,8 +7,27 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'home',
+    'books': 'all',
     'my-books': 'read',
+    'recommendations': 'recommendations',
     'works/:id': 'show'
+  },
+
+  recommendations: function () {
+    var posts = new RationalReads.Collections.Works();
+
+    posts.fetch({
+      success: function () {
+        posts = posts.recommendedWorks();
+        posts.sort();
+        var indexView = new RationalReads.Views.WorksIndex({
+            collection: posts,
+            type: "recommendations"
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
   },
 
   home: function () {
@@ -17,7 +36,23 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     posts.fetch({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
-            collection: posts
+            collection: posts,
+            type: "all"
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
+  },
+
+  all: function () {
+    var posts = new RationalReads.Collections.Works();
+
+    posts.fetch({
+      success: function () {
+        var indexView = new RationalReads.Views.WorksIndex({
+            collection: posts,
+            type: "all"
           });
 
         this._swapView(indexView);

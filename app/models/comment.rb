@@ -16,4 +16,20 @@ class Comment < ActiveRecord::Base
     foreign_key: :parent_comment_id,
     primary_key: :id
   )
+
+  def depth
+    depth = 0
+    comment = self
+    while true
+      if comment.parent_comment_id == nil
+        break
+      else
+       depth += 1
+       comment = Comment.find(comment.parent_comment_id)
+     end
+   end
+
+   depth
+ end
+
 end

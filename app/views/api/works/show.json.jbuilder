@@ -7,6 +7,8 @@ else
   json.user_rating "none"
 end
 
+json.num_comments @work.comments.length
+
 json.comments @comments do |comment|
   user = User.find(comment.user_id)
   if user.rating(comment.work_id)
@@ -17,6 +19,14 @@ json.comments @comments do |comment|
 
   json.id comment.id
   json.username user.username
+
+  if (comment.parent_comment_id)
+    json.parent_comment_id comment.parent_comment_id
+  else
+    json.parent_comment_id "none"
+  end
+
+  json.depth comment.depth
   json.content comment.content
   json.time_ago time_ago_in_words(comment.created_at)
 end

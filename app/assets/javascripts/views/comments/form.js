@@ -1,7 +1,7 @@
-RationalReads.Views.ReviewForm = Backbone.View.extend({
+RationalReads.Views.CommentForm = Backbone.View.extend({
   template: JST['comments/form'],
   errorTemplate: JST['comments/error'],
-  successTemplate: JST['comments/show'],
+  successTemplate: JST['comments/new_comment'],
 
   initialize: function (options) {
     this.work = options.work
@@ -32,7 +32,7 @@ RationalReads.Views.ReviewForm = Backbone.View.extend({
     var form = $(event.currentTarget);
     var $textarea = form.find("textarea");
     var content = $textarea.val();
-    $textarea.val("Submitted!");
+    // $textarea.val("Submitted!");
 
     var comment = new RationalReads.Models.Comment();
 
@@ -46,7 +46,13 @@ RationalReads.Views.ReviewForm = Backbone.View.extend({
       {
         success: function(model, response) {
           var newComment = this.successTemplate({content: response.content})
-          $("#comment").prepend(newComment);
+
+          if (this.reply) {
+            $("#" + model.get("parent_comment_id")).append(newComment);
+          } else {
+            $("#comment").prepend(newComment);
+          }
+
         }.bind(this),
         error: function (model, response) {
           if (content.length === 0) {
@@ -58,6 +64,8 @@ RationalReads.Views.ReviewForm = Backbone.View.extend({
         }.bind(this)
       }
     )
+
+    this.remove();
   }
 
 });

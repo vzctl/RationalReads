@@ -12,8 +12,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/books">All Books</a></li>
+        <li><a href="#/recommendations">Recommendations</a></li>
         <% if signed_in? %>
-          <li><a href="#/my-books">My Books</a>
+          <li><a href="#/my-books">My Books</a></li>
           <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
         <% else %>
           <li><%= link_to "Log in", new_session_url %></li>

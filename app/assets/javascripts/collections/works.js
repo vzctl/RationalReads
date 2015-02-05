@@ -12,6 +12,13 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     });
 
     return new RationalReads.Collections.Works(filtered);
-  }
+  },
 
+  recommendedWorks: function () {
+    filtered = this.filter( function(work) {
+      return (work.get("user_rating") === "none");
+    });
+
+    return new RationalReads.Collections.Works(filtered);
+  }
 });

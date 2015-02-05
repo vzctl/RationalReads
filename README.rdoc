@@ -34,7 +34,8 @@ Please feel free to use a different markup language if you do not plan to run
 4.  Limit number of characters displayed in read_item and full_item
 5.  Is the rating backbone model getting used? [done - yes, it is, for the create action]
 6.  Add comments instantaneously, instead of waiting for the comment to save
-
+7.  Increment # of comments on show page when a user submits a comment
+8.  Fetch all books once for entire site, instead of multiple times for each collection
 
 #Next Steps
 1. Re-name review to comment in all files

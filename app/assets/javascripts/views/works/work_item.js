@@ -6,7 +6,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
 
   templateRead: JST['works/read_item'],
   templateFull: JST['works/index_item'],
-  templateShow: JST['works/show_item'],
+  templateShow: JST['works/show'],
 
   render: function () {
     if (this.type === "index") {
