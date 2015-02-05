@@ -1,21 +1,30 @@
 RationalReads.Views.ReviewForm = Backbone.View.extend({
-  template: JST['reviews/form'],
-  errorTemplate: JST['reviews/error'],
+  template: JST['comments/form'],
+  errorTemplate: JST['comments/error'],
+  successTemplate: JST['comments/show'],
 
   initialize: function (options) {
     this.work = options.work
+    this.reply = options.reply
+    this.parent_comment = options.parent_comment
   },
 
   events: {
-    "submit .review": "submitComment"
+    "submit .comment": "submitComment"
   },
 
   render: function () {
-    var content = this.template();
+    if (this.reply) {
+      var header = "Leave a reply"
+    } else {
+      var header = "Leave a comment"
+    }
+
+    var content = this.template({header: header});
 
     this.$el.html(content);
 
-    return this
+    return this;
   },
 
   submitComment: function (event) {
@@ -23,11 +32,20 @@ RationalReads.Views.ReviewForm = Backbone.View.extend({
     var form = $(event.currentTarget);
     var textarea = form.find("textarea");
     var content = textarea.val();
-    this.model.set({work_id: this.work.get("id"), content: content});
-    this.model.save({},
+
+    var comment = new RationalReads.Models.Comment();
+
+    comment.set({work_id: this.work.get("id"), content: content});
+
+    if (!this.parent_comment) {
+      comment.set({parent_comment_id: this.parent_comment.get("id")});
+    }
+
+    comment.save({},
       {
         success: function(model, response) {
-          console.log(model)
+          var newComment = this.successTemplate({content: response.content})
+          $("#comment").prepend(newComment);
         }.bind(this),
         error: function (model, response) {
           if (content.length === 0) {

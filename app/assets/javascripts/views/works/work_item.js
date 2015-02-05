@@ -22,7 +22,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
 
     this.$el.html(content);
 
-    var $raty = this.$el.find("#raty")
+    var $raty = this.$el.find(".raty")
       $raty.raty({
         score: displayRating,
         click : function (score) {
@@ -40,7 +40,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     rating.save({},
       {
         success: function(model, response) {
-          var $raty = this.$el.find("#raty");
+          var $raty = this.$el.find(".raty");
           var $ratingResponse = $("<div class='changed'>");
           if (response.type === "create") {
             this._updateStatsAfterCreate($ratingResponse, response);
@@ -75,7 +75,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   _updateStatsAfterError: function(response) {
-    var $work = this.$el.find("#raty");
+    var $work = this.$el.find(".raty");
     $ratingResponse = $("<div class='changed'>");
     $ratingResponse.append(response.responseText);
     $work.html($ratingResponse);

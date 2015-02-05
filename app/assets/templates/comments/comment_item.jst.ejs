@@ -1,0 +1,15 @@
+<div class="single-comment">
+  <div class="comment-data">
+    <p class="username"><%= comment.get("username") %></p>
+    <div class="raty user-rating"></div>
+    <p class="time-ago"><%= comment.get("time_ago") %> ago</p>
+  </div>
+
+  <div class="comment-content">
+    <%= comment.get("content") %>
+  </div>
+
+  <div class="reply">
+    <a href="javascript:void(0)">Reply</a>
+  </div>
+</div>

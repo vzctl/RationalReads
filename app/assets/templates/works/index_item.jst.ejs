@@ -5,7 +5,7 @@
 
     <div class="stats row">
       <div class="stars col-md-3">
-        <div id="raty"></div>
+        <div class="raty"></div>
       </div>
       <div class="avg-rating col-md-2">
         <%= work.get("average_rating") %>
@@ -13,7 +13,8 @@
       <div class="num-ratings col-md-3">
       <%= work.get("ratings") %> ratings
       </div>
-      <div class="review col-md-2">
+      <div class="num-comments col-md-2">
+        <%= work.get("num_comments") %> comments
       </div>
     </div>
 

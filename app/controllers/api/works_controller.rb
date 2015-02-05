@@ -13,6 +13,7 @@ module Api
 
     def show
       @work = Work.find(params[:id])
+      @comments = @work.comments
       render :show
     end
 

@@ -3,6 +3,7 @@ class Work < ActiveRecord::Base
   validates :author, :link, :description, presence: true
 
   has_many :ratings
+  has_many :comments
 
   def average_rating
     ratings = self.ratings()
