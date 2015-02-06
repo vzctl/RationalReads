@@ -36,6 +36,7 @@ Please feel free to use a different markup language if you do not plan to run
 6.  Add comments instantaneously, instead of waiting for the comment to save
 7.  Increment # of comments on show page when a user submits a comment
 8.  Fetch all books once for entire site, instead of multiple times for each collection
+9.  Not interested button (to filter recommendations)
 
 #Next Steps
 1. Re-name review to comment in all files

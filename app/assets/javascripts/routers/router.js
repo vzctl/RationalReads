@@ -22,7 +22,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
         posts.sort();
         var indexView = new RationalReads.Views.WorksIndex({
             collection: posts,
-            type: "recommendations"
+            type: "recommendations",
+            style: "index"
           });
 
         this._swapView(indexView);
@@ -35,12 +36,11 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
     posts.fetch({
       success: function () {
-        var indexView = new RationalReads.Views.WorksIndex({
-            collection: posts,
-            type: "all"
+        var homeView = new RationalReads.Views.HomeView({
+            collection: posts
           });
 
-        this._swapView(indexView);
+        this._swapView(homeView);
       }.bind(this)
     })
   },
@@ -52,7 +52,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: posts,
-            type: "all"
+            type: "all",
+            style: "index"
           });
 
         this._swapView(indexView);

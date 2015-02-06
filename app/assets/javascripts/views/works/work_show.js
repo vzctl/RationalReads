@@ -57,8 +57,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
         var commentItem = new RationalReads.Views.CommentItem({
           model: comment,
           work: this.model
-        });
-        console.log(comment.get("content"));
+        });     
         this.addSubview('#comment', commentItem);
       } else {
         child_comments.push(comment);
