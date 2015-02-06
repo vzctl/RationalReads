@@ -20,5 +20,18 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     });
 
     return new RationalReads.Collections.Works(filtered);
-  }
+  },
+
+  strategies: {
+    rating: function (work) { return -work.get("average_rating"); },
+    date: function (work) {
+      var date = new Date(work.get("created_at"))
+      return -date.getTime();
+    }
+  },
+
+   changeSort: function (sortProperty) {
+       this.comparator = this.strategies[sortProperty];
+   }
+
 });

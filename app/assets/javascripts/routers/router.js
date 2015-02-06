@@ -13,6 +13,20 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'works/:id': 'show'
   },
 
+  home: function () {
+    var posts = new RationalReads.Collections.Works();
+
+    posts.fetch({
+      success: function () {
+        var homeView = new RationalReads.Views.HomeView({
+            collection: posts
+          });
+
+        this._swapView(homeView);
+      }.bind(this)
+    })
+  },
+
   recommendations: function () {
     var posts = new RationalReads.Collections.Works();
 
@@ -27,20 +41,6 @@ RationalReads.Routers.Router = Backbone.Router.extend({
           });
 
         this._swapView(indexView);
-      }.bind(this)
-    })
-  },
-
-  home: function () {
-    var posts = new RationalReads.Collections.Works();
-
-    posts.fetch({
-      success: function () {
-        var homeView = new RationalReads.Views.HomeView({
-            collection: posts
-          });
-
-        this._swapView(homeView);
       }.bind(this)
     })
   },

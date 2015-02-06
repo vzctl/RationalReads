@@ -5,7 +5,7 @@ RationalReads.Models.Work = Backbone.Model.extend({
     this.comments().set(response.comments);
     delete response.comments;
 
-    return response
+    return response;
   },
 
   comments: function () {
@@ -13,6 +13,6 @@ RationalReads.Models.Work = Backbone.Model.extend({
       this._comments = new RationalReads.Collections.Comments();
     }
 
-    return this._comments
+    return this._comments;
   }
 });

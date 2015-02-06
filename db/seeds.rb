@@ -32,3 +32,7 @@ rating9 = Rating.create({work_id: 3, user_id: 1, rating: 4})
 rating10 = Rating.create({work_id: 3, user_id: 3, rating: 4})
 rating11 = Rating.create({work_id: 3, user_id: 3, rating: 5})
 rating12 = Rating.create({work_id: 3, user_id: 4, rating: 5})
+
+
+
+Work.create({name: "Harry Potter and the Methods of Rationality10", author: " Eliezer Yudkowsky", link: "http://hpmor.com/", description: "Petunia married a biochemist, and Harry grew up reading science and science fiction. Then came the Hogwarts letter, and a world of intriguing new possibilities to exploit. And new friends, like Hermione Granger, and Professor McGonagall, and Professor Quirrell..."})
