@@ -2,7 +2,6 @@ RationalReads.Views.ReadWorks = Backbone.CompositeView.extend({
   template: JST['works/read'],
 
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync', this.render);
     this.style = "list";
   },
 

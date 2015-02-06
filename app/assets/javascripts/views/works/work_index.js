@@ -4,7 +4,6 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   searchTemplate: JST['works/search'],
 
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync', this.render);
     this.style = options.style;
     this.type = options.type;
   },
@@ -16,17 +15,19 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
       this.$el.html(this.recommendationsTemplate());
     } else if (this.type === "search") {
       this.$el.html(this.searchTemplate());
+    } else {
+      this.$el.empty();
     }
 
-    this.$el.append("<div id='index'>")
-    this.collection.sort()
+    this.$el.append("<div class='index'>");
+    this.collection.sort();
 
     this.collection.each( function (work) {
       var subItem = new RationalReads.Views.WorkItem({
         model: work,
         style: this.style
       });
-      this.addSubview('#index', subItem)
+      this.addSubview('.index', subItem);
     }.bind(this));
 
     return this;

@@ -24,3 +24,4 @@
 //= require_tree .
 //= require bootstrap
 //= require jquery.raty.js
+//= require jquery.serializejson.min.js

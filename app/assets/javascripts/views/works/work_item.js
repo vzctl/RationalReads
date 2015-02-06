@@ -26,12 +26,12 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     this.$el.html(content);
 
     var $raty = this.$el.find(".raty")
-      $raty.raty({
-        score: displayRating,
-        click : function (score) {
-          this.submitRating(score);
-        }.bind(this)
-      });
+    $raty.raty({
+      score: displayRating,
+      click : function (score) {
+        this.submitRating(score);
+      }.bind(this)
+    });
 
     return this
   },

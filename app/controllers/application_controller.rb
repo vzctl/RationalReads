@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless signed_in?
-      render json: "Log in first!"
+      render json: ["Log in first!"], status: 404
     end
   end
 

@@ -4,10 +4,9 @@ module Api
       @work = Work.new(work_params)
 
       if @work.save
-        redirect_to work_url(@work)
+        render json: @work
       else
-        flash.now[:errors] = @work.errors.full_messages
-        render text: "fail"
+        render json: @work.errors.full_messages, status: 406
       end
     end
 

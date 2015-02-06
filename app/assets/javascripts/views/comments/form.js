@@ -32,7 +32,6 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
     var form = $(event.currentTarget);
     var $textarea = form.find("textarea");
     var content = $textarea.val();
-    // $textarea.val("Submitted!");
 
     var comment = new RationalReads.Models.Comment();
 
@@ -46,7 +45,7 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
       {
         success: function(model, response) {
           var newComment = this.successTemplate({content: response.content})
-
+          this.remove();
           if (this.reply) {
             $("#" + model.get("parent_comment_id")).append(newComment);
           } else {
@@ -55,17 +54,14 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
 
         }.bind(this),
         error: function (model, response) {
-          if (content.length === 0) {
-            var error = "No content to submit! Type some more.";
-          } else {
-            var error = "You've got to log in to leave a comment!";
-          }
-          $(".errors").append(this.errorTemplate({error: error}));
+          
+          response.responseJSON.forEach ( function (error) {
+            $(".errors").append(this.errorTemplate({error: error}));
+          }.bind(this));
+
         }.bind(this)
       }
     )
-
-    this.remove();
   }
 
 });

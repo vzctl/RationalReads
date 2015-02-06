@@ -2,22 +2,12 @@ RationalReads.Views.HomeView = Backbone.CompositeView.extend({
   topTemplate: JST['works/home_header'],
   bottomTemplate: JST['works/home_bottom'],
 
-  initialize: function () {
-
-  },
-
   render: function () {
     this.$el.html(this.topTemplate());
     this.$el.addClass("home-body row");
 
-    var posts = new RationalReads.Collections.Works();
-
-    posts.fetch({
-      success: function () {
-        this.renderRecommendations(posts);
-        this.renderLatest(posts);
-      }.bind(this)
-    });
+    this.$('#recommendations').append(this.renderRecommendations(this.collection).$el);
+    this.$('#latest').append(this.renderLatest(this.collection).$el);
 
     this.$el.append(this.bottomTemplate());
     return this;
@@ -34,7 +24,8 @@ RationalReads.Views.HomeView = Backbone.CompositeView.extend({
         style: "home"
       });
 
-    this.addSubview('#recommendations', recommendationsView)
+    // this.addSubview('#recommendations', recommendationsView);
+    return recommendationsView.render();
   },
 
   renderLatest: function (posts) {
@@ -48,7 +39,8 @@ RationalReads.Views.HomeView = Backbone.CompositeView.extend({
         style: "home"
       });
 
-    this.addSubview('#latest', latestView)
+    // this.addSubview('#latest', latestView);
+    return latestView.render();
   }
 
 });
