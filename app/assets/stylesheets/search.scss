@@ -10,3 +10,47 @@
   font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
   margin-right:7px;
 }
+
+
+.search-item {
+  display: block;
+}
+
+.search-item-box:hover{
+  background-color: blue;
+}
+
+.search-item-box:hover .search-link{
+  color: white;
+}
+
+#autocomplete {
+  position: absolute;
+  background-color:purple;
+  filter:alpha(opacity=90);
+   opacity:0.9;
+   -moz-opacity:0.9;
+  padding:0px;
+  border-radius:5px;
+  border-left: thin solid gray;
+  border-right: thin solid gray;
+}
+
+.search-item-box {
+  border-bottom: thin solid black;
+  background-color: yellow;
+  padding: 5px;
+  display: block;
+
+  position:relative;
+   z-index:100;
+}
+
+.search-link {
+  color:red;
+}
+
+.search-link:hover {
+  color:white;
+  text-decoration: none;
+}

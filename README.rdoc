@@ -38,6 +38,7 @@ Please feel free to use a different markup language if you do not plan to run
 8.  Fetch all books once for entire site, instead of multiple times for each collection
 9.  Not interested button (to filter recommendations)
 10. Not doing bayesian average
+11. Raty not working fully on front page
 
 #Next Steps
 1. Re-name review to comment in all files

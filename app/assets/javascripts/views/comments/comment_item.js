@@ -19,7 +19,7 @@ RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
     var $raty = this.$el.find(".raty")
       $raty.raty({
         readOnly: true,
-        score: this.model.get("rating"),
+        score: this.model.get("rating")
       });
 
     return this;

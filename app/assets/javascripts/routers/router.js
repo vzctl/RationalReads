@@ -1,17 +1,22 @@
 RationalReads.Routers.Router = Backbone.Router.extend({
   initialize: function() {
-    // this.navBar = $("#navbar");
-    // this.footer = $("#footer");
     this.$rootEl = $('#main');
   },
 
   routes: {
     '': 'home',
-    'books': 'all',
-    'my-books': 'read',
+    'works': 'all',
+    'my-works': 'read',
     'recommendations': 'recommendations',
+    'works/new' : 'newWork',
     'works/:id': 'show',
     'search/:terms': 'search'
+  },
+
+  newWork: function () {
+    var workForm = new RationalReads.Views.WorkForm();
+
+    this._swapView(workForm);
   },
 
   search: function (terms) {
