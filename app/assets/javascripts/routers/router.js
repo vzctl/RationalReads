@@ -10,16 +10,36 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'books': 'all',
     'my-books': 'read',
     'recommendations': 'recommendations',
-    'works/:id': 'show'
+    'works/:id': 'show',
+    'search/:terms': 'search'
+  },
+
+  search: function (terms) {
+    var works = new RationalReads.Collections.Works();
+
+    works.fetch({
+      success: function () {
+        works = works.contains(terms);
+        works.changeSort("name");
+        works.sort();
+        var indexView = new RationalReads.Views.WorksIndex({
+            collection: works,
+            type: "search",
+            style: "index"
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
   },
 
   home: function () {
-    var posts = new RationalReads.Collections.Works();
+    var works = new RationalReads.Collections.Works();
 
-    posts.fetch({
+    works.fetch({
       success: function () {
         var homeView = new RationalReads.Views.HomeView({
-            collection: posts
+            collection: works
           });
 
         this._swapView(homeView);
@@ -28,14 +48,14 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   recommendations: function () {
-    var posts = new RationalReads.Collections.Works();
+    var works = new RationalReads.Collections.Works();
 
-    posts.fetch({
+    works.fetch({
       success: function () {
-        posts = posts.recommendedWorks();
-        posts.sort();
+        works = works.recommendedWorks();
+        works.sort();
         var indexView = new RationalReads.Views.WorksIndex({
-            collection: posts,
+            collection: works,
             type: "recommendations",
             style: "index"
           });
@@ -46,12 +66,12 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   all: function () {
-    var posts = new RationalReads.Collections.Works();
+    var works = new RationalReads.Collections.Works();
 
-    posts.fetch({
+    works.fetch({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
-            collection: posts,
+            collection: works,
             type: "all",
             style: "index"
           });
@@ -62,11 +82,11 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   read: function () {
-    var posts = new RationalReads.Collections.Works();
+    var works = new RationalReads.Collections.Works();
 
-    posts.fetch({
+    works.fetch({
       success: function () {
-        var readPosts = posts.read();
+        var readPosts = works.read();
         var indexView = new RationalReads.Views.ReadWorks({
             collection: readPosts
           });

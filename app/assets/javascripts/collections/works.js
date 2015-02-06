@@ -14,6 +14,16 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     return new RationalReads.Collections.Works(filtered);
   },
 
+  contains: function (terms) {
+    filtered = this.filter( function(work) {
+      var workName = work.get("name").toLowerCase();
+      var searchString = terms.toLowerCase()
+      return !(workName.indexOf(searchString) === -1);
+    });
+
+    return new RationalReads.Collections.Works(filtered);
+  },
+
   recommendedWorks: function () {
     filtered = this.filter( function(work) {
       return (work.get("user_rating") === "none");
@@ -27,6 +37,9 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     date: function (work) {
       var date = new Date(work.get("created_at"))
       return -date.getTime();
+    },
+    name: function (work) {
+      return work.get("name");
     }
   },
 

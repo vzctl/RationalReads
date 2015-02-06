@@ -1,6 +1,7 @@
 RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   indexTemplate: JST['works/index'],
   recommendationsTemplate: JST['works/recommendations'],
+  searchTemplate: JST['works/search'],
 
   initialize: function (options) {
     this.listenTo(this.collection, 'sync', this.render);
@@ -13,7 +14,10 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
       this.$el.html(this.indexTemplate());
     } else if (this.type === "recommendations" ){
       this.$el.html(this.recommendationsTemplate());
+    } else if (this.type === "search") {
+      this.$el.html(this.searchTemplate());
     }
+
     this.$el.append("<div id='index'>")
     this.collection.sort()
 
