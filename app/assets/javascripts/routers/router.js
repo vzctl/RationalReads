@@ -29,8 +29,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
         works.sort();
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
-            type: "search",
-            style: "index"
+            type: "search"
           });
 
         this._swapView(indexView);
@@ -43,7 +42,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
     works.fetch({
       success: function () {
-        var homeView = new RationalReads.Views.HomeView({
+        var homeView = new RationalReads.Views.WorksHome({
             collection: works
           });
 
@@ -61,8 +60,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
         works.sort();
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
-            type: "recommendations",
-            style: "index"
+            type: "recommendations"
           });
 
         this._swapView(indexView);
@@ -77,8 +75,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
-            type: "all",
-            style: "index"
+            type: "index"
           });
 
         this._swapView(indexView);
@@ -92,7 +89,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     works.fetch({
       success: function () {
         var readPosts = works.read();
-        var indexView = new RationalReads.Views.ReadWorks({
+        var indexView = new RationalReads.Views.WorksRead({
             collection: readPosts
           });
 

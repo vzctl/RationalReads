@@ -25,11 +25,21 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
   },
 
   recommendedWorks: function () {
+    var ratedWorks = 0;
     filtered = this.filter( function(work) {
-      return (work.get("user_rating") === "none");
+      if (work.get("user_rating") === "none") {
+        ratedWorks++;
+        return true;
+      } else {
+        return false;
+      }
     });
 
-    return new RationalReads.Collections.Works(filtered);
+    if (ratedWorks === this.length) {
+      return "none";
+    } else {
+      return new RationalReads.Collections.Works(filtered);
+    }
   },
 
   strategies: {

@@ -1,5 +1,5 @@
-RationalReads.Views.ReadWorks = Backbone.CompositeView.extend({
-  template: JST['works/read'],
+RationalReads.Views.WorksRead = Backbone.CompositeView.extend({
+  template: JST['works/headers/read_header'],
 
   initialize: function (options) {
     this.style = "list";
@@ -12,7 +12,7 @@ RationalReads.Views.ReadWorks = Backbone.CompositeView.extend({
     this.collection.each( function (work) {
       var subItem = new RationalReads.Views.WorkItem({
         model: work,
-        style: this.style
+        type: "read"
       });
       this.addSubview('#index', subItem)
     }.bind(this));

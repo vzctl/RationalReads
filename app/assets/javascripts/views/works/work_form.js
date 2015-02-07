@@ -1,6 +1,6 @@
 RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
-  template: JST['works/form'],
-  errorTemplate: JST['comments/error'],
+  template: JST['works/work_form'],
+  errorTemplate: JST['error'],
 
   initialize: function () {
     this.$el = $("<div class='new-work'></div>")

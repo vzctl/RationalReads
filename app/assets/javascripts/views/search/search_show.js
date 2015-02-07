@@ -1,4 +1,4 @@
-RationalReads.Views.SearchView = Backbone.CompositeView.extend({
+RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
   formTemplate: JST['search/search_form'],
 
   initialize: function (options) {

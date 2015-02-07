@@ -1,6 +1,6 @@
 RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
-  template: JST['comments/show_header'],
-  childInsertionTemplate: JST['comments/insertion'],
+  template: JST['comments/headers/work_comment_header'],
+  childInsertionTemplate: JST['comments/child_comment_marker'],
 
   initialize: function () {
     this.style = "show";
@@ -78,7 +78,11 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   renderChildren: function (child_comments) {
     var deletes = [];
 
-    child_comments.forEach( function (comment, index) {
+    var childComments = new RationalReads.Collections.Comments();
+    childComments.reset(child_comments);
+    childComments.sort()
+
+    childComments.each( function (comment, index) {
       var parent_element = this.$el.find('#' + comment.get("parent_comment_id"))
       if (parent_element.length > 0 ) {
         var commentItem = new RationalReads.Views.CommentItem({
@@ -91,7 +95,6 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
           var parent_of_parent = $(parent_element).parent();
           $(child_insertion_div).insertAfter(parent_of_parent);
         }
-
         this.addSubview('#c' + comment.get("parent_comment_id"), commentItem);
 
         deletes.push(index);

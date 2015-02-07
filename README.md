@@ -38,21 +38,25 @@ Please feel free to use a different markup language if you do not plan to run
 10. Not doing bayesian average
 11. Raty not working fully on front page
 12. Add about page
+13. Comment sort getting called in home page?
 
-#Features
+# Features to add
+0. Add length to work
 1. Tags
-2. Chapter
-3. Use amazon api to populate work form from search bar
-
+2. Chapter Functionality
+3. Like comments
+4. Karma?
+5. Use amazon api to populate work form from search bar
 
 # Display Ideas
 1. Logo
 2. Navbar styling
+3. Everything
 
-#Refactor ideas
-1. Loop through errors (copy from work_form.js), perhaps make global function
-2. Combine templates / add folder
-3. Rename files and names to be consistent
-4. Maybe merge style and type in works options hash
-5. Re-organize css files
-6. Go over html element naming, establish convention
+# ToDo
+1. Add works (put in all major works - 20 - 30)
+2. Styling
+3. Bells and whistles
+4. Styling
+5. Bug fixes
+5. Send out r post

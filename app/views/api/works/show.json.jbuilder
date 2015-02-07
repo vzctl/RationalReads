@@ -30,4 +30,5 @@ json.comments @comments do |comment|
   json.depth comment.depth
   json.content comment.content
   json.time_ago time_ago_in_words(comment.created_at)
+  json.created_at comment.created_at
 end

@@ -2,6 +2,7 @@ RationalReads.Collections.Comments = Backbone.Collection.extend({
   model: RationalReads.Models.Comment,
 
   comparator: function (comment) {
-    return comment.get("time_ago");
+    var date = new Date(comment.get("created_at"))
+    return -date.getTime();
   }
 });

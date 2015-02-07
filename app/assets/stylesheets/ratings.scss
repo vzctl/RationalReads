@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.changed {
-  color:red;
+.transition {
+  position:relative;
+  padding:0px;
+  margin:0px;
+}
+
+.stars {
+  width:120px;
+  padding:0px;
+  color: blue;
+}
+
+.avg-rating {
+  width: 40px;
 }

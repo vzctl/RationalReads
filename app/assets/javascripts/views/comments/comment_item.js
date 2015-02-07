@@ -1,6 +1,6 @@
 RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
 
-  template: JST['comments/item'],
+  template: JST['comments/comment_show'],
 
   events: {
     "click .reply": "createForm"
