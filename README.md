@@ -39,6 +39,8 @@ Please feel free to use a different markup language if you do not plan to run
 11. Raty not working fully on front page
 12. Add about page
 13. Comment sort getting called in home page?
+14. Am pluralizing comments and ratings, even when there's only 1
+15. Shrink browser screen - the stats row doesn't margin-left on the second row
 
 # Features to add
 0. Add length to work
@@ -46,7 +48,10 @@ Please feel free to use a different markup language if you do not plan to run
 2. Chapter Functionality
 3. Like comments
 4. Karma?
-5. Use amazon api to populate work form from search bar
+5. Sequels / Series
+6. Author Functionality
+7. Something I'm forgetting
+8. Use amazon api to populate work form from search bar
 
 # Display Ideas
 1. Logo

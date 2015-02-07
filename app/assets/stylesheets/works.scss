@@ -27,26 +27,31 @@
 .stats {
   margin-top:5px;
   margin-bottom:5px;
+  margin-left:-6px;
+  padding-left:0px;
+}
+
+.stats div.stars {
+  margin-left: -2px;
 }
 
 .stats div {
-  margin:0px;
   padding-right:0px;
+  float: left;
+  display: block;
+  margin-left: 7px;
+  margin-right: 5px;
 }
 
+.description {
+  clear: both;
+}
 .read-header {
   font-weight:bold;
 }
 
 #work-info {
   max-width:1000px;
-}
-
-.stats div {
-  float: left;
-  display: block;
-  margin-left: 7px;
-  margin-right: 5px;
 }
 
 // New Work Page

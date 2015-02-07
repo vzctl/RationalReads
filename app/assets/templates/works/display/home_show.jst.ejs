@@ -1,9 +1,9 @@
-<div class="work home-display">
+<div class="work home-display" id="number-<%= index %>">
   <div class="inner-work">
     <p class="title"><a href="#/works/<%= work.get("id") %>"> <%= work.get("name") %> </a></p>
     <p class="author"> by <%= work.get("author") %> </p>
 
-    <div class="stats row">
+    <div class="stats">
       <div class="stars">
         <div class="raty"></div>
       </div>
@@ -19,9 +19,12 @@
       <div class="date">
         <%= work.get("created_at_string") %>
       </div>
+      <div class="length">
+        <%= work.get("length") %>
+      </div>
     </div>
 
     <p class="description"><%= work.get("description") %></p>
-    Read it <a href="<%= work.get("link") %>">here</a>!
+    <p class="link-text">Read it <a class="link-link" href="<%= work.get("link") %>">here</a>!</p>
   </div>
 </div>

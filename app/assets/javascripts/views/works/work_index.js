@@ -21,10 +21,11 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
 
     this.collection.sort();
 
-    this.collection.each( function (work) {
+    this.collection.each( function (work, index) {
       var subItem = new RationalReads.Views.WorkItem({
         model: work,
-        type: this.type
+        type: this.type,
+        index: index
       });
       this.addSubview('.index', subItem);
     }.bind(this));

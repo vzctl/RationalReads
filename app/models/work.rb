@@ -1,6 +1,6 @@
 class Work < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
-  validates :author, :link, :description, presence: true
+  validates :author, :link, :description, :length, presence: true
 
   has_many :ratings
   has_many :comments

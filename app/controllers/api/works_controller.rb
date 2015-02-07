@@ -24,7 +24,7 @@ module Api
     private
 
       def work_params
-        params.require(:work).permit(:name, :author, :link, :description)
+        params.require(:work).permit(:name, :author, :link, :description, :length)
       end
   end
 end

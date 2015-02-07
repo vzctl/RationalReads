@@ -1,6 +1,7 @@
 .home-head {
-  text-align: center;
+  // text-align: left;
   display: block;
+  margin-left: 30px;
 }
 
 #main .home-body {
@@ -18,4 +19,38 @@
   background-color: yellow;
   border-radius: 5px;
   padding:20px;
+}
+
+a.more:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.more {
+  // font-weight: bold;
+  color: blue;
+  margin-left:5px;
+}
+
+#left #number-0 .inner-work {
+  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent !important;
+  font-size:1.3em;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  color: white;
+}
+
+#left #number-0 .inner-work .title a{
+  font-size:26px;
+  color: white;
+  text-decoration: underline;
+}
+
+.hidden-display {
+  display:none;
+  margin-top:16px;
+}
+
+#number-0 .link-link {
+  color: white;
+  text-decoration: underline;
 }

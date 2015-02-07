@@ -4,6 +4,7 @@ window.RationalReads = {
   Views: {},
   Routers: {},
   Utils: {},
+  Plugins: {},
   initialize: function() {
     new RationalReads.Routers.Router
     var searchView = new RationalReads.Views.SearchShow();

@@ -2,12 +2,23 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
 
   initialize: function (options) {
     this.type = options.type;
+    this.index = options.index;
   },
 
   readTemplate: JST['works/display/read_show'],
   fullTemplate: JST['works/display/index_show'],
   showTemplate: JST['works/display/work_show'],
   homeTemplate: JST['works/display/home_show'],
+
+  events: {
+    "click .more": "expandDescription"
+  },
+
+  expandDescription: function () {
+    $(this.$el.find(".more")).remove();
+    $(this.$el.find(".hidden-display")).slideDown("slow");
+  },
+
 
   render: function () {
     var displayRating = this.model.get("average_rating");
@@ -18,10 +29,12 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
       var content = this.readTemplate({work: this.model});
       displayRating = this.model.get("user_rating");
     } else if (this.type === "home") {
-      var content = this.homeTemplate({work: this.model});
+      var content = this.homeTemplate({work: this.model, index: this.index});
     } else {
       var content = this.showTemplate({work: this.model});
     }
+
+    content = RationalReads.Plugins.ShowMore.call(this, content);
 
     this.$el.html(content);
 
