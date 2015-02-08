@@ -13,7 +13,7 @@ RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var comment = this.template({comment: this.model, depth: this.model.get("depth")});
+    var comment = this.template({comment: this.model});
     this.$el.html(comment);
 
     var $raty = this.$el.find(".raty")

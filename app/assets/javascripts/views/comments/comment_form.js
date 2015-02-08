@@ -1,7 +1,7 @@
 RationalReads.Views.CommentForm = Backbone.View.extend({
   template: JST['comments/comment_form'],
   errorTemplate: JST['error'],
-  successTemplate: JST['comments/new_comment'],
+  commentTemplate: JST['comments/comment_show'],
 
   initialize: function (options) {
     this.work = options.work
@@ -44,14 +44,20 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
     comment.save({},
       {
         success: function(model, response) {
-          var newComment = this.successTemplate({content: response.content})
+          var $newComment = $(this.commentTemplate({comment: comment}))
           this.updateCommentCount(this.work.get("num_comments"));
           this.remove();
           if (this.reply) {
-            $("#" + model.get("parent_comment_id")).append(newComment);
+            $("#" + model.get("parent_comment_id")).append($newComment);
           } else {
-            $("#comment").prepend(newComment);
+            $("#comment").prepend($newComment);
           }
+
+          var $raty = $newComment.find(".raty")
+            $raty.raty({
+              readOnly: true,
+              score: comment.get("rating")
+            });
 
         }.bind(this),
         error: function (model, response) {
