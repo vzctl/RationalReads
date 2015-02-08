@@ -42,6 +42,11 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     }
   },
 
+  orderBy: function (comparator) {
+    this.changeSort(comparator);
+    this.sort();
+  },
+
   strategies: {
     rating: function (work) { return -work.get("average_rating"); },
     date: function (work) {
@@ -52,8 +57,23 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
       return work.get("name");
     },
     comments: function (work) {
-      console.log(work.get("num_comments"))
       return -work.get("num_comments");
+    },
+    length: function (work) {
+
+      var lengthInNum = function lengthInNum (length) {
+        if (length === "Short") {
+          return 3
+        } else if (length === "Medium") {
+          return 2
+        } else if (length === "Long") {
+          return 1
+        } else if (length === "Epic") {
+          return 0
+        }
+      }
+      var length = work.get("length");
+      return lengthInNum(length);
     }
   },
 

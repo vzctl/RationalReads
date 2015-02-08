@@ -24,20 +24,33 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   renderLeft: function () {
     var leftWorks = this.collection;
-    leftWorks.changeSort(this.currentTab);
+    leftWorks.orderBy(this.currentTab);
     leftWorks.sort();
+
     var firstFive = new RationalReads.Collections.Works();
     firstFive.reset(leftWorks.first(5));
-    // debugger
-    firstFive.sort();
+    firstFive.orderBy(this.currentTab);
+
     var leftView = new RationalReads.Views.WorksIndex({
       collection: firstFive,
       type: "home"
     });
 
     this.views.push(leftView);
+    this.updateLeftHeader();
     this.$('#left').append(leftView.render().$el);
     this.$('#left').append(this.moreTemplate({comparator: this.currentTab}));
+  },
+
+  updateLeftHeader: function () {
+    var $headerText = this.$el.find(".left-header");
+    if (this.currentTab === "rating") {
+      $headerText.text("Highest Rated");
+    } else if (this.currentTab === "comments") {
+      $headerText.text("Most Commented");
+    } else {
+      $headerText.text("Longest");
+    }
   },
 
   renderRight: function () {
