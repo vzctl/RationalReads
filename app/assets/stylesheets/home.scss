@@ -146,14 +146,39 @@
 #main div ul.custom-tabs {
   border-bottom: none;
   vertical-align: bottom;
-  margin-top:21px;
-  padding-left:30px !important;
+  margin-top:33px;
   display:block;
+  font-size: 12px;
 }
 
-#main div ul.custom-tabs li[role=presentation] {
-  padding: 0px;
-  color: white !important;
+#main div ul.custom-tabs li:nth-child(1){
+  margin-left:70px;
+}
+
+#main div ul.custom-tabs li {
+  width: 90px;
+  height: 30px;
+  text-align: center;
+  margin-right: 2px;
+  background-color: black;
+}
+
+#main div ul.custom-tabs li a {
+  padding: 5px;
+  line-height:10px;
+  color: white;
+}
+
+.tabed {
+  border: thin gray solid;
+  border-radius: 5px;
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.activated {
+
 }
 
 .home-display {
