@@ -25,3 +25,4 @@
 //= require bootstrap
 //= require jquery.raty.js
 //= require jquery.serializejson.min.js
+//= require jquery.scrollTo.min

@@ -6,6 +6,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.type = options.type;
+    RationalReads.Utils.MoveTop();
   },
 
   render: function () {

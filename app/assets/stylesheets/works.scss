@@ -26,21 +26,35 @@
 
 .stats {
   margin-top:5px;
-  margin-bottom:5px;
-  margin-left:-6px;
+  margin-bottom:30px;
   padding-left:0px;
-}
-
-.stats div.stars {
-  margin-left: -2px;
 }
 
 .stats div {
   padding-right:0px;
   float: left;
   display: block;
-  margin-left: 7px;
-  margin-right: 5px;
+  margin-left: 0px;
+  margin-right: 7px;
+  font-size:13px;
+}
+
+.stats div.num-ratings-number {
+  margin-right: 6px;
+}
+
+.stats .avg-rating {
+  margin-right:20px;
+  margin-left: 0px;
+  display: block;
+}
+
+.stats .date {
+  margin-left:20px;
+}
+
+.stats .length {
+  margin-left: 20px;
 }
 
 .description {
@@ -52,6 +66,23 @@
 
 #work-info {
   max-width:1000px;
+}
+
+// For show_more plugin
+
+a.more:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.more {
+  color: blue;
+  margin-left:5px;
+}
+
+.hidden-display {
+  display:none;
+  margin-top:16px;
 }
 
 // New Work Page

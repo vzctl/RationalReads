@@ -2,12 +2,14 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
   formTemplate: JST['search/search_form'],
 
   initialize: function (options) {
+    this.$el = $("<div class='seachbox'>")
   },
 
   events: {
     "submit .search-bar": "renderResult",
     "keyup .search": "autoComplete",
-    "click #autocomplete": "clearSearch"
+    "click #autocomplete": "clearSearch",
+    "mouseleave": "clearSearchWithDelay"
   },
 
   render: function () {
@@ -54,7 +56,10 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
         subview.remove();
       });
     });
-  }
+  },
 
+  clearSearchWithDelay: function () {
+    setTimeout( this.clearSearch.bind(this), 1000);
+  }
 
 });

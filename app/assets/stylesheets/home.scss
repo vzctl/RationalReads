@@ -21,36 +21,85 @@
   padding:20px;
 }
 
-a.more:hover {
-  cursor: pointer;
+.left-bottom {
+  float:right;
+  margin-right:28px;
+  margin-top:-6px;
+}
+
+.left-bottom a:hover {
   text-decoration: none;
 }
+// Styling of left column
 
-a.more {
-  // font-weight: bold;
-  color: blue;
-  margin-left:5px;
-}
-
-#left #number-0 .inner-work {
-  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent !important;
-  font-size:1.3em;
+#left p{
+  font-size: 16px;
   font-family: Georgia,"Times New Roman",Times,serif;
-  color: white;
 }
 
-#left #number-0 .inner-work .title a{
+#left .title a {
   font-size:26px;
-  color: white;
-  text-decoration: underline;
-}
-
-.hidden-display {
-  display:none;
-  margin-top:16px;
+  color: blue;
 }
 
 #number-0 .link-link {
+  color: aqua;
+}
+
+#left .work {
+  margin-top:-30px;
+}
+
+#left #number-0 {
+  margin-top: 0px;
+}
+
+#left #number-1 {
+  width:88%;
+  margin-left:7.25%;
+}
+
+#left #number-2 {
+  width:86%;
+  margin-left:9.25%;
+}
+
+#left #number-3 {
+  width:84%;
+  margin-left:11.25%;
+}
+
+#left #number-4 {
+  width:82%;
+  margin-left:13.25%;
+}
+
+#left #number-0 .inner-work {
+  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent;
+  background: -webkit-linear-gradient(top, #fe3881 0%,#ed0158 100%);
   color: white;
-  text-decoration: underline;
+}
+
+#left #number-1 .inner-work {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa53d), color-stop(100%,#f58300));
+  background: -moz-linear-gradient(center top , #FFA53D 0%, #F58300 100%) repeat scroll 0% 0% transparent;
+}
+
+#left #number-2 .inner-work {
+  background: -webkit-linear-gradient(top, #fee531 0%,#e6cb01 100%);
+  background: -moz-linear-gradient(center top , #FEE531 0%, #E6CB01 100%) repeat scroll 0% 0% transparent;
+}
+
+#left #number-3 .inner-work {
+  background: -webkit-linear-gradient(top, #beeb4f 0%,#a2da19 100%);
+  background: -moz-linear-gradient(center top , #BEEB4F 0%, #A2DA19 100%) repeat scroll 0% 0% transparent;
+}
+
+#left #number-4 .inner-work {
+  background: -webkit-linear-gradient(top, #57beed 0%,#189ddb 100%);
+  background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
+}
+
+#left #number-4 .link-link {
+  color: blue;
 }

@@ -5,12 +5,31 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'home',
+    'works?order=:name': 'allSorted',
     'works': 'all',
     'my-works': 'read',
     'recommendations': 'recommendations',
     'works/new' : 'newWork',
     'works/:id': 'show',
     'search/:terms': 'search'
+  },
+
+  allSorted: function (comparator) {
+    var works = new RationalReads.Collections.Works();
+
+    works.fetch({
+      success: function () {
+        works.changeSort(comparator);
+        works.sort();
+
+        var indexView = new RationalReads.Views.WorksIndex({
+            collection: works,
+            type: "index"
+          });
+
+        this._swapView(indexView);
+      }.bind(this)
+    })
   },
 
   newWork: function () {

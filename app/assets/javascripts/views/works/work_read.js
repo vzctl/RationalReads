@@ -3,6 +3,7 @@ RationalReads.Views.WorksRead = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.style = "list";
+    RationalReads.Utils.MoveTop();
   },
 
   render: function () {

@@ -4,20 +4,21 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.style = "show";
+    RationalReads.Utils.MoveTop();
   },
 
   render: function () {
     this.renderWork();
     this.renderCommentForm();
-    var child_comments = this.renderTopLevelComments();
+    var remainingChildren = this.renderTopLevelComments();
 
-    while (child_comments.length > 0) {
-      var deletes = this.renderChildren(child_comments);
+    while (remainingChildren.length > 0) {
+      var deletes = this.renderChildren(remainingChildren);
       deletes.sort( function (a,b) {
         return b - a;
       });
 
-      child_comments = this.deleteArrayAt(child_comments, deletes);
+      remainingChildren = this.deleteArrayAt(remainingChildren, deletes);
     }
 
     return this;
@@ -50,7 +51,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
     this.$el.append(this.template());
     this.$el.append("<div id='comment'>")
     this.model.comments().sort();
-    var child_comments = [];
+    var remainingChildren = [];
 
     this.model.comments().each(function (comment) {
       if (comment.get("parent_comment_id") === "none") {
@@ -60,40 +61,40 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
         });
         this.addSubview('#comment', commentItem);
       } else {
-        child_comments.push(comment);
+        remainingChildren.push(comment);
       }
     }.bind(this));
 
-    return child_comments
+    return remainingChildren
   },
 
-  deleteArrayAt: function (child_comments, deletes) {
+  deleteArrayAt: function (remainingChildren, deletes) {
     deletes.forEach ( function (comment_index) {
-      child_comments.splice(comment_index, 1);
+      remainingChildren.splice(comment_index, 1);
     }.bind(this))
 
-    return child_comments
+    return remainingChildren
   },
 
-  renderChildren: function (child_comments) {
+  renderChildren: function (remainingChildren) {
     var deletes = [];
 
     var childComments = new RationalReads.Collections.Comments();
-    childComments.reset(child_comments);
+    childComments.reset(remainingChildren);
     childComments.sort()
 
     childComments.each( function (comment, index) {
-      var parent_element = this.$el.find('#' + comment.get("parent_comment_id"))
-      if (parent_element.length > 0 ) {
+      var parentElement = this.$el.find('#' + comment.get("parent_comment_id"))
+      if (parentElement.length > 0 ) {
         var commentItem = new RationalReads.Views.CommentItem({
           model: comment,
           work: this.model
         });
 
         if ( !(this.$el.find('#c' + comment.get("parent_comment_id")).length > 0) ) {
-          var child_insertion_div = this.childInsertionTemplate({id: comment.get("parent_comment_id")});
-          var parent_of_parent = $(parent_element).parent();
-          $(child_insertion_div).insertAfter(parent_of_parent);
+          var childInsertionDiv = this.childInsertionTemplate({id: comment.get("parent_comment_id")});
+          var parentOfParent = $(parentElement).parent();
+          $(childInsertionDiv).insertAfter(parentOfParent);
         }
         this.addSubview('#c' + comment.get("parent_comment_id"), commentItem);
 

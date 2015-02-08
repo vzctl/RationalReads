@@ -9,11 +9,23 @@
 }
 
 .stars {
-  width:120px;
+  width:78px;
   padding:0px;
   color: blue;
+  margin-right:0px;
+  margin-top:-1px;
 }
 
 .avg-rating {
   width: 10px;
+}
+
+.raty img {
+  padding:0px;
+  margin-left:-4px;
+}
+
+.stats div.stars .raty{
+  margin-right: 0px;
+  margin-left: 2px;
 }

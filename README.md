@@ -40,7 +40,16 @@ Please feel free to use a different markup language if you do not plan to run
 12. Add about page
 13. Comment sort getting called in home page?
 14. Am pluralizing comments and ratings, even when there's only 1
-15. Shrink browser screen - the stats row doesn't margin-left on the second row
+15. Avg rating isn't pushing based on size of object
+16. Arrow syntax defining routes, get rid of api folder, point from route to controller action
+18. If click on search item, shouldn't go to search action
+20. Search results should have links as titles
+21. In work show page, label average rating
+22. In stats row, group together rating stars and average rating, and also make cleared (e.g. two numbers in a row might be confusing)
+23. Move autocomplete to server-side, once database gets large
+24. Add global function to fetch and give user id / currentUser backbone model
+25. Instead of render json: comment on success, user jbuilder
+26. Need to add event for onclick, if not in searchbar, clear search items (current only mouseout)
 
 # Features to add
 0. Add length to work
@@ -50,8 +59,9 @@ Please feel free to use a different markup language if you do not plan to run
 4. Karma?
 5. Sequels / Series
 6. Author Functionality
-7. Something I'm forgetting
+7. Add tabs to homepage, to each side (e.g. highest rated, most commented, longest)
 8. Use amazon api to populate work form from search bar
+15. Calc time on client side, auto-update, e.g. every minute (search for plugin)
 
 # Display Ideas
 1. Logo
@@ -64,4 +74,5 @@ Please feel free to use a different markup language if you do not plan to run
 3. Bells and whistles
 4. Styling
 5. Bug fixes
-5. Send out r post
+6. Edit git log to repace aastudent with amit
+7. Send out r post

@@ -1,4 +1,4 @@
-RationalReads.Plugins.ShowMore = function (content) {
+RationalReads.Utils.ShowMore = function (content) {
   var $modifiedContent = $(content);
   $description = $modifiedContent.find(".description");
   var description = $description.text();

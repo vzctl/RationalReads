@@ -34,7 +34,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
       var content = this.showTemplate({work: this.model});
     }
 
-    content = RationalReads.Plugins.ShowMore.call(this, content);
+    content = RationalReads.Utils.ShowMore.call(this, content);
 
     this.$el.html(content);
 
@@ -93,7 +93,8 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   _updateStatsAfterCreate: function($ratingResponse, response) {
-    $ratingResponse.text("Rating added!");
+    $ratingResponse.text("Added!");
+    // $ratingResponse.addClass("")
     var numRatings = response.ratings;
     var $numRatings = this.$el.find(".num-ratings-number");
 
@@ -105,7 +106,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   _updateStatsAfterUpdate: function($ratingResponse, response) {
-    $ratingResponse.text("Rating updated!");
+    $ratingResponse.text("Updated!");
     this._updateAverageRating(response.average_rating, response);
     },
 
