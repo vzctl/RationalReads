@@ -1,12 +1,12 @@
-<div class="single-comment depth<%=depth %>" id="<%= comment.get("id") %>">
+<div class="single-comment depth<%=depth %>" id="<%= comment.escape("id") %>">
   <div class="comment-data">
-    <p class="username"><%= comment.get("username") %></p>
+    <p class="username"><%= comment.escape("username") %></p>
     <div class="raty user-rating"></div>
-    <p class="time-ago"><%= comment.get("time_ago") %> ago</p>
+    <p class="time-ago"><%= comment.escape("time_ago") %> ago</p>
   </div>
 
   <div class="comment-content">
-    <%= comment.get("content") %>
+    <%= comment.escape("content") %>
   </div>
 
   <div class="reply">

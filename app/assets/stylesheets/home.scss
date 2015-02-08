@@ -30,7 +30,7 @@
 .left-bottom a:hover {
   text-decoration: none;
 }
-// Styling of left column
+// styling of left column
 
 #left p{
   font-size: 16px;
@@ -102,4 +102,60 @@
 
 #left #number-4 .link-link {
   color: blue;
+}
+
+#left .stats .stars .transition {
+  margin-top: -1px;
+}
+
+// styling of right column
+
+#right .stats .stars .transition {
+  margin-top:1px;
+}
+
+#right .title-and-author p {
+  float: left;
+  display: block;
+}
+
+#right .title-and-author p.author {
+  margin-top: 7px;
+  margin-left:15px !important;
+}
+
+#right .stats {
+  clear: both;
+}
+
+#right .home-display .inner-work {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  border-bottom: solid black;
+  border-bottom-left-radius: 0em;
+  padding-left:0px;
+}
+
+// nav tab styling
+
+.home-head {
+  float:left;
+}
+
+#main div ul.custom-tabs {
+  border-bottom: none;
+  vertical-align: bottom;
+  margin-top:21px;
+  padding-left:30px !important;
+  display:block;
+}
+
+#main div ul.custom-tabs li[role=presentation] {
+  padding: 0px;
+  color: white !important;
+}
+
+.home-display {
+  clear: both;
 }

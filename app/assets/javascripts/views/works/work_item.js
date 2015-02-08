@@ -9,6 +9,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   fullTemplate: JST['works/display/index_show'],
   showTemplate: JST['works/display/work_show'],
   homeTemplate: JST['works/display/home_show'],
+  latestTemplate: JST['works/display/latest_show'],
 
   events: {
     "click .more": "expandDescription"
@@ -30,8 +31,8 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
       displayRating = this.model.get("user_rating");
     } else if (this.type === "home") {
       var content = this.homeTemplate({work: this.model, index: this.index});
-    } else {
-      var content = this.showTemplate({work: this.model});
+    } else if (this.type === "latest"){
+      var content = this.latestTemplate({work: this.model});
     }
 
     content = RationalReads.Utils.ShowMore.call(this, content);
@@ -94,7 +95,6 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
 
   _updateStatsAfterCreate: function($ratingResponse, response) {
     $ratingResponse.text("Added!");
-    // $ratingResponse.addClass("")
     var numRatings = response.ratings;
     var $numRatings = this.$el.find(".num-ratings-number");
 

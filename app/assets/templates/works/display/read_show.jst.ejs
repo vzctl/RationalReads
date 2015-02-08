@@ -1,11 +1,11 @@
 <div class="row">
-  <p class="title col-md-3"> <a href="#/works/<%= work.get("id") %>"> <%= work.get("name") %> </a></p>
-  <p class="author col-md-2"> by <%= work.get("author") %> </p>
+  <p class="title col-md-3"> <a href="#/works/<%= work.escape("id") %>"> <%= work.escape("name") %> </a></p>
+  <p class="author col-md-2"> by <%= work.escape("author") %> </p>
   <div class="avg-rating col-md-1">
-    <%= work.get("average_rating") %>
+    <%= work.escape("average_rating") %>
   </div>
   <div class="num-ratings col-md-1">
-    <div class="num-ratings-number"><%= work.get("ratings") %></div> ratings
+    <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
   </div>
   <div class="stars col-md-3">
     <div class="raty"></div>

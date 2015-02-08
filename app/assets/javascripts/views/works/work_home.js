@@ -1,9 +1,7 @@
 RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
   topTemplate: JST['works/headers/home_header'],
-  bottomTemplate: JST['works/home_bottom'],
+  moreTemplate: JST['works/home_bottom'],
   noRecommendationsTemplate: JST['works/work_empty'],
-  highestRatedLinkTemplate: JST['works/bottoms/highest_rated'],
-  latestLinkTemplate: JST['works/bottoms/latest'],
 
   initialize: function () {
     this.views = [];
@@ -20,10 +18,9 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
   },
 
   renderLeft: function () {
-    var firstFive = null;
     if (true) {
-      firstFive = this.getHighestRated();
-      bottom = this.highestRatedLinkTemplate();
+      var firstFive = this.getHighestRated();
+      var comparator = "rating"
     };
 
     var leftView = new RationalReads.Views.WorksIndex({
@@ -32,14 +29,13 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     });
     this.views.push(leftView);
     this.$('#left').append(leftView.render().$el);
-    this.$('#left').append(bottom);
+    this.$('#left').append(this.moreTemplate({comparator: comparator}));
   },
 
   renderRight: function () {
-    var firstTen = null;
     if (true) {
-      firstTen = this.getHighestRated();
-      bottom = this.latestLinkTemplate();
+      var firstTen = this.getLatest();
+      var comparator = "date"
     };
 
     var rightView = new RationalReads.Views.WorksIndex({
@@ -49,7 +45,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
     this.views.push(rightView);
     this.$('#right').append(rightView.render().$el);
-    this.$('#right').append(bottom);
+    this.$('#right').append(this.moreTemplate({comparator: comparator}));
   },
 
   getHighestRated: function () {
@@ -66,7 +62,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     latestWorks.changeSort("date");
     latestWorks.sort();
     var firstTenLatest = new RationalReads.Collections.Works();
-    firstTenLatest.reset(works.first(5));
+    firstTenLatest.reset(latestWorks.first(10));
 
     return firstTenLatest;
   },

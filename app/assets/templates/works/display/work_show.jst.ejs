@@ -1,22 +1,22 @@
-<h1><%= work.get("name") %></h1>
-<p class="author"> by <%= work.get("author") %> </p>
+<h1><%= work.escape("name") %></h1>
+<p class="author"> by <%= work.escape("author") %> </p>
 
     <div class="stats row">
       <div class="stars col-md-3">
         <div class="raty"></div>
       </div>
       <div class="avg-rating col-md-2">
-        <%= work.get("average_rating") %>
+        <%= work.escape("average_rating") %>
       </div>
       <div class="num-ratings col-md-3">
-      <div class="num-ratings-number"><%= work.get("ratings") %></div> ratings
+      <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
       </div>
       <div class="num-comments col-md-2">
-        <div class="num-comments-number"><%= work.get("num_comments") %></div> comments
+        <div class="num-comments-number"><%= work.escape("num_comments") %></div> comments
       </div>
     </div>
 
-    <p class="description"><%= work.get("description") %></p>
-    Read it <a href="<%= work.get("link") %>">here</a>!
+    <p class="description"><%= work.escape("description") %></p>
+    Read it <a href="<%= work.escape("link") %>">here</a>!
   </div>
 </div>
