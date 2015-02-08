@@ -5,6 +5,11 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.views = [];
+    this.currentTab = "rating";
+  },
+
+  events: {
+    "click li": "toggleTab"
   },
 
   render: function () {
@@ -18,18 +23,21 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
   },
 
   renderLeft: function () {
-    if (true) {
-      var firstFive = this.getHighestRated();
-      var comparator = "rating"
-    };
-
+    var leftWorks = this.collection;
+    leftWorks.changeSort(this.currentTab);
+    leftWorks.sort();
+    var firstFive = new RationalReads.Collections.Works();
+    firstFive.reset(leftWorks.first(5));
+    // debugger
+    firstFive.sort();
     var leftView = new RationalReads.Views.WorksIndex({
       collection: firstFive,
       type: "home"
     });
+
     this.views.push(leftView);
     this.$('#left').append(leftView.render().$el);
-    this.$('#left').append(this.moreTemplate({comparator: comparator}));
+    this.$('#left').append(this.moreTemplate({comparator: this.currentTab}));
   },
 
   renderRight: function () {
@@ -48,13 +56,23 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     this.$('#right').append(this.moreTemplate({comparator: comparator}));
   },
 
-  getHighestRated: function () {
-    var highestWorks = this.collection;
-    highestWorks.sort();
-    var firstFive = new RationalReads.Collections.Works();
-    firstFive.reset(highestWorks.first(5));
+  toggleTab: function (event) {
+    var $tab = $(event.currentTarget);
+    var clickedId = $tab.attr("id");
+    if (clickedId != this.currentTab) {
+      this.toggleTabClasses($tab);
+      this.currentTab = clickedId;
+      this.$('#left').empty();
+      this.renderLeft();
+      this.currentTab = clickedId;
+    }
+  },
 
-    return firstFive;
+  toggleTabClasses: function ($tab) {
+    $tab.addClass("activated");
+    $tab.removeClass("unactivated");
+    $("#"+this.currentTab).addClass("unactivated");
+    $("#"+this.currentTab).removeClass("activated");
   },
 
   getLatest: function () {
@@ -66,33 +84,6 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
     return firstTenLatest;
   },
-
-
-    renderRecommendations: function (works) {
-
-        var recommendationsView = new RationalReads.Views.WorksIndex({
-          collection: firstFiveRecs,
-          type: "home"
-        });
-        this.views.push(recommendationsView);
-        this.$('#recommendations').append(recommendationsView.render().$el);
-
-      // if (recWorks === "none") {
-      //   this.$('#recommendations').append(this.noRecommendationsTemplate());
-      //   recWorks = this.collection;
-      //   $(this.$el.find(".recommendations-header")).text("Highest Rated Works");
-      // }
-      //   recWorks.sort()
-      //   var firstFiveRecs = new RationalReads.Collections.Comments();
-      //   firstFiveRecs.reset(recWorks.first(5))
-      //   var recommendationsView = new RationalReads.Views.WorksIndex({
-      //     collection: firstFiveRecs,
-      //     type: "sub",
-      //     type: "home"
-      //   });
-      //   this.views.push(recommendationsView);
-      //   this.$('#recommendations').append(recommendationsView.render().$el);
-    },
 
   remove: function () {
     Backbone.View.prototype.remove.call(this);

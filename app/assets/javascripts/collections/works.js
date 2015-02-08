@@ -50,6 +50,10 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     },
     name: function (work) {
       return work.get("name");
+    },
+    comments: function (work) {
+      console.log(work.get("num_comments"))
+      return -work.get("num_comments");
     }
   },
 

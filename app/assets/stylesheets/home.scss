@@ -146,31 +146,67 @@
 #main div ul.custom-tabs {
   border-bottom: none;
   vertical-align: bottom;
-  margin-top:33px;
+  margin-top:35px;
+  height: 30px;
   display:block;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  list-style:none;
+  padding-left:0px;
+  float: right;
 }
 
 #main div ul.custom-tabs li:nth-child(1){
-  margin-left:70px;
+  // margin-left:70px;
+}
+
+.tab-container {
+  position:relative;
+  float:right;
+  margin-right:45px;
+  width:220px;
+  height:35px;
+  display: inline;
+}
+
+#main div ul.custom-tabs li.activated {
+  background: -webkit-linear-gradient(top, #fe3881 0%, #ed0158 100%);
+  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent;
+}
+
+#main div ul.custom-tabs li.unactivated:hover {
+  background: -webkit-linear-gradient(top, #57beed 0%, #1F8DBF 100%) !important;
+  background: -moz-linear-gradient(center top , #57beed 0%, #1F8DBF 100%) repeat scroll 0% 0% transparent;
 }
 
 #main div ul.custom-tabs li {
-  width: 90px;
-  height: 30px;
+  width: 70px;
+  height: 28px;
   text-align: center;
   margin-right: 2px;
-  background-color: black;
+  background: -webkit-linear-gradient(top, #57beed 0%, #189ddb 100%);
+  background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
+  color: black;
+  float:left;
+  position: relative;
 }
 
 #main div ul.custom-tabs li a {
-  padding: 5px;
-  line-height:10px;
+  padding: 0px;
+  padding-top:2px;
+  line-height:11px;
   color: white;
+  display: block;
+  vertical-align: bottom;
+  text-decoration: none;
+}
+
+a.single-line {
+  margin-top: 5px;
 }
 
 .tabed {
-  border: thin gray solid;
+  border: thin black solid;
   border-radius: 5px;
   border-bottom: none;
   border-bottom-left-radius: 0px;
