@@ -33,6 +33,14 @@ input.search {
   background-color: #189ddb;
 }
 
+.hovered-box{
+  background-color: #189ddb !important;
+}
+
+.hovered-box .search-link{
+  color: white;
+}
+
 .search-item-box:hover .search-link{
   color: white;
 }
