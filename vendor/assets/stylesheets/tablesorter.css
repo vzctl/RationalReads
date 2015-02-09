@@ -1,7 +1,7 @@
 /* tables */
 table.tablesorter {
   font-family:arial;
-  background-color: #CDCDCD;
+  background-color: white;
   margin:10px 0pt 15px;
   font-size: 8pt;
   width: 100%;
@@ -9,7 +9,7 @@ table.tablesorter {
 }
 
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-  border: 1px solid white;
+  /*border: 6px solid transparent;*/
   font-size: 8pt;
   padding: 4px;
 }

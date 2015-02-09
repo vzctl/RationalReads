@@ -6,7 +6,7 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    "submit .search-bar": "renderResult",
+    "click #search-icon": "renderResult",
     "keyup .search": "autoComplete",
     "click #autocomplete": "clearSearch",
     "mouseleave": "clearSearchWithDelay"
@@ -22,7 +22,7 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
 
   renderResult: function (event) {
     event.preventDefault();
-    var searchTerm = $(event.currentTarget).find(".search").val()
+    var searchTerm = $(".search").val()
     Backbone.history.navigate("#/search/" + searchTerm, {trigger: true})
   },
 
@@ -51,6 +51,7 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
   },
 
   clearSearch: function () {
+    $(".search").empty();
     _(this.subviews()).each(function (subviews) {
       _(subviews).each(function (subview) {
         subview.remove();

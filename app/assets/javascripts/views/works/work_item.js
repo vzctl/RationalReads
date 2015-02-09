@@ -18,13 +18,14 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   expandDescription: function () {
     $(this.$el.find(".more")).remove();
     $(this.$el.find(".hidden-display")).slideDown("slow");
+    this.$el = $("<div class='item'>");
   },
 
 
   render: function () {
     var displayRating = this.model.get("average_rating");
 
-    if (this.type === "index" || this.type === "recommendations") {
+    if (this.type === "index" || this.type === "recommendations" || this.type === "search") {
       var content = this.fullTemplate({work: this.model});
     } else if (this.type === "read") {
       this.$el = $("<tr>")
@@ -37,7 +38,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     } else if (this.type === "show") {
       var content = this.showTemplate({work: this.model});
     }
-    
+
     content = RationalReads.Utils.ShowMore.call(this, content, this.type);
 
     this.$el.html(content);
@@ -114,7 +115,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     },
 
   _updateAverageRating: function(avgRating, response) {
-    var $avgRatings = this.$el.find(".avg-rating");
+    var $avgRatings = this.$el.find("span.avg");
 
     $avgRatings.animate({'opacity': 0}, 500, function () {
         $(this).text(avgRating);

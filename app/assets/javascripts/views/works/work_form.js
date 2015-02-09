@@ -3,7 +3,7 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
   errorTemplate: JST['error'],
 
   initialize: function () {
-    this.$el = $("<div class='new-work'></div>")
+    this.$el = $("<div class='centered'>");
   },
 
   events: {

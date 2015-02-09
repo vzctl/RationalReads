@@ -5,19 +5,32 @@
   display: block;
 }
 
+#search-icon {
+  margin-left: -30px;
+}
+
+input.search {
+  padding-left:6px;
+  height: 22px;
+  border-radius: 5px;
+  margin-top:5px;
+  font-size: 12px !important;
+  line-height:17px !important;
+  width: 150px;
+}
+
 .search-bar input {
   border: 2px solid rgba(0,0,0,.1);
   font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
   margin-right:7px;
 }
 
-
 .search-item {
   display: block;
 }
 
 .search-item-box:hover{
-  background-color: blue;
+  background-color: #189ddb;
 }
 
 .search-item-box:hover .search-link{
@@ -32,22 +45,20 @@
    -moz-opacity:0.9;
   padding:0px;
   border-radius:5px;
-  border-left: thin solid gray;
-  border-right: thin solid gray;
 }
 
 .search-item-box {
-  border-bottom: thin solid black;
-  background-color: yellow;
+  border: thin solid gray;
+  margin-top:-2px;
+  background-color: #beeb4f;
   padding: 5px;
   display: block;
-
   position:relative;
    z-index:100;
 }
 
 .search-link {
-  color:red;
+  color:black;
 }
 
 .search-link:hover {

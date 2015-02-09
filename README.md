@@ -69,9 +69,6 @@ Please feel free to use a different markup language if you do not plan to run
 
 # ToDo
 1. Add works (put in all major works - 20 - 30)
-2. Styling
-3. Bells and whistles
-4. Styling
-5. Bug fixes
-6. Edit git log to repace aastudent with amit
+2. New Form
+3. Log in / log out / new user
 7. Send out r post

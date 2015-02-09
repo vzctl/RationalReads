@@ -1,3 +1,7 @@
+h1#bookshelf {
+  margin-bottom: 20px;
+}
+
 table.strapless{
   max-width: 100%;
   background-color: transparent;
@@ -21,24 +25,25 @@ table {
 }
 
 #read-works td p{
-  margin:0px;
+  margin: 0px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
 
 table.tablesorter tr:nth-child(even) td{
   background-color: #F0F0F6;
 }
 
-
 table tr{
   font-size:16px;
 }
 
 table .title {
-  width:300px;
+  width:305px;
 }
 
 table .author {
-  width:200px;
+  width:175px;
 }
 
 table .length {
@@ -49,8 +54,7 @@ table thead th{
   height:20px;
   background: #fe3881;
   color: white;
-  border-radius: 5px;
-  border: 0px solid #000000;
+  border: 1px solid white;
 }
 
 table .avg-rating {
@@ -63,4 +67,9 @@ table .ratings {
 
 table .rating {
   width: 80px;
+}
+
+p.empty {
+  margin-top:10px;
+  font-size: 24px;
 }

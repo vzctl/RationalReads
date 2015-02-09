@@ -5,6 +5,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.type = "show";
     RationalReads.Utils.MoveTop();
+    this.$el = $("<div class='centered'>");
   },
 
   render: function () {
