@@ -1,7 +1,9 @@
-<div class="work col-md-6">
+<div class="work index-display">
   <div class="inner-work">
-    <p class="title"><a href="#/works/<%= work.escape("id") %>"> <%= work.escape("name") %> </a></p>
-    <p class="author"> by <%= work.escape("author") %> </p>
+    <div class="title-and-author">
+      <p class="title"><a href="#/works/<%= work.escape("id") %>"> <%= work.escape("name") %> </a></p>
+      <p class="author"> by <%= work.escape("author") %> </p>
+    </div>
 
     <div class="stats">
       <div class="stars">
@@ -11,10 +13,13 @@
         <%= work.escape("average_rating") %>
       </div>
       <div class="num-ratings">
-      <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
+        <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
       </div>
       <div class="num-comments">
         <%= work.escape("num_comments") %> comments
+      </div>
+      <div class="date">
+        <%= work.escape("created_at_string") %>
       </div>
       <div class="length">
         <%= work.escape("length") %>
@@ -22,6 +27,7 @@
     </div>
 
     <p class="description"><%= work.escape("description") %></p>
-    Read it <a href="<%= work.escape("link") %>">here</a>!
+
+    <p class="link-text">Read it <a class="link-link" href="<%= work.escape("link") %>">here</a>.</p>
   </div>
 </div>

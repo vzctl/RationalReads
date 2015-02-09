@@ -1,11 +1,56 @@
-// Place all the styles related to the Works controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//styling index page
 
+#all-works + .index .inner-work {
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  border-bottom: solid black;
+  border-bottom-left-radius: 0em;
+  padding-left:0px;
+  padding-right: 200px;
+}
+
+#all-works + .index .index-display {
+  width: 1000px;
+}
+
+#recs + .index .inner-work {
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  border-bottom: solid black;
+  border-bottom-left-radius: 0em;
+  padding-left:0px;
+  padding-right: 200px;
+}
+
+#recs + .index .index-display {
+  width: 1000px;
+}
+
+// styling works show
+
+#work-info div.avg-rating{
+  padding-right:50px;
+}
+
+#work-info div.num-comments{
+  padding-right:20px;
+}
+
+#work-info div.date{
+  padding-right:20px;
+}
+
+#work-info p.description {
+  font-size: 16px;
+  padding-top:10px;
+}
+
+// styling all works
 
 .inner-work {
   margin-bottom: 15px;
-  background-color: pink;
   border-radius: 5px;
   padding:10px;
 }

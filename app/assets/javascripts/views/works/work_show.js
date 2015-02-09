@@ -3,7 +3,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   childInsertionTemplate: JST['comments/child_comment_marker'],
 
   initialize: function () {
-    this.style = "show";
+    this.type = "show";
     RationalReads.Utils.MoveTop();
   },
 
@@ -29,7 +29,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
     var workShow = new RationalReads.Views.WorkItem({
       model: this.model,
-      style: this.style
+      type: this.type
     });
 
     this.addSubview('#work-info', workShow);

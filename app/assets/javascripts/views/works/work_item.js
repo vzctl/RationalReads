@@ -34,9 +34,11 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
       var content = this.homeTemplate({work: this.model, index: this.index});
     } else if (this.type === "latest"){
       var content = this.latestTemplate({work: this.model});
+    } else if (this.type === "show") {
+      var content = this.showTemplate({work: this.model});
     }
-
-    content = RationalReads.Utils.ShowMore.call(this, content);
+    
+    content = RationalReads.Utils.ShowMore.call(this, content, this.type);
 
     this.$el.html(content);
 
