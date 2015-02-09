@@ -164,10 +164,6 @@
   float: right;
 }
 
-#main div ul.custom-tabs li:nth-child(1){
-  // margin-left:70px;
-}
-
 .tab-container {
   position:relative;
   float:right;
@@ -214,7 +210,7 @@ a.single-line {
 }
 
 .tabed {
-  border: thin black solid;
+  border: thin gray solid;
   border-radius: 5px;
   border-bottom: none;
   border-bottom-left-radius: 0px;

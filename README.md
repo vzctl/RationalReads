@@ -59,9 +59,8 @@ Please feel free to use a different markup language if you do not plan to run
 4. Karma?
 5. Sequels / Series
 6. Author Functionality
-7. Add tabs to homepage, to each side (e.g. highest rated, most commented, longest)
-8. Use amazon api to populate work form from search bar
-15. Calc time on client side, auto-update, e.g. every minute (search for plugin)
+8. Lists
+9. Calc time on client side, auto-update, e.g. every minute (search for plugin)
 
 # Display Ideas
 1. Logo

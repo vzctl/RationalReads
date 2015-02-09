@@ -27,6 +27,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     if (this.type === "index" || this.type === "recommendations") {
       var content = this.fullTemplate({work: this.model});
     } else if (this.type === "read") {
+      this.$el = $("<tr>")
       var content = this.readTemplate({work: this.model});
       displayRating = this.model.get("user_rating");
     } else if (this.type === "home") {

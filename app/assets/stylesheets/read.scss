@@ -1,0 +1,66 @@
+table.strapless{
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: separate;
+  border-spacing: 0px;
+  border-color: white !important;
+}
+
+table.strapless tr{
+  border-color: white !important;
+}
+
+table {
+  border-color: white;
+}
+
+#read-works {
+  margin:0px;
+  padding:0px;
+  width: 950px;
+}
+
+#read-works td p{
+  margin:0px;
+}
+
+table.tablesorter tr:nth-child(even) td{
+  background-color: #F0F0F6;
+}
+
+
+table tr{
+  font-size:16px;
+}
+
+table .title {
+  width:300px;
+}
+
+table .author {
+  width:200px;
+}
+
+table .length {
+  width: 60px;
+}
+
+table thead th{
+  height:20px;
+  background: #fe3881;
+  color: white;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+table .avg-rating {
+  width: 70px;
+}
+
+table .ratings {
+  width: 60px;
+}
+
+table .rating {
+  width: 80px;
+}

@@ -1,13 +1,19 @@
-<div class="row">
-  <p class="title col-md-3"> <a href="#/works/<%= work.escape("id") %>"> <%= work.escape("name") %> </a></p>
-  <p class="author col-md-2"> by <%= work.escape("author") %> </p>
-  <div class="avg-rating col-md-1">
+
+  <td><p class="title">
+  <a href="#/works/<%= work.escape("id") %>"> <%= work.escape("name") %> </a>
+  </p></td>
+  <td><p class="author">
+  <%= work.escape("author") %>
+  </p></td>
+  <td><p class="length">
+  <%= work.escape("length") %>
+  </p></td>
+  <td class="avg-rating">
     <%= work.escape("average_rating") %>
-  </div>
-  <div class="num-ratings col-md-1">
-    <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
-  </div>
-  <div class="stars col-md-3">
-    <div class="raty"></div>
-  </div>
-</div>
+  </td>
+  <td class="num-ratings">
+    <div class="num-ratings-number"><%= work.escape("ratings") %></div>
+  </td>
+  <td class="stars">
+    <p class="hidden"><%= this.model.get("user_rating") %></p> <div class="raty"></div>
+  </td>

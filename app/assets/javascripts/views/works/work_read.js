@@ -8,16 +8,20 @@ RationalReads.Views.WorksRead = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template());
-    this.$el.append("<div id='index'>")
-    this.collection.sort()
+    this.collection.sort();
     this.collection.each( function (work) {
       var subItem = new RationalReads.Views.WorkItem({
         model: work,
         type: "read"
       });
-      this.addSubview('#index', subItem)
+      this.addSubview('tbody', subItem);
     }.bind(this));
 
+    this.$el.find("#read-works").tablesorter({
+      sortList: [[5,1]]
+    });
+
+    this.$el.find("th.rating").removeClass("headerSortUp");
     return this;
   }
 });
