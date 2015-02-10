@@ -12,7 +12,9 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'works/new' : 'newWork',
     'works/:id': 'show',
     'search/:terms': 'search',
-    'chapters/:id': 'showChapter'
+    'chapters/:id': 'showChapter',
+    'about': 'about',
+    'contact': 'contact'
   },
 
   showChapter: function (id) {
@@ -26,6 +28,16 @@ RationalReads.Routers.Router = Backbone.Router.extend({
         this._swapView(showView);
       }.bind(this)
     })
+  },
+
+  about: function () {
+    var about = new RationalReads.Views.About()
+    this._swapView(about);
+  },
+
+  contact: function () {
+    var contact = new RationalReads.Views.Contact()
+    this._swapView(contact);
   },
 
   allSorted: function (comparator) {
@@ -90,13 +102,19 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     works.fetch({
       success: function () {
         works = works.recommendedWorks();
-        works.sort();
-        var indexView = new RationalReads.Views.WorksIndex({
-            collection: works,
-            type: "recommendations"
-          });
+        if (works === "none") {
+          var $main = $("#main");
+          $main.html($("<div class='centered'>"));
+          $(".centered").append("<h3>Rate works to get recommendations.</h3>");
+        } else {
+          works.sort();
+          var indexView = new RationalReads.Views.WorksIndex({
+              collection: works,
+              type: "recommendations"
+            });
 
-        this._swapView(indexView);
+          this._swapView(indexView);
+        }
       }.bind(this)
     })
   },

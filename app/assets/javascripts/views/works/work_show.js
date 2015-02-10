@@ -38,6 +38,12 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
         this.addSubview('#chapters', newChapter);
       }.bind(this))
+
+      var newChapter = new RationalReads.Views.ChapterForm({
+        work: this.model
+      });
+
+      this.addSubview('#chapters', newChapter);
     }
 
   },

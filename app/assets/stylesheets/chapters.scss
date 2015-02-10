@@ -80,3 +80,56 @@ a.chapter {
 .link-to-chapter {
   margin-top:40px;
 }
+
+// New chapter
+
+.chapter-form {
+  clear: both;
+  display:block;
+  width: 800px;
+}
+
+.chapter-form-item{
+  float: left;
+  display: block;
+  font-weight: normal;
+}
+
+.chapter-form .number-input, .chapter-form .link-input {
+  float: left;
+  clear: none;
+}
+
+input.number, input.link {
+  width: 35px;
+  height: 18px;
+  margin-left: 10px;
+  line-height: 14px;
+}
+
+.chapter-form input.link {
+  width: 400px;
+}
+
+.chapter-form .link-input label {
+  margin-left: 25px;
+}
+
+button.chapter-submit-button {
+  background-color: #df962f;
+  color: #FFFFFF;
+  padding: 5px;
+  font-weight: bold;
+  float: left;
+  margin-left: 25px;
+  margin-top: 3px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border: 1px solid #808080;
+}
+
+
+// .input-box {
+//   padding-top: 15px;
+// }

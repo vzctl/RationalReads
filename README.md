@@ -29,14 +29,10 @@ Please feel free to use a different markup language if you do not plan to run
 
 # Issues
 1.  In both work_index and work_read, many functions duplicated
-2.  In Your Bookshelf, the items are sorted by avg rating rather than your rating
-3.  Instead of replacing starts with, e.g. "Rating updating!", just flash it instead (so, gone, updated, back)
-4.  Limit number of characters displayed in read_item and full_item
 7.  Increment # of comments on show page when a user submits a comment
 8.  Fetch all books once for entire site, instead of multiple times for each collection
 9.  Not interested button (to filter recommendations)
 10. Not doing bayesian average
-11. Raty not working fully on front page
 12. Add about page
 13. Comment sort getting called in home page?
 14. Am pluralizing comments and ratings, even when there's only 1
@@ -73,6 +69,8 @@ Please feel free to use a different markup language if you do not plan to run
 # ToDo
 1. Add works (put in all major works - 20 - 30)
 2. New Chapter Form
-3. Recs page doesn't work if not logged in
-3. PG backup gem
+2.5. How do add a chapter to a book which doesn't already have chapters???
+3. Style navbar
+4. Add bookshelf styling
+5. PG backup gem
 7. Send out r post

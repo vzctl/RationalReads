@@ -162,8 +162,9 @@
   background-color: white;
   padding-top: 10px;
   padding-bottom: 1px;
-  border-bottom: solid black;
+  border-bottom: solid black thin;
   border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em;
   padding-left:0px;
   padding-right:0px;
   padding-top: 4px;
@@ -182,7 +183,7 @@
   margin-top:35px;
   height: 30px;
   display:block;
-  font-size: 10px;
+  font-size: 12px;
   list-style:none;
   padding-left:0px;
   float: right;
@@ -192,7 +193,7 @@
   position:relative;
   float:right;
   margin-right:45px;
-  width:220px;
+  width:240px;
   height:35px;
   display: inline;
 }
@@ -208,7 +209,7 @@
 }
 
 #main div ul.custom-tabs li {
-  width: 70px;
+  width: 75px;
   height: 28px;
   text-align: center;
   margin-right: 2px;

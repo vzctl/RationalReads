@@ -23,7 +23,7 @@
   margin-left: 50px;
   position: relative;
   margin-right: 50px;
-  // min-height:
+  min-height: 1000px;
 }
 
 .alert {
@@ -34,10 +34,8 @@ body {
   padding-top: 60px;
 }
 
-.footer {
-  padding-top:10px;
-  font-size:12px;
-  clear: both;
+#footer {
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
