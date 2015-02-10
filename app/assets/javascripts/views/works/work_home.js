@@ -102,7 +102,8 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     latestWorks.sort();
     var firstTenLatest = new RationalReads.Collections.Works();
     firstTenLatest.reset(latestWorks.first(10));
-
+    firstTenLatest.changeSort("date");
+    firstTenLatest.sort();
     return firstTenLatest;
   },
 

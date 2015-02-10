@@ -72,6 +72,6 @@ Please feel free to use a different markup language if you do not plan to run
 
 # ToDo
 1. Add works (put in all major works - 20 - 30)
-2. New Form
-3. Log in / log out / new user
+2. New Chapter Form
+3. PG backup gem
 7. Send out r post

@@ -1,6 +1,10 @@
 RationalReads.Models.Work = Backbone.Model.extend({
   urlRoot: 'api/works',
 
+  initialize: function () {
+    this.type = "work";
+  },
+  
   parse: function (response) {
     this.comments().set(response.comments);
     this.chapters().set(response.chapters);

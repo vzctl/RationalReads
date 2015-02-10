@@ -12,27 +12,21 @@ RationalReads.Views.LatestAdditionsIndex = Backbone.CompositeView.extend({
 
     var sortedItems = this.merge();
 
-    sortedItems.forEach( function (item) {
-      if (item.type === ""
-      console.log(item.get("time_ago"));
-    });
-
-    // this.chapters.each( function (chapter, index) {
-    //   var subItem = new RationalReads.Views.ChapterItem({
-    //     model: chapter,
-    //     index: index
-    //   });
-    //   this.addSubview('.index', subItem);
-    // }.bind(this));
-    //
-    // this.works.each( function (work, index) {
-    //   var subItem = new RationalReads.Views.WorkItem({
-    //     model: work,
-    //     type: "latest",
-    //     index: index
-    //   });
-    //   this.addSubview('.index', subItem);
-    // }.bind(this));
+    sortedItems.forEach( function (item, index) {
+      if (item.type === "chapter") {
+        var subItem = new RationalReads.Views.ChapterItem({
+            model: item,
+            index: index
+          });
+        } else {
+          var subItem = new RationalReads.Views.WorkItem({
+            model: item,
+            type: "latest",
+            index: index
+          });
+        }
+        this.addSubview('.index', subItem);
+      }.bind(this));
 
     return this;
   },
@@ -53,7 +47,8 @@ RationalReads.Views.LatestAdditionsIndex = Backbone.CompositeView.extend({
 
         var chapterDate = new Date(chapter.get("created_at"));
         var workDate = new Date(work.get("created_at"));
-        if (chapterDate > workDate) {
+
+        if (chapterDate < workDate) {
           sortedItems.push(work);
           this.works.remove(this.works.at(0));
         } else {
