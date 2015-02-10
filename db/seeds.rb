@@ -22,9 +22,9 @@ work12 = Work.create({name: "The Metropolitan Man", author: "Alexander Wales", l
 work13 = Work.create({name: "A Bluer Shade of White", author: "Alexander Wales", link: "https://www.fanfiction.net/s/10327510/1/A-Bluer-Shade-of-White", description: "Six years after her coronation, Elsa rules over Arendelle, using the power of ice to improve the lives of her citizens.", length: "Short"})
 work14 = Work.create({name: "The Last Christmas", author: "Alexander Wales", link: "https://www.fanfiction.net/s/9915682/1/The-Last-Christmas", description: "The mantle of Santa Claus has been passed down once again, this time to an industrial engineer who starts to get some dangerous ideas in his head about the true meaning of Christmas.", length: "Short"})
 
-chapter1 = Chapter.create({work_id: 1, number: 80});
-chapter2 = Chapter.create({work_id: 1, number: 81});
-chapter3 = Chapter.create({work_id: 1, number: 82});
+chapter1 = Chapter.create({work_id: 1, number: 80, link: "asdfsadf"});
+chapter2 = Chapter.create({work_id: 1, number: 81, link: "asdfsadf"});
+chapter3 = Chapter.create({work_id: 1, number: 82, link: "asdfsadf"});
 
 rating1 = Rating.create({work_id: 1, user_id: 1, rating: 4})
 rating2 = Rating.create({work_id: 1, user_id: 2, rating: 5})

@@ -2,8 +2,8 @@ json.extract! @work, :id, :name, :author, :link, :description, :created_at, :len
 json.created_at_string @work.created_at.strftime("%B %d, %Y")
 json.average_rating @work.average_rating
 json.ratings @work.ratings.length
-if current_user && current_user.rating(@work.id)
-  json.user_rating current_user.rating(@work.id).rating
+if current_user && current_user.rating(@work.id, nil)
+  json.user_rating current_user.rating(@work.id, nil).rating
 else
   json.user_rating "none"
 end

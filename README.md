@@ -51,6 +51,7 @@ Please feel free to use a different markup language if you do not plan to run
 25. Instead of render json: comment on success, user jbuilder
 26. Need to add event for onclick, if not in searchbar, clear search items (current only mouseout)
 27. Move chapter controller to api namespace
+28. Update comment count when leave comment
 
 # Features to add
 0. Add length to work

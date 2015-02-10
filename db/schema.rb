@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150209225244) do
   create_table "chapters", force: :cascade do |t|
     t.integer  "work_id",    null: false
     t.integer  "number",     null: false
+    t.string   "link",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,11 +6,15 @@ class Rating < ActiveRecord::Base
   belongs_to :work
   belongs_to :chapter
 
-  def generate_data(work, type)
+  def generate_data(work, type, parent_type)
     rating_data = {}
     rating_data[:average_rating] = work.average_rating
     rating_data[:ratings] = work.ratings.length
-    rating_data[:id] = self.work_id
+    if parent_type == "chapter"
+      rating_data[:id] = self.chapter_id
+    else
+      rating_data[:id] = self.work_id
+    end
     rating_data[:type] = type
     rating_data
   end

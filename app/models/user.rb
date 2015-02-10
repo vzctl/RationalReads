@@ -29,11 +29,17 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def rating(work_id)
+  def rating(work_id, chapter_id)
+    if work_id == nil
+      id = chapter_id
+    else
+      id = work_id
+    end
+
     ratings = self.ratings
 
     ratings.each do |rating|
-      if rating.work_id == work_id
+      if rating.id == id
         return Rating.find(rating.id)
       end
     end

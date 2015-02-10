@@ -1,4 +1,4 @@
-<h1><a href="#/works/<%= chapter.escape("work_id") %>"><%= chapter.escape("work_title") %></a></h1>
+<h1><a class="to-work" href="#/works/<%= chapter.escape("work_id") %>"><%= chapter.escape("work_title") %></a>, Chapter <%= chapter.escape("number") %> </h1>
 
       <div class="stats">
         <div class="stars">
@@ -17,7 +17,8 @@
           <%= chapter.escape("created_at_string") %>
         </div>
       </div>
-
-    Read it <a href="<%= chapter.escape("average_rating") %>">here</a>.
+    <div class="link-to-chapter"></div>
+      Read it <a href="<%= chapter.escape("link") %>">here</a>.
+    </div>
   </div>
 </div>
