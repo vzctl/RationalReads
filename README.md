@@ -52,6 +52,7 @@ Please feel free to use a different markup language if you do not plan to run
 26. Need to add event for onclick, if not in searchbar, clear search items (current only mouseout)
 27. Move chapter controller to api namespace
 28. Update comment count when leave comment
+29. Move chapter show jbuilder to partial
 
 # Features to add
 0. Add length to work

@@ -131,7 +131,7 @@
 }
 
 #left .stats .stars .transition {
-  margin-top: -1px;
+  margin-top: 1px;
 }
 
 // styling of right column
@@ -145,9 +145,13 @@
   display: block;
 }
 
+#right .title-and-author p.title {
+  margin-right: 15px;
+}
+
 #right .title-and-author p.author {
   margin-top: 7px;
-  margin-left:15px !important;
+  margin-bottom: 7px;
 }
 
 #right .stats {
@@ -161,6 +165,9 @@
   border-bottom: solid black;
   border-bottom-left-radius: 0em;
   padding-left:0px;
+  padding-right:0px;
+  padding-top: 4px;
+  padding-bottom: 10px;
 }
 
 // nav tab styling

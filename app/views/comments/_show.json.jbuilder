@@ -1,8 +1,17 @@
 user = User.find(comment.user_id)
-if user.rating(comment.work_id)
-  json.rating user.rating(comment.work_id).rating
+
+if comment.chapter_id == nil
+  if user.rating(comment.work_id, nil)
+    json.rating user.rating(comment.work_id, nil).rating
+  else
+    json.rating "none"
+  end
 else
-  json.rating "none"
+  if user.rating(nil, comment.chapter_id)
+    json.rating user.rating(nil, comment.chapter_id).rating
+  else
+    json.rating "none"
+  end
 end
 
 json.id comment.id

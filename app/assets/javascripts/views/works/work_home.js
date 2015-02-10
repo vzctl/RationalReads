@@ -55,18 +55,26 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   renderRight: function () {
     if (true) {
-      var firstTen = this.getLatest();
+      var firstTenWorks = this.getLatest(this.collection);
       var comparator = "date"
     };
 
-    var rightView = new RationalReads.Views.WorksIndex({
-      collection: firstTen,
-      type: "latest"
-    });
+    var chapters = new RationalReads.Collections.Chapters();
 
-    this.views.push(rightView);
-    this.$('#right').append(rightView.render().$el);
-    this.$('#right').append(this.moreTemplate({comparator: comparator}));
+    chapters.fetch({
+      success: function () {
+        var firstTenChapters = this.getLatest(chapters);
+
+        var rightView = new RationalReads.Views.LatestAdditionsIndex({
+          works: firstTenWorks,
+          chapters: firstTenChapters
+        });
+
+        this.views.push(rightView);
+        this.$('#right').append(rightView.render().$el);
+        this.$('#right').append(this.moreTemplate({comparator: comparator}));
+      }.bind(this)
+    });
   },
 
   toggleTab: function (event) {
@@ -88,8 +96,8 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     $("#"+this.currentTab).removeClass("activated");
   },
 
-  getLatest: function () {
-    var latestWorks = this.collection
+  getLatest: function (collection) {
+    var latestWorks = collection
     latestWorks.changeSort("date");
     latestWorks.sort();
     var firstTenLatest = new RationalReads.Collections.Works();

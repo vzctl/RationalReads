@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
     ratings = self.ratings
 
     ratings.each do |rating|
-      if rating.id == id
+      if rating.work_id == id || rating.chapter_id == id
         return Rating.find(rating.id)
       end
     end

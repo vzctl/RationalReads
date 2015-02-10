@@ -122,7 +122,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
     rating.save({},
       {
         success: function(model, response) {
-          var $raty = this.$el.find(".raty");
+          var $raty = this.$el.find(".main-raty");
           var $ratingResponse = $("<p class='transition'></p>");
           if (response.type === "create") {
             this._updateStatsAfterCreate($ratingResponse, response);
@@ -132,8 +132,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
           this._ratingGraphic($ratingResponse, $raty, score)
         }.bind(this),
         error: function (model, response) {
-          debugger
-          var $raty = this.$el.find(".raty");
+          var $raty = this.$el.find(".main-raty");
           var $ratingResponse = $("<p class='transition'></p>");
           this._updateStatsAfterError($ratingResponse, $raty, response);
         }.bind(this)
@@ -186,7 +185,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
 
   _updateStatsAfterError: function($ratingResponse, $raty, response) {
     $ratingResponse.append(response.responseJSON);
-    debugger
+    
     $raty.animate({'opacity': 0}, 500, function () {
         $(this).html($ratingResponse);
     }).animate({'opacity': 1}, 10);

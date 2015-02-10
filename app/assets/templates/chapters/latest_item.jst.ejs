@@ -1,0 +1,27 @@
+<div class="work home-display">
+  <div class="inner-work">
+    <div class="title-and-author">
+      <p class="title"><a href="#/chapters/<%= chapter.escape("id") %>"> <%= chapter.escape("work_title") %>, Chapter <%= chapter.escape("number") %>  </a></p>
+      <p class="author"> by <%= chapter.escape("author") %> </p>
+    </div>
+
+    <div class="stats">
+      <div class="stars">
+        <div class="raty"></div>
+      </div>
+      <div class="avg-rating">
+        <span class="avg"><%= chapter.escape("average_rating") %></span>
+      </div>
+      <div class="num-ratings">
+        <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings
+      </div>
+      <div class="num-comments">
+        <%= chapter.escape("num_comments") %> comments
+      </div>
+      <div class="date">
+        <%= chapter.escape("time_ago") %> ago
+      </div>
+    </div>
+    <p class="link-text">Read it <a class="link-link" href="<%= chapter.escape("link") %>">here</a>.</p>
+  </div>
+</div>

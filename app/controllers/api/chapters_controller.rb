@@ -18,6 +18,12 @@ module Api
       render :show
     end
 
+    def index
+      @chapters = Chapter.all
+
+      render :index
+    end
+
     private
 
     def work_params
