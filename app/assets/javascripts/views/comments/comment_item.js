@@ -8,8 +8,10 @@ RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.work = options.work;
+    this.chapter = options.chapter;
     this.formCreated = false;
     this.form = null;
+    this.type = options.type;
   },
 
   render: function () {
@@ -30,8 +32,10 @@ RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
       this.formCreated = true;
       var newComment = new RationalReads.Views.CommentForm({
           work: this.work,
+          chapter: this.chapter,
           reply: true,
-          parent_comment: this.model
+          parent_comment: this.model,
+          type: this.type
         });
       this.form = newComment;
       this.$el.append(newComment.render().$el);

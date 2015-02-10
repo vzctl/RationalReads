@@ -1,0 +1,23 @@
+<h1><a href="#/works/<%= chapter.escape("work_id") %>"><%= chapter.escape("work_title") %></a></h1>
+
+      <div class="stats">
+        <div class="stars">
+          <div class="raty"></div>
+        </div>
+        <div class="avg-rating">
+          <span class="avg"><%= chapter.escape("average_rating") %></span>
+        </div>
+        <div class="num-ratings">
+          <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings
+        </div>
+        <div class="num-comments">
+          <%= chapter.escape("num_comments") %> comments
+        </div>
+        <div class="date">
+          <%= chapter.escape("created_at_string") %>
+        </div>
+      </div>
+
+    Read it <a href="<%= chapter.escape("average_rating") %>">here</a>.
+  </div>
+</div>

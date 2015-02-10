@@ -16,12 +16,11 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   showChapter: function (id) {
-    var post = new RationalReads.Models.Work({id: id});
-
-    post.fetch({
+    var chapter = new RationalReads.Models.Chapter({id: id});
+    chapter.fetch({
       success: function () {
-        var showView = new RationalReads.Views.WorksShow({
-            model: post
+        var showView = new RationalReads.Views.ChaptersShow({
+            model: chapter
           });
 
         this._swapView(showView);
@@ -133,12 +132,12 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   show: function (id) {
-    var post = new RationalReads.Models.Work({id: id});
+    var work = new RationalReads.Models.Work({id: id});
 
-    post.fetch({
+    work.fetch({
       success: function () {
         var showView = new RationalReads.Views.WorksShow({
-            model: post
+            model: work
           });
 
         this._swapView(showView);

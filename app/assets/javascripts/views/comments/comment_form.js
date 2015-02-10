@@ -4,9 +4,11 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
   commentTemplate: JST['comments/comment_show'],
 
   initialize: function (options) {
-    this.work = options.work
-    this.reply = options.reply
-    this.parent_comment = options.parent_comment
+    this.work = options.work;
+    this.reply = options.reply;
+    this.parent_comment = options.parent_comment;
+    this.chapter = options.chapter
+    this.type = options.type
   },
 
   events: {
@@ -34,8 +36,11 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
     var content = $textarea.val();
 
     var comment = new RationalReads.Models.Comment();
-
-    comment.set({work_id: this.work.get("id"), content: content});
+    if (this.type === "chapter") {
+      comment.set({chapter_id: this.chapter.get("id"), content: content});
+    } else {
+      comment.set({work_id: this.work.get("id"), content: content});
+    }
 
     if (this.parent_comment != null) {
       comment.set({parent_comment_id: this.parent_comment.get("id")});
@@ -45,7 +50,13 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
       {
         success: function(model, response) {
           var $newComment = $(this.commentTemplate({comment: comment}))
-          this.updateCommentCount(this.work.get("num_comments"));
+
+          if (this.type === "chapter") {
+            this.updateCommentCount(this.chapter.get("num_comments"));
+          } else {
+            this.updateCommentCount(this.work.get("num_comments"));
+          }
+
           this.remove();
           if (this.reply) {
             $("#" + model.get("parent_comment_id")).append($newComment);

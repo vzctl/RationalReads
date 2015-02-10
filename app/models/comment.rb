@@ -36,7 +36,7 @@ class Comment < ActiveRecord::Base
 
  def any_present?
    if %w(work_id chapter_id).all?{|attr| self[attr].blank?}
-     errors.add :base, "Error message"
+     errors.add :base, "Comment not attached to a work or chapter."
    end
  end
 

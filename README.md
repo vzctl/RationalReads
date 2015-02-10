@@ -50,6 +50,7 @@ Please feel free to use a different markup language if you do not plan to run
 24. Add global function to fetch and give user id / currentUser backbone model
 25. Instead of render json: comment on success, user jbuilder
 26. Need to add event for onclick, if not in searchbar, clear search items (current only mouseout)
+27. Move chapter controller to api namespace
 
 # Features to add
 0. Add length to work
