@@ -16,13 +16,14 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "jquery.raty.css";
- @import "tablesorter.css";
+ @import "jquery.raty";
+ @import "tablesorter";
 
 #main {
   margin-left: 50px;
   position: relative;
   margin-right: 50px;
+  // min-height:
 }
 
 .alert {

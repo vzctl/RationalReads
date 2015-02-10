@@ -59,8 +59,8 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
   },
 
   autoComplete: function (event) {
-      if (event.keyCode != 38 && event.keyCode != 40 && event.keyCode != 13) {
       var searchText = $(event.currentTarget).val();
+      if (event.keyCode != 38 && event.keyCode != 40 && event.keyCode != 13 && searchText.length > 0) {
       this.clearSearch();
 
       var works = new RationalReads.Collections.Works();
