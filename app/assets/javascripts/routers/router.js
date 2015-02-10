@@ -11,7 +11,22 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'recommendations': 'recommendations',
     'works/new' : 'newWork',
     'works/:id': 'show',
-    'search/:terms': 'search'
+    'search/:terms': 'search',
+    'chapters/:id': 'showChapter'
+  },
+
+  showChapter: function (id) {
+    var post = new RationalReads.Models.Work({id: id});
+
+    post.fetch({
+      success: function () {
+        var showView = new RationalReads.Views.WorksShow({
+            model: post
+          });
+
+        this._swapView(showView);
+      }.bind(this)
+    })
   },
 
   allSorted: function (comparator) {

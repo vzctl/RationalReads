@@ -22,7 +22,9 @@ work12 = Work.create({name: "The Metropolitan Man", author: "Alexander Wales", l
 work13 = Work.create({name: "A Bluer Shade of White", author: "Alexander Wales", link: "https://www.fanfiction.net/s/10327510/1/A-Bluer-Shade-of-White", description: "Six years after her coronation, Elsa rules over Arendelle, using the power of ice to improve the lives of her citizens.", length: "Short"})
 work14 = Work.create({name: "The Last Christmas", author: "Alexander Wales", link: "https://www.fanfiction.net/s/9915682/1/The-Last-Christmas", description: "The mantle of Santa Claus has been passed down once again, this time to an industrial engineer who starts to get some dangerous ideas in his head about the true meaning of Christmas.", length: "Short"})
 
-# work11 = Work.create({name: "", author: "", link: "", description: "", length: "")
+chapter1 = Chapter.create({work_id: 1, number: 80});
+chapter2 = Chapter.create({work_id: 1, number: 81});
+chapter3 = Chapter.create({work_id: 1, number: 82});
 
 rating1 = Rating.create({work_id: 1, user_id: 1, rating: 4})
 rating2 = Rating.create({work_id: 1, user_id: 2, rating: 5})
@@ -36,3 +38,8 @@ rating9 = Rating.create({work_id: 3, user_id: 1, rating: 4})
 rating10 = Rating.create({work_id: 3, user_id: 3, rating: 4})
 rating11 = Rating.create({work_id: 3, user_id: 3, rating: 5})
 rating12 = Rating.create({work_id: 3, user_id: 4, rating: 5})
+
+rating13 = Rating.create({chapter_id: 1, user_id: 3, rating: 4})
+rating14 = Rating.create({chapter_id: 2, user_id: 3, rating: 5})
+rating15 = Rating.create({chapter_id: 3, user_id: 4, rating: 5})
+# Rating.create({chapter_id: 1, user_id: 4, rating: 5})

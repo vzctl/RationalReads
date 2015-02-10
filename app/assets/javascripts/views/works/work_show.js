@@ -1,5 +1,6 @@
 RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   template: JST['comments/headers/work_comment_header'],
+  chapterHeaderTemplate: JST['chapters/headers/chapter_index_header'],
   childInsertionTemplate: JST['comments/child_comment_marker'],
 
   initialize: function () {
@@ -10,6 +11,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
   render: function () {
     this.renderWork();
+    this.renderChapters();
     this.renderCommentForm();
     var remainingChildren = this.renderTopLevelComments();
 
@@ -24,6 +26,22 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
     return this;
   },
+
+  renderChapters: function () {
+    if (this.model.chapters().length > 0) {
+      this.$el.append(this.chapterHeaderTemplate());
+      this.$el.append("<div id='chapters'>");
+      this.model.chapters().each( function (chapter) {
+        var newChapter = new RationalReads.Views.ChapterBlock({
+          model: chapter
+        });
+
+        this.addSubview('#chapters', newChapter);
+      }.bind(this))
+    }
+
+  },
+
 
   renderWork: function () {
     this.$el.append("<div id='work-info'>");

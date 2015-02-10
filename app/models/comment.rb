@@ -1,7 +1,9 @@
 class Comment < ActiveRecord::Base
-  validates :user_id, :work_id, :content, presence: true
+  validates :user_id, :content, presence: true
+  validate :any_present?
 
   belongs_to :work
+  belongs_to :chapter
 
   has_many(
     :child_comments,
@@ -30,6 +32,12 @@ class Comment < ActiveRecord::Base
    end
 
    depth
+ end
+
+ def any_present?
+   if %w(work_id chapter_id).all?{|attr| self[attr].blank?}
+     errors.add :base, "Error message"
+   end
  end
 
 end

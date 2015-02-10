@@ -1,10 +1,10 @@
-class Work < ActiveRecord::Base
-  validates :name, presence: true, uniqueness: true
-  validates :author, :link, :description, :length, presence: true
+class Chapter < ActiveRecord::Base
+  validates :work_id, presence: true
+  validates :number, presence: true
 
-  has_many :ratings
   has_many :comments
-  has_many :chapters
+  has_many :ratings
+  belongs_to :work
 
   def average_rating
     ratings = self.ratings

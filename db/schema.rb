@@ -11,18 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207032501) do
+ActiveRecord::Schema.define(version: 20150209225244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "chapters", force: :cascade do |t|
+    t.integer  "work_id",    null: false
+    t.integer  "number",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chapters", ["number"], name: "index_chapters_on_number", using: :btree
+  add_index "chapters", ["work_id"], name: "index_chapters_on_work_id", using: :btree
+
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",           null: false
-    t.integer  "work_id",           null: false
+    t.integer  "work_id"
     t.text     "content",           null: false
     t.integer  "parent_comment_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "chapter_id"
   end
 
   add_index "comments", ["parent_comment_id"], name: "index_comments_on_parent_comment_id", using: :btree
@@ -31,10 +42,11 @@ ActiveRecord::Schema.define(version: 20150207032501) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id",    null: false
-    t.integer  "work_id",    null: false
+    t.integer  "work_id"
     t.integer  "rating",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "chapter_id"
   end
 
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree

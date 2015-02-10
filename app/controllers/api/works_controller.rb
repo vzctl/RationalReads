@@ -13,6 +13,8 @@ module Api
     def show
       @work = Work.find(params[:id])
       @comments = @work.comments
+      @chapters = @work.chapters
+      
       render :show
     end
 

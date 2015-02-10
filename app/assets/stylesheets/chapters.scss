@@ -1,0 +1,74 @@
+// Place all the styles related to the Chapters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chapter-block {
+  background-color: #57beed;
+  border: 5px solid #1F8DBF;
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: block;
+  margin: 10px;
+}
+
+div.link {
+  margin-left:8px;
+  margin-top:5px;
+  display: block;
+}
+
+a.chapter {
+  font-weight: bold;
+  color: white;
+}
+
+.rating05 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 10%, transparent 10%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 10%, transparent 10%, transparent 100%);
+}
+
+.rating10 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 20%, transparent 20%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 20%, transparent 20%, transparent 100%);
+}
+
+.rating15 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 30%, transparent 30%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 30%, transparent 30%, transparent 100%);
+}
+
+.rating20 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 40%, transparent 40%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 40%, transparent 40%, transparent 100%);
+}
+
+.rating25 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 50%, transparent 50%, transparent 100%);
+}
+
+.rating30 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 60%, transparent 60%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 60%, transparent 60%, transparent 100%);
+}
+
+.rating35 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 70%, transparent 70%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 70%, transparent 70%, transparent 100%);
+}
+
+.rating40 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 80%, transparent 80%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 80%, transparent 80%, transparent 100%);
+}
+
+.rating45 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 90%, transparent 90%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 90%, transparent 90%, transparent 100%);
+}
+
+.rating50 {
+  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 100%, transparent 100%, transparent 100%);
+  background-image: linear-gradient(left, #fe3881, #fe3881 100%, transparent 100%, transparent 100%);
+}
