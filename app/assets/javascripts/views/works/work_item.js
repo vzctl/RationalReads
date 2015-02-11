@@ -3,6 +3,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   initialize: function (options) {
     this.type = options.type;
     this.index = options.index;
+    this.hover = false;
   },
 
   readTemplate: JST['works/display/read_show'],
@@ -12,7 +13,9 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   latestTemplate: JST['works/display/latest_show'],
 
   events: {
-    "click .more": "expandDescription"
+    "click .more": "expandDescription",
+    "mouseover": "enlarge",
+    "mouseleave": "shrink"
   },
 
   expandDescription: function () {
@@ -21,6 +24,37 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     this.$el = $("<div class='item'>");
   },
 
+  enlarge: function (event) {
+    setTimeout(function() {
+      if (!this.hover) {
+        this.hover = true;
+        var $description = this.$el.find(".description");
+
+        setTimeout( function(){
+          $description.css( {'font-weight':500} )
+        }.bind(this), 25);
+        setTimeout( function(){
+          $description.css( {'font-weight':600} )
+        }.bind(this), 50);
+      }
+    }.bind(this), 1000);
+  },
+
+  shrink: function (event) {
+    setTimeout(function() {
+      if (this.hover) {
+        this.hover = false;
+        var $description = this.$el.find(".description");
+
+        setTimeout( function(){
+          $description.css( {'font-weight':500} )
+        }.bind(this), 50);
+        setTimeout( function(){
+          $description.css( {'font-weight':400} )
+        }.bind(this), 75);
+      }
+    }.bind(this), 1000);
+  },
 
   render: function () {
     var displayRating = this.model.get("average_rating");

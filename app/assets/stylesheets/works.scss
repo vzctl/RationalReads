@@ -1,25 +1,54 @@
 // global index style (messes up home page styling)
 
 .index {
-  border-left: solid black;
+  // border-left: solid black;
+  // font-family: 'PT Serif', arial, sans-serif;
+}
+
+#all-works {
+  // font-family: 'PT Serif', arial, sans-serif;
+  font-weight: bold;
 }
 
 .inner-work {
   margin-left: 20px;
   margin-top:10px;
   padding-bottom: 0px !important;
-  // background-color: gray !important;
 }
 
 .index .index-display {
-  border-bottom: solid black thin;
-  // background-color: red;
+  border-bottom: solid  black 1px;
+  border-color: #72ce3f;
 }
 
 .stats {
-  // color: green;
+  color: #FD6E6E;
+  // font-family: 'PT Serif', arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
+.index a{
+  color: #57C4D5;
+  // font-family: 'PT Serif', arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+.index a:hover{
+  color: red;
+  text-decoration: none;
+  // font-family: 'PT Serif', arial, sans-serif;
+  // font-family: 'Raleway', sans-serif;
+}
+
+.index p.description {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+// styling hover effect
+
+.hover {
+  font-size: 120%;
+}
 //styling index page
 
 .stats .stars .raty p.transition {
