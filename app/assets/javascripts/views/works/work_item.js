@@ -48,9 +48,15 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
           borderWidth: 4
         }, 0);
 
-        this.$nextEl.css({'margin-top': ''}).animate({
-          'margin-top': -3
-        }, 0);
+        if (this.$nextEl.length > 0) {
+          this.$nextEl.css({'margin-top': ''}).animate({
+            'margin-top': -3
+          }, 0);
+        } else {
+          $(".footer").css({'margin-top': ''}).animate({
+            'margin-top': 12
+          }, 0);
+        }
 
         setTimeout( function(){
           this.$description.css( {'font-weight':500} )
@@ -78,9 +84,15 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
           borderWidth: 1
         }, 0);
 
-        this.$nextEl.css({'margin-top': ''}).animate({
-          'margin-top': 0
-        }, 0);
+        if (this.$nextEl.length > 0) {
+          this.$nextEl.css({'margin-top': ''}).animate({
+            'margin-top': 0
+          }, 0);
+        } else {
+          $(".footer").css({'margin-top': ''}).animate({
+            'margin-top': 15
+          }, 0);
+        }
 
         setTimeout( function(){
           this.$description.css( {'font-weight':500} )

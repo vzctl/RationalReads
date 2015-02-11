@@ -43,7 +43,11 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
         }
       } else if (event.keyCode === 13) {
         this.clearSearchWithNoDelay();
-        Backbone.history.navigate("/works/" + $searchItem.attr("index"), {trigger: true})
+        if (this.keyIndex > -1) {
+          Backbone.history.navigate("/works/" + $searchItem.attr("index"), {trigger: true})
+        } else {
+          Backbone.history.navigate("/search/" + searchTerm, {trigger: true})
+        }
       }
       this.clearHighlight();
       $searchItem = $(".search-item-box#" + this.keyIndex);

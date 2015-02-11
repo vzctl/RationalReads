@@ -10,7 +10,7 @@ a.chapter-form-link {
 // Coloring of blocks
 
 .chapter-block {
-  background-color: #57beed;
+  background-color: #1ABDD6;
   border: 5px solid #1F8DBF;
   width: 40px;
   height: 40px;
@@ -31,53 +31,53 @@ a.chapter {
 }
 
 .rating05 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 10%, transparent 10%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 10%, transparent 10%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 10%, transparent 10%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 10%, transparent 10%, transparent 100%);
 }
 
 .rating10 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 20%, transparent 20%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 20%, transparent 20%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 20%, transparent 20%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 20%, transparent 20%, transparent 100%);
 }
 
 .rating15 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 30%, transparent 30%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 30%, transparent 30%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 30%, transparent 30%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 30%, transparent 30%, transparent 100%);
 }
 
 .rating20 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 40%, transparent 40%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 40%, transparent 40%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 40%, transparent 40%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 40%, transparent 40%, transparent 100%);
 }
 
 .rating25 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 50%, transparent 50%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 50%, transparent 50%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 50%, transparent 50%, transparent 100%);
 }
 
 .rating30 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 60%, transparent 60%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 60%, transparent 60%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 60%, transparent 60%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 60%, transparent 60%, transparent 100%);
 }
 
 .rating35 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 70%, transparent 70%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 70%, transparent 70%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 70%, transparent 70%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 70%, transparent 70%, transparent 100%);
 }
 
 .rating40 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 80%, transparent 80%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 80%, transparent 80%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 80%, transparent 80%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 80%, transparent 80%, transparent 100%);
 }
 
 .rating45 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 90%, transparent 90%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 90%, transparent 90%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 90%, transparent 90%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 90%, transparent 90%, transparent 100%);
 }
 
 .rating50 {
-  background-image: -webkit-linear-gradient(left, #fe3881, #fe3881 100%, transparent 100%, transparent 100%);
-  background-image: linear-gradient(left, #fe3881, #fe3881 100%, transparent 100%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FD6E6E, #FD6E6E 100%, transparent 100%, transparent 100%);
+  background-image: linear-gradient(left, #FD6E6E, #FD6E6E 100%, transparent 100%, transparent 100%);
 }
 
 .to-work {
@@ -130,13 +130,12 @@ a.chapter {
 }
 
 button.chapter-submit-button {
-  background-color: #df962f;
+  background-color: #1ABDD6;
   color: #FFFFFF;
   padding: 5px;
-  font-weight: bold;
-  float: left;
-  margin-left: 25px;
-  margin-top: 3px;
+  float: right;
+  margin-right: 15px;
+  margin-top: 7px;
   border-radius: 5px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);

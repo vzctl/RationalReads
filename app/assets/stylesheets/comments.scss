@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 textarea.comment-submit {
-  border: 2px solid rgba(0,0,0,.1);
+  border: 2px solid;
+  border-color: #72ce3f;
   padding: 10px;
   width: 785px;
   font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
@@ -12,10 +13,9 @@ textarea.comment-submit {
 }
 
 button.comment-submit-button {
-  background-color: #df962f;
+  background-color: #1ABDD6;
   color: #FFFFFF;
   padding: 5px;
-  font-weight: bold;
   float: right;
   margin-right: 15px;
   margin-top: 11px;

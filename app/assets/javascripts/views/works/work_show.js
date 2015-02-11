@@ -76,10 +76,13 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   },
 
   renderTopLevelComments: function () {
-    this.$el.append(this.template());
-    this.$el.append("<div id='comment'>")
-    this.model.comments().sort();
     var remainingChildren = [];
+    
+    if (this.model.comments().length > 0) {
+      this.$el.append(this.template());
+      this.$el.append("<div id='comment'>")
+      this.model.comments().sort();
+    }
 
     this.model.comments().each(function (comment) {
       if (comment.get("parent_comment_id") === "none") {

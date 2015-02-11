@@ -1,6 +1,6 @@
 #search-bar {
   margin-top:10px;
-  width:295px;
+  width:225px;
   float:left;
   display: block;
 }
@@ -27,6 +27,7 @@ input.search {
 
 .search-item {
   display: block;
+  min-width: 300px;
 }
 
 .search-item-box:hover{

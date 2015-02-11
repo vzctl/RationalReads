@@ -71,11 +71,6 @@ Please feel free to use a different markup language if you do not plan to run
 2. For new chapter form, add plus sign and hover change color
 3. Add unseek logo, if it looks good (otherwise...) + favicon
 4. Redo homepage
-5. Recs page
-6. Search page
-7. Add work page
-8. Bookshelf page
-9. Sign in / sign out / create user
 10. PG backup gem
 11. Send out r post
 

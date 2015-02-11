@@ -2,6 +2,7 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
   template: JST['comments/comment_form'],
   errorTemplate: JST['error'],
   commentTemplate: JST['comments/comment_show'],
+  commentHeaderTemplate: JST['comments/headers/work_comment_header'],
 
   initialize: function (options) {
     this.work = options.work;
@@ -61,6 +62,10 @@ RationalReads.Views.CommentForm = Backbone.View.extend({
           if (this.reply) {
             $("#" + model.get("parent_comment_id")).append($newComment);
           } else {
+            if ( $("#comment").length === 0 ) {
+              $("#comment-form").append(this.commentHeaderTemplate());
+              $("#comment-form").append("<div id='comment'>")
+            }
             $("#comment").prepend($newComment);
           }
 
