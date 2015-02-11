@@ -9,7 +9,7 @@
       <div class="stars">
         <div class="raty"></div>
       </div>
-      <div class="avg-rating">
+      <div class="avg-rating" title="Average Rating">
         <span class="avg"><%= work.escape("average_rating") %></span>
       </div>
       <div class="num-ratings">
@@ -18,11 +18,11 @@
       <div class="num-comments">
         <%= work.escape("num_comments") %> comments
       </div>
-      <div class="date">
+      <div class="date" title="Date Added to Site">
         <%= work.escape("created_at_string") %>
       </div>
-      <div class="length">
-        <%= work.escape("length") %>
+      <div class="length" title="Length">
+        <%= work.escape("length") %> Length
       </div>
     </div>
 

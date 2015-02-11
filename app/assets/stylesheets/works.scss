@@ -1,15 +1,23 @@
-// global index style
+// global index style (messes up home page styling)
 
 .index {
   border-left: solid black;
 }
 
 .inner-work {
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-top:10px;
+  padding-bottom: 0px !important;
+  // background-color: gray !important;
 }
 
 .index .index-display {
   border-bottom: solid black thin;
+  // background-color: red;
+}
+
+.stats {
+  // color: green;
 }
 
 //styling index page
@@ -28,7 +36,7 @@ div.centered {
   background-color: white;
   padding-top: 4px;
   padding-bottom: 8px;
-  border-bottom: solid black thin;
+  // border-bottom: solid black thin;
   border-bottom-left-radius: 0em;
   border-bottom-right-radius: 0em;
   padding-left:0px;

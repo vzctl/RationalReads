@@ -75,3 +75,5 @@ Please feel free to use a different markup language if you do not plan to run
 5. Reduce contract of left in homepage (kolur)
 5. PG backup gem
 7. Send out r post
+
+transparent white background, on top of light bookshelf background
