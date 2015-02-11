@@ -9,7 +9,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.renderWork();
+    this.renderChapter();
     this.renderCommentForm();
     var remainingChildren = this.renderTopLevelComments();
 
@@ -25,7 +25,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  renderWork: function () {
+  renderChapter: function () {
     var content = this.template({chapter: this.model})
 
     this.$el.append(content);
@@ -185,7 +185,7 @@ RationalReads.Views.ChaptersShow = Backbone.CompositeView.extend({
 
   _updateStatsAfterError: function($ratingResponse, $raty, response) {
     $ratingResponse.append(response.responseJSON);
-    
+
     $raty.animate({'opacity': 0}, 500, function () {
         $(this).html($ratingResponse);
     }).animate({'opacity': 1}, 10);

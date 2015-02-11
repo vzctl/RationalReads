@@ -29,6 +29,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
   renderChapters: function () {
     if (this.model.chapters().length > 0) {
+      var type = "full";
       this.$el.append(this.chapterHeaderTemplate());
       this.$el.append("<div id='chapters'>");
       this.model.chapters().each( function (chapter) {
@@ -38,14 +39,16 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
         this.addSubview('#chapters', newChapter);
       }.bind(this))
-
-      var newChapter = new RationalReads.Views.ChapterForm({
-        work: this.model
-      });
-
-      this.addSubview('#chapters', newChapter);
+    } else {
+      var type = "short";
+      this.$el.append("<div id='chapters'>");
     }
+    var newChapter = new RationalReads.Views.ChapterForm({
+      model: this.model,
+      type: type
+    });
 
+    this.addSubview('#chapters', newChapter);
   },
 
 

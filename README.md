@@ -68,9 +68,10 @@ Please feel free to use a different markup language if you do not plan to run
 
 # ToDo
 1. Add works (put in all major works - 20 - 30)
-2. New Chapter Form
-2.5. How do add a chapter to a book which doesn't already have chapters???
+2. New Chapter Form, add plus sign and hover change color
+2.5. How do add a chapter to a book which doesn't already have chapters?
 3. Style navbar
 4. Add bookshelf styling
+5. Reduce contract of left in homepage (kolur)
 5. PG backup gem
 7. Send out r post

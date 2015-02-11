@@ -1,3 +1,17 @@
+// global index style
+
+.index {
+  border-left: solid black;
+}
+
+.inner-work {
+  margin-left: 10px;
+}
+
+.index .index-display {
+  border-bottom: solid black thin;
+}
+
 //styling index page
 
 .stats .stars .raty p.transition {
@@ -170,6 +184,12 @@ display:block;
 
 .work-form-item{
   display: block;
+}
+
+input {
+  border: 2px solid rgba(0,0,0,.1) !important;
+  font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
+  border-radius: 5px;
 }
 
 textarea.work-submit {

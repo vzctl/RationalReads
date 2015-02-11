@@ -1,6 +1,7 @@
 class Chapter < ActiveRecord::Base
   validates :work_id, presence: true
   validates :number, presence: true
+  validates :link, presence: true
 
   has_many :comments
   has_many :ratings

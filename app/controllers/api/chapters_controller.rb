@@ -26,8 +26,8 @@ module Api
 
     private
 
-    def work_params
-      params.require(:chapter).permit(:work_id, :number)
+    def chapter_params
+      params.require(:chapter).permit(:work_id, :number, :link)
     end
   end
 end
