@@ -52,9 +52,13 @@ table .length {
 
 table thead th{
   height:20px;
-  background: #fe3881;
+  background: #72ce3f;
   color: white;
+  color: black;
   border: 1px solid white;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 table .avg-rating {

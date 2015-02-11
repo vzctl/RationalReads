@@ -26,40 +26,84 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
 
   enlarge: function (event) {
     setTimeout(function() {
-      if (!this.hover) {
+      if (!this.hover && this.indexPage()) {
         this.hover = true;
-        var $description = this.$el.find(".description");
+        this.$description = this.$el.find(".description");
+
+        this.$borderBox = this.$el.find(".index-display");
+        this.$previousEl = $(this.$el).prev();
+        this.$nextEl = $(this.$el).next();
+        this.$prevBorder = this.$previousEl.find(".index-display");
+        this.$borderBox.css({border: ''}).animate({
+          borderWidth: 4
+        }, 0);
+
+        if (this.$previousEl.length > 0) {
+          this.$el.css({'margin-top': ''}).animate({
+            'margin-top': -3
+          }, 0);
+        }
+
+        this.$prevBorder.css({border: ''}).animate({
+          borderWidth: 4
+        }, 0);
+
+        this.$nextEl.css({'margin-top': ''}).animate({
+          'margin-top': -3
+        }, 0);
 
         setTimeout( function(){
-          $description.css( {'font-weight':500} )
-        }.bind(this), 25);
+          this.$description.css( {'font-weight':500} )
+        }.bind(this), 30);
         setTimeout( function(){
-          $description.css( {'font-weight':600} )
-        }.bind(this), 50);
+          this.$description.css( {'font-weight':600} )
+        }.bind(this), 40);
       }
-    }.bind(this), 1000);
+    }.bind(this), 0);
   },
 
   shrink: function (event) {
     setTimeout(function() {
-      if (this.hover) {
+      if (this.hover && this.indexPage()) {
         this.hover = false;
-        var $description = this.$el.find(".description");
+        this.$borderBox.css({border: ''}).animate({
+          borderWidth: 1
+        }, 0);
+
+        this.$el.css({'margin-top': ''}).animate({
+          'margin-top': 0
+        }, 0);
+
+        this.$prevBorder.css({border: ''}).animate({
+          borderWidth: 1
+        }, 0);
+
+        this.$nextEl.css({'margin-top': ''}).animate({
+          'margin-top': 0
+        }, 0);
 
         setTimeout( function(){
-          $description.css( {'font-weight':500} )
-        }.bind(this), 50);
+          this.$description.css( {'font-weight':500} )
+        }.bind(this), 30);
         setTimeout( function(){
-          $description.css( {'font-weight':400} )
-        }.bind(this), 75);
+          this.$description.css( {'font-weight':400} )
+        }.bind(this), 40);
       }
-    }.bind(this), 1000);
+    }.bind(this), 0);
+  },
+
+  indexPage: function () {
+    if (this.type === "index" || this.type === "recommendations" || this.type === "search") {
+      return true
+    } else {
+      return false
+    }
   },
 
   render: function () {
     var displayRating = this.model.get("average_rating");
 
-    if (this.type === "index" || this.type === "recommendations" || this.type === "search") {
+    if (this.indexPage()) {
       var content = this.fullTemplate({work: this.model});
     } else if (this.type === "read") {
       this.$el = $("<tr>")

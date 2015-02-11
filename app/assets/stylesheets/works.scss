@@ -1,12 +1,9 @@
 // global index style (messes up home page styling)
 
 .index {
-  // border-left: solid black;
-  // font-family: 'PT Serif', arial, sans-serif;
 }
 
 #all-works {
-  // font-family: 'PT Serif', arial, sans-serif;
   font-weight: bold;
 }
 
@@ -23,26 +20,31 @@
 
 .stats {
   color: #FD6E6E;
-  // font-family: 'PT Serif', arial, sans-serif;
-  font-family: 'Raleway', sans-serif;
+}
+
+.index a.blended-link {
+  color: #FD6E6E;
+}
+
+.index a.blended-link:hover {
+  text-decoration: underline;
 }
 
 .index a{
-  color: #57C4D5;
-  // font-family: 'PT Serif', arial, sans-serif;
-  font-family: 'Raleway', sans-serif;
+  color: #1ABDD6;
 }
 
 .index a:hover{
   color: red;
   text-decoration: none;
-  // font-family: 'PT Serif', arial, sans-serif;
-  // font-family: 'Raleway', sans-serif;
 }
 
 .index p.description {
   font-size: 16px;
-  font-family: 'Raleway', sans-serif;
+}
+
+.index .num-ratings {
+  padding-right: 20px;
 }
 // styling hover effect
 
@@ -53,6 +55,8 @@
 
 .stats .stars .raty p.transition {
   font-size: 13px !important;
+  margin-top:3px;
+  color: #1ABDD6;
 }
 
 div.centered {

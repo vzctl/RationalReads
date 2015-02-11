@@ -68,12 +68,15 @@ Please feel free to use a different markup language if you do not plan to run
 
 # ToDo
 1. Add works (put in all major works - 20 - 30)
-2. New Chapter Form, add plus sign and hover change color
-2.5. How do add a chapter to a book which doesn't already have chapters?
-3. Style navbar
-4. Add bookshelf styling
-5. Reduce contract of left in homepage (kolur)
-5. PG backup gem
-7. Send out r post
+2. For new chapter form, add plus sign and hover change color
+3. Add unseek logo, if it looks good (otherwise...) + favicon
+4. Redo homepage
+5. Recs page
+6. Search page
+7. Add work page
+8. Bookshelf page
+9. Sign in / sign out / create user
+10. PG backup gem
+11. Send out r post
 
 transparent white background, on top of light bookshelf background

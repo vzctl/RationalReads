@@ -30,11 +30,11 @@ input.search {
 }
 
 .search-item-box:hover{
-  background-color: #189ddb;
+  background-color: #1ABDD6 !important;
 }
 
 .hovered-box{
-  background-color: #189ddb !important;
+  background-color: #1ABDD6 !important;
 }
 
 .hovered-box .search-link{
@@ -48,17 +48,16 @@ input.search {
 #autocomplete {
   position: absolute;
   background-color:purple;
-  filter:alpha(opacity=90);
-   opacity:0.9;
-   -moz-opacity:0.9;
   padding:0px;
-  border-radius:5px;
+  border-radius:50px;
 }
 
 .search-item-box {
-  border: thin solid gray;
+  border: thin solid;
+  border-left-color: #72ce3f;
+  border-right-color: #72ce3f;
   margin-top:-2px;
-  background-color: #beeb4f;
+  background-color: white;
   padding: 5px;
   display: block;
   position:relative;
@@ -66,7 +65,8 @@ input.search {
 }
 
 .search-link {
-  color:black;
+  color: #1ABDD6;
+  font-family: 'Raleway', sans-serif;
 }
 
 .search-link:hover {
