@@ -4,9 +4,7 @@
   #search-bar  {
     display: none !important;
   }
-
 }
-
 
 @media (max-width: 993px) {
 
@@ -27,6 +25,14 @@
     margin-top: 30px;
     margin-left: 20px;
   }
+
+  .home-page {
+    background-image: none !important;
+  }
+
+  #left .left-bottom {
+    margin-top: -30px;
+  }
 }
 
 @media (max-width: 1065px) {
@@ -45,6 +51,14 @@
   #left div.length {
     display:none;
   }
+  #left .home-display {
+    padding-bottom: 2px;
+  }
+}
+
+.home-page {
+  background-image: -webkit-linear-gradient(left, #FAC5C5, #FAC5C5 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(left, #FAC5C5, #FAC5C5 50%, transparent 50%, transparent 100%);
 }
 
 .home-head {
@@ -101,12 +115,16 @@ h3.home-bottom a:hover{
 // styling of left column
 
 #left p, .left-header {
-  color: white;
+  color: black;
 }
 
 .left-header {
   margin-left: 50px;
   margin-bottom: 0px;
+}
+
+.left-box {
+  height: 100%;
 }
 
 // #left .inner-work {
@@ -268,35 +286,34 @@ h3.home-bottom a:hover{
 }
 
 #main div ul.custom-tabs {
-  border-bottom: none;
+  // border-bottom: none;
   vertical-align: bottom;
   margin-top:18px;
   height: 30px;
-  display:block;
   font-size: 12px;
   list-style:none;
   padding-left:0px;
-  float: right;
-  display: none;
+  // float: right;
+  // position:absolute;
 }
 
 .tab-container {
-  position:relative;
-  float:right;
-  margin-right:45px;
+  position:absolute;
+  right: 5px;
+  // margin-top: -10px;
+  top: -5px;
+  // margin-right:45px;
   // width:640px;
+  // margin-top:10px;
   height:35px;
   display: inline;
 }
 
 #main div ul.custom-tabs li.activated {
-  background: -webkit-linear-gradient(top, #fe3881 0%, #ed0158 100%);
-  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent;
+background-color: #FD6E6E;
 }
 
 #main div ul.custom-tabs li.unactivated:hover {
-  background: -webkit-linear-gradient(top, #57beed 0%, #1F8DBF 100%) !important;
-  background: -moz-linear-gradient(center top , #57beed 0%, #1F8DBF 100%) repeat scroll 0% 0% transparent;
 }
 
 #main div ul.custom-tabs li {
@@ -304,8 +321,8 @@ h3.home-bottom a:hover{
   height: 28px;
   text-align: center;
   margin-right: 2px;
-  background: -webkit-linear-gradient(top, #57beed 0%, #189ddb 100%);
-  background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
+  // background: -webkit-linear-gradient(top, #57beed 0%, #189ddb 100%);
+  // background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
   color: black;
   float:left;
   position: relative;
@@ -328,9 +345,10 @@ a.single-line {
 .tabed {
   border: thin gray solid;
   border-radius: 5px;
-  border-bottom: none;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top: none;
+  border: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .activated {

@@ -7,11 +7,25 @@ nav.navbar ul.nav a{
 }
 
 nav a.navbar-brand {
-  color: #000000 !important;
-  font-weight: 700;
-  font-family: 'Raleway', sans-serif;
+  color: #4B4975 !important;
+}
+
+nav a.navbar-brand #first{
+  color: white !important;
+}
+
+nav a.navbar-brand #second{
+  color: black !important;
+}
+
+.navbar ul.nav a:hover{
+  color: black !important;
 }
 
 .navbar {
   border-bottom: none !important;
+}
+
+.navbar-brand {
+  margin-right: 27px !important;
 }

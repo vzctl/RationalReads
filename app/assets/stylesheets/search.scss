@@ -48,15 +48,14 @@ input.search {
 
 #autocomplete {
   position: absolute;
-  background-color:purple;
   padding:0px;
   border-radius:50px;
 }
 
 .search-item-box {
   border: thin solid;
-  border-left-color: #72ce3f;
-  border-right-color: #72ce3f;
+  border-left-color: gray;
+  border-right-color: gray;
   margin-top:-2px;
   background-color: white;
   padding: 5px;

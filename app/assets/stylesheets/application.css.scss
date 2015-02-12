@@ -46,13 +46,21 @@ body {
 
 #footer .inner-footer {
   margin-left: 125px;
+  margin-right: 125px;
   padding-top:5px;
   height: 20px;
+}
 
+#footer .left {
+  float: left;
+}
+
+#footer .right {
+  float: right;
 }
 
 #footer a {
-  color: #1ABDD6;
+  color: white;
 }
 
 #footer a:hover {
@@ -71,7 +79,7 @@ a {
 
 // fix navbar expanding too early problem
 
-@media (max-width: 991px) {
+@media (max-width: 1009px) {
     .navbar-header {
         float: none;
     }
