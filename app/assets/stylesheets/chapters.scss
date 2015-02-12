@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.plus-block:hover .plus-sign{
+  color: #FD6E6E;
+}
+
+.plus-block:hover {
+  cursor: pointer;
+}
+
+.plus-sign {
+  font-size: 20px;
+  margin-left: 6px;
+  margin-top: 2px;
+  color: white;
+}
+
 a.chapter-form-link {
   float: right;
   margin-right: 215px;

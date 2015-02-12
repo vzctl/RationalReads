@@ -1,10 +1,17 @@
 //styling for different widths
 
-@media (max-width: 465px) {
+@media (max-width: 490px) {
   #search-bar  {
     display: none !important;
   }
 }
+
+@media (max-width: 520px) {
+  .tab-container  {
+    display: none !important;
+  }
+}
+
 
 @media (max-width: 993px) {
 
@@ -33,11 +40,28 @@
   #left .left-bottom {
     margin-top: -30px;
   }
+
+  .tab-container {
+    right: 50px !important;
+    top: 3px !important;
+    height:35px;
+    display: inline;
+  }
+
+  #main div ul.custom-tabs li.tabed {
+    font-size: 12px !important;
+    width: 75px !important;
+  }
 }
 
 @media (max-width: 1065px) {
   #right div.date {
     display: none;
+  }
+
+  #main div ul.custom-tabs li {
+    font-size: 10px;
+    width: 60px !important;
   }
 }
 
@@ -318,11 +342,9 @@ background-color: #FD6E6E;
 
 #main div ul.custom-tabs li {
   width: 75px;
-  height: 28px;
+  height: 35px;
   text-align: center;
   margin-right: 2px;
-  // background: -webkit-linear-gradient(top, #57beed 0%, #189ddb 100%);
-  // background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
   color: black;
   float:left;
   position: relative;
@@ -330,7 +352,7 @@ background-color: #FD6E6E;
 
 #main div ul.custom-tabs li a {
   padding: 0px;
-  padding-top:2px;
+  padding-top:6px;
   line-height:11px;
   color: white;
   display: block;

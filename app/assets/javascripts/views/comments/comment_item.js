@@ -38,7 +38,11 @@ RationalReads.Views.CommentItem = Backbone.CompositeView.extend({
           type: this.type
         });
       this.form = newComment;
-      this.$el.append(newComment.render().$el);
+      var form = newComment.render().$el;
+      form.addClass("hidden-display");
+      this.$el.append(form);
+      form.slideDown("slow");
+      // newComment.render().$el.appendTo(this.$el).slideDown("slow");
     }
   },
 
