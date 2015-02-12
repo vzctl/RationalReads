@@ -7,7 +7,7 @@
 }
 
 .index .index-display {
-  border-bottom: solid  black 1px;
+  border-bottom: solid  1px;
   border-color: #72ce3f;
 }
 
@@ -84,6 +84,11 @@ div.centered {
 
 #work-info div.avg-rating{
   padding-right:50px;
+  margin-right: 10px;
+}
+
+#work-info div.num-ratings{
+  margin-right:50px;
 }
 
 #work-info div.num-comments{

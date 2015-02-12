@@ -4,9 +4,19 @@
   margin-left: 30px;
 }
 
-#main .home-body {
+.left-box {
+  background-color: black;
+}
+
+h3.home-bottom a:hover{
+  text-decoration: none !important;
+  color: red
+}
+
+#main .home-page {
   margin-left: -50px;
   position: relative;
+  margin-top: -23px;
 }
 
 .home-display {
@@ -49,86 +59,101 @@
 
 // styling of left column
 
-#left p{
-  font-size: 16px;
-  font-family: Georgia,"Times New Roman",Times,serif;
+#left .inner-work {
+  padding-bottom: 10px !important;
 }
 
-#left .title a {
-  font-size:26px;
-  color: blue;
-}
 
-#number-0 .link-link {
-  color: aqua;
-}
+// #left .stats{
+//   color: black;
+// }
+//
+// #left div.stats div.num-comments a.blended-link {
+//   color: black;
+// }
+//
+// #left a:hover{
+//   text-decoration: underline;
+// }
+// #left p a.link-link {
+//   color: blue;
+// }
+// #left p{
+//   font-size: 16px;
+//   font-family: Georgia,"Times New Roman",Times,serif;
+// }
+//
+// #left .title a {
+//   font-size:26px;
+//   color: blue;
+// }
 
-#left .work {
-  margin-top:-30px;
-}
+// #left .work {
+//   margin-top:-25px;
+// }
 
-#left #number-0 {
-  margin-top: 0px;
-  float: right;
-}
+// #number-0 .link-link {
+//   color: aqua;
+// }
+//
+// #left #number-0 {
+//   margin-top: 0px;
+//   float: right;
+// }
 
-#left #number-1 {
-  width:88%;
-  float: right;
-}
+// #left #number-1 {
+//   float: right;
+// }
+//
+// #left #number-2 {
+//   float: right;
+// }
+//
+// #left #number-3 {
+//   float: right;
+// }
+//
+// #left #number-4 {
+//   float: right;
+// }
 
-#left #number-2 {
-  width:86%;
-  float: right;
-}
-
-#left #number-3 {
-  width:84%;
-  float: right;
-}
-
-#left #number-4 {
-  width:82%;
-  float: right;
-}
-
-#left #number-0 .inner-work {
-  background: -moz-linear-gradient(center top , #FE3881 0%, #ED0158 100%) repeat scroll 0% 0% transparent;
-  background: -webkit-linear-gradient(top, #fe3881 0%,#ed0158 100%);
-  color: white;
-}
-
-#left #number-1 .inner-work {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa53d), color-stop(100%,#f58300));
-  background: -moz-linear-gradient(center top , #FFA53D 0%, #F58300 100%) repeat scroll 0% 0% transparent;
-}
-
-#left #number-2 .inner-work {
-  background: -webkit-linear-gradient(top, #fee531 0%,#e6cb01 100%);
-  background: -moz-linear-gradient(center top , #FEE531 0%, #E6CB01 100%) repeat scroll 0% 0% transparent;
-}
-
-#left #number-3 .inner-work {
-  background: -webkit-linear-gradient(top, #beeb4f 0%,#a2da19 100%);
-  background: -moz-linear-gradient(center top , #BEEB4F 0%, #A2DA19 100%) repeat scroll 0% 0% transparent;
-}
-
-#left #number-4 .inner-work {
-  background: -webkit-linear-gradient(top, #57beed 0%,#189ddb 100%);
-  background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
-}
-
-#left #number-3 .stats div{
-  font-size:12px;
-}
-
-#left #number-4 .stats div{
-  font-size:11px;
-}
-
-#left #number-4 .link-link {
-  color: blue;
-}
+// #left #number-0 .inner-work {
+//   background: -webkit-linear-gradient(top, #57beed 0%,#189ddb 100%);
+//   background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
+//   // color: white;
+// }
+//
+// #left #number-1 .inner-work {
+//   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa53d), color-stop(100%,#f58300));
+//   background: -moz-linear-gradient(center top , #FFA53D 0%, #F58300 100%) repeat scroll 0% 0% transparent;
+// }
+//
+// #left #number-2 .inner-work {
+//   background: -webkit-linear-gradient(top, #fee531 0%,#e6cb01 100%);
+//   background: -moz-linear-gradient(center top , #FEE531 0%, #E6CB01 100%) repeat scroll 0% 0% transparent;
+// }
+//
+// #left #number-3 .inner-work {
+//   background: -webkit-linear-gradient(top, #beeb4f 0%,#a2da19 100%);
+//   background: -moz-linear-gradient(center top , #BEEB4F 0%, #A2DA19 100%) repeat scroll 0% 0% transparent;
+// }
+//
+// #left #number-4 .inner-work {
+//   background: -webkit-linear-gradient(top, #57beed 0%,#189ddb 100%);
+//   background: -moz-linear-gradient(center top , #57BEED 0%, #189DDB 100%) repeat scroll 0% 0% transparent;
+// }
+//
+// #left #number-3 .stats div{
+//   font-size:12px;
+// }
+//
+// #left #number-4 .stats div{
+//   font-size:11px;
+// }
+//
+// #left #number-4 .link-link {
+//   color: blue;
+// }
 
 #left .stats .stars .transition {
   margin-top: 1px;
@@ -180,7 +205,7 @@
 #main div ul.custom-tabs {
   border-bottom: none;
   vertical-align: bottom;
-  margin-top:35px;
+  margin-top:18px;
   height: 30px;
   display:block;
   font-size: 12px;
@@ -193,7 +218,7 @@
   position:relative;
   float:right;
   margin-right:45px;
-  width:240px;
+  width:640px;
   height:35px;
   display: inline;
 }

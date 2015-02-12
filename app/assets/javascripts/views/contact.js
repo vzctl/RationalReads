@@ -3,7 +3,7 @@ RationalReads.Views.Contact = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.append(this.template());
-
+    RationalReads.Utils.MoveTop();
     return this
   }
 

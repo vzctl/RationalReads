@@ -41,14 +41,23 @@ body {
 #footer {
   width: 1100px;
   margin: 0 auto;
-  // margin-top:25px;
   padding-top: 25px;
   padding-bottom: 20px;
   margin-left: 125px;
 }
 
+#footer a {
+  color: #1ABDD6;
+}
+
+#footer a:hover {
+  color: red;
+  text-decoration: none;
+}
+
 p {
   font-family: 'Raleway', sans-serif;
+  font-size: 16px;
 }
 
 a {

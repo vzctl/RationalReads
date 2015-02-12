@@ -16,7 +16,7 @@
         <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings
       </div>
       <div class="num-comments">
-        <%= chapter.escape("num_comments") %> comments
+        <a class="blended-link" href="#/works/<%= chapter.escape("id") %>"><%= chapter.escape("num_comments") %> comments</a>
       </div>
       <div class="date">
         <%= chapter.escape("time_ago") %> ago

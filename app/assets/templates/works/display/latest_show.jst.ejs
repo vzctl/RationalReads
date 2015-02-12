@@ -16,7 +16,7 @@
         <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
       </div>
       <div class="num-comments">
-        <%= work.escape("num_comments") %> comments
+        <a class="blended-link" href="#/works/<%= work.escape("id") %>"><%= work.escape("num_comments") %> comments</a>
       </div>
       <div class="date">
         <%= work.escape("time_ago") %> ago

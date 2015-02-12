@@ -6,6 +6,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
   initialize: function () {
     this.views = [];
     this.currentTab = "rating";
+    this.$el = $("<div class='home-page row'>");
   },
 
   events: {
@@ -14,7 +15,6 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.topTemplate());
-    this.$el.addClass("home-body row");
 
     this.renderLeft();
     this.renderRight();

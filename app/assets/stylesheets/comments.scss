@@ -62,17 +62,34 @@ button.comment-submit-button {
   color: grey;
 }
 
-.username, .user-rating, .time-age {
+.username, .user-rating {
 float:left;
 display: block;
 margin-right:10px;
 font-size:12px;
 }
 
+.username {
+  color: #FD6E6E;
+}
+
+.user-rating {
+  margin-top: -1px;
+}
+
+.time-ago {
+font-size: 12px;
+}
+
 .reply a{
-  color: grey;
+  color: #1ABDD6;
   font-size: 12px;
   font-weight:bold;
+}
+
+.reply a:hover{
+  color: red;
+  text-decoration: none;
 }
 
 .reply + .single-comment {
