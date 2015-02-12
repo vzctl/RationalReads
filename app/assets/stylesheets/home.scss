@@ -12,7 +12,6 @@
   }
 }
 
-
 @media (max-width: 993px) {
 
   #main{
@@ -67,6 +66,22 @@
 
 @media (max-width: 1100px) {
   #left div.date {
+    display: none;
+  }
+}
+
+@media (max-width: 1121px) {
+  h2 {
+    font-size:26px !important;
+  }
+
+  div.length {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1221px) {
+  span.length {
     display: none;
   }
 }
@@ -138,13 +153,17 @@ h3.home-bottom a:hover{
 
 // styling of left column
 
+#main .row .left-box #left .left-hidden {
+  margin-left: -500px;
+  opacity: 0;
+}
+
 #left p, .left-header {
   color: black;
 }
 
 .left-header {
   margin-left: 50px;
-  margin-bottom: 0px;
 }
 
 .left-box {
@@ -264,6 +283,11 @@ h3.home-bottom a:hover{
 
 // styling of right column
 
+span.length {
+  margin: 0px !important;
+  padding: 0px;
+}
+
 #right .stats .stars .transition {
   margin-top:1px;
 }
@@ -299,10 +323,6 @@ h3.home-bottom a:hover{
   padding-bottom: 10px;
 }
 
-.right-box {
-  // padding-right: 0px !important;
-}
-
 // nav tab styling
 
 .home-head {
@@ -310,31 +330,25 @@ h3.home-bottom a:hover{
 }
 
 #main div ul.custom-tabs {
-  // border-bottom: none;
   vertical-align: bottom;
   margin-top:18px;
   height: 30px;
   font-size: 12px;
   list-style:none;
   padding-left:0px;
-  // float: right;
-  // position:absolute;
 }
 
 .tab-container {
   position:absolute;
   right: 5px;
-  // margin-top: -10px;
-  top: -5px;
-  // margin-right:45px;
-  // width:640px;
-  // margin-top:10px;
+  top: 15px;
   height:35px;
   display: inline;
 }
 
 #main div ul.custom-tabs li.activated {
-background-color: #FD6E6E;
+background-color: #EB7C7C;
+border: thin #FF5959 solid;
 }
 
 #main div ul.custom-tabs li.unactivated:hover {
@@ -365,12 +379,11 @@ a.single-line {
 }
 
 .tabed {
-  border: thin gray solid;
-  border-radius: 5px;
-  border-top: none;
   border: none;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 2px;
 }
 
 .activated {

@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hidden-form {
+  display: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  height: 135px;
+}
+
+.hidden-form h3{
+  margin-top:-5px !important;
+}
+
 textarea.comment-submit {
   border: 2px solid;
   border-color: #72ce3f;

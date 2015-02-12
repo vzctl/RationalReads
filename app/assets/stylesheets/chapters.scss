@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//smooth form transition
+
+div.centered div#chapters .hidden-chapter-form {
+  display: none;
+  // border: 1px solid transparent;
+  margin: 0px;
+  padding: 0px;
+  width: 800px;
+  height: 40px;
+}
+
+// plus block
+
 .plus-block:hover .plus-sign{
   color: #FD6E6E;
 }

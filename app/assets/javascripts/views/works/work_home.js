@@ -38,8 +38,19 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
     this.views.push(leftView);
     this.updateLeftHeader();
-    this.$('#left').append(leftView.render().$el);
-    this.$('#left').append(this.moreTemplate({comparator: this.currentTab}));
+
+    var $content = $(leftView.render().$el);
+    $content.addClass("left-hidden");
+    this.$('#left').append($content);
+
+    $content.animate({
+    'margin-left':'0px',
+    'opacity': 100
+  }, 200)
+
+    setTimeout( function () {
+      this.$('#left').append(this.moreTemplate({comparator: this.currentTab}));
+    }.bind(this), 200);
   },
 
   updateLeftHeader: function () {
@@ -83,9 +94,18 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     if (clickedId != this.currentTab) {
       this.toggleTabClasses($tab);
       this.currentTab = clickedId;
-      this.$('#left').empty();
-      this.renderLeft();
-      this.currentTab = clickedId;
+
+      $("#left .centered").animate({
+      'margin-left':'500px',
+      'opacity': 0
+    }, 200)
+
+      setTimeout( function () {
+        this.$('#left').empty();
+        this.renderLeft();
+        this.currentTab = clickedId;
+      }.bind(this), 200);
+
     }
   },
 

@@ -28,7 +28,13 @@ RationalReads.Views.ChapterForm = Backbone.View.extend({
       $(".chapter-form-link").remove();
     }
 
-    $("#chapters").append(this.formTemplate());
+    var form = $(this.formTemplate());
+    form.addClass("hidden-chapter-form");
+    $("#chapters").append(form);
+    form.slideDown({
+      "duration": 100
+    });
+
     $(".chapter-form").submit( function (event) {
       this.createChapter(event);
     }.bind(this));

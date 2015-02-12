@@ -34,9 +34,6 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
         this.$previousEl = $(this.$el).prev();
         this.$nextEl = $(this.$el).next();
         this.$prevBorder = this.$previousEl.find(".index-display");
-        this.$borderBox.css({border: ''}).animate({
-          borderWidth: 4
-        }, 0);
 
         if (this.$previousEl.length > 0) {
           this.$el.css({'margin-top': ''}).animate({
@@ -49,6 +46,10 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
         }, 0);
 
         if (this.$nextEl.length > 0) {
+          this.$borderBox.css({border: ''}).animate({
+            borderWidth: 4
+          }, 0);
+
           this.$nextEl.css({'margin-top': ''}).animate({
             'margin-top': -3
           }, 0);

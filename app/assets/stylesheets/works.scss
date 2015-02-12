@@ -72,6 +72,10 @@ div.centered {
   border-bottom: none !important;
 }
 
+.index > div:last-child .work {
+  border-bottom: none !important;
+}
+
 #search-results + .index .index-display {
   width: 1000px;
 }
@@ -104,6 +108,9 @@ div.centered {
   padding-top:10px;
 }
 
+#work-info .transition {
+  margin-top: 1px;
+}
 // styling all works
 
 .inner-work {
