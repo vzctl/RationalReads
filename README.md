@@ -71,6 +71,11 @@ Please feel free to use a different markup language if you do not plan to run
 2. For new chapter form, add plus sign and hover change color
 3. Add unseek logo, if it looks good (otherwise...) + favicon
 4. Redo homepage
+--Get rid of thing that is causing left side to have messed up styling / no border-bottom, etc...
+--Change font color(s)
+--Remove display-none on tabs, figure out filtering animation
+--Add media queries
+5. Footer contact color
 10. PG backup gem
 11. Send out r post
 

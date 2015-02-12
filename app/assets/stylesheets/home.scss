@@ -1,3 +1,52 @@
+//styling for different widths
+
+@media (max-width: 465px) {
+  #search-bar  {
+    display: none !important;
+  }
+
+}
+
+
+@media (max-width: 993px) {
+
+  #main{
+    margin-right: 0px !important;
+  }
+
+  .left-box  {
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+
+  .left-box .home-display {
+    margin-left: 0px;
+  }
+
+  h2.left-header {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1065px) {
+  #right div.date {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  #left div.date {
+    display: none;
+  }
+}
+
+@media (max-width: 1340px) {
+  #left div.length {
+    display:none;
+  }
+}
+
 .home-head {
   display: block;
   margin-left: 40px;
@@ -60,13 +109,13 @@ h3.home-bottom a:hover{
   margin-bottom: 0px;
 }
 
-#left .inner-work {
-  padding-bottom: 10px !important;
-  border-bottom: thin solid gray;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-color: white;
-}
+// #left .inner-work {
+//   padding-bottom: 10px !important;
+//   border-bottom: thin solid;
+//   border-bottom-left-radius: 0px;
+//   border-bottom-right-radius: 0px;
+//   border-color: white;
+// }
 
 #left {
   margin-top:-10px;
@@ -206,6 +255,10 @@ h3.home-bottom a:hover{
   padding-right:0px;
   padding-top: 4px;
   padding-bottom: 10px;
+}
+
+.right-box {
+  // padding-right: 0px !important;
 }
 
 // nav tab styling
