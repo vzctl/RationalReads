@@ -172,16 +172,16 @@ div.centered {
 }
 
 // For show_more plugin
-
+//
 a.more:hover {
   cursor: pointer;
-  text-decoration: none;
+  // text-decoration: none;
 }
 
-a.more {
-  color: blue;
-  margin-left:5px;
-}
+// a.more {
+//   color: blue;
+//   margin-left:5px;
+// }
 
 .hidden-display {
   display:none;

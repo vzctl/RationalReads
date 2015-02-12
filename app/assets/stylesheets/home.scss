@@ -1,11 +1,10 @@
 .home-head {
-  // text-align: left;
   display: block;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .left-box {
-  background-color: black;
+  background-color: #FAC5C5;
 }
 
 h3.home-bottom a:hover{
@@ -26,13 +25,6 @@ h3.home-bottom a:hover{
 
 #right .home-display {
   margin-right: 0px;
-}
-
-.home-display .inner-work {
-  margin-bottom: 15px;
-  background-color: yellow;
-  border-radius: 5px;
-  padding:20px;
 }
 
 .left-bottom {
@@ -59,10 +51,30 @@ h3.home-bottom a:hover{
 
 // styling of left column
 
-#left .inner-work {
-  padding-bottom: 10px !important;
+#left p, .left-header {
+  color: white;
 }
 
+.left-header {
+  margin-left: 50px;
+  margin-bottom: 0px;
+}
+
+#left .inner-work {
+  padding-bottom: 10px !important;
+  border-bottom: thin solid gray;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-color: white;
+}
+
+#left {
+  margin-top:-10px;
+}
+
+#number-0 {
+  padding-top: 0px;
+}
 
 // #left .stats{
 //   color: black;
@@ -187,7 +199,7 @@ h3.home-bottom a:hover{
   background-color: white;
   padding-top: 10px;
   padding-bottom: 1px;
-  border-bottom: solid black thin;
+  border-bottom: solid #72ce3f thin;
   border-bottom-left-radius: 0em;
   border-bottom-right-radius: 0em;
   padding-left:0px;
@@ -212,13 +224,14 @@ h3.home-bottom a:hover{
   list-style:none;
   padding-left:0px;
   float: right;
+  display: none;
 }
 
 .tab-container {
   position:relative;
   float:right;
   margin-right:45px;
-  width:640px;
+  // width:640px;
   height:35px;
   display: inline;
 }

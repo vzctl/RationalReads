@@ -39,11 +39,16 @@ body {
 }
 
 #footer {
-  width: 1100px;
-  margin: 0 auto;
-  padding-top: 25px;
-  padding-bottom: 20px;
+  width: 100%;
+  background-color: #72ce3f;
+  height: 30px;
+}
+
+#footer .inner-footer {
   margin-left: 125px;
+  padding-top:5px;
+  height: 20px;
+
 }
 
 #footer a {
