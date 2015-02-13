@@ -75,12 +75,15 @@
     font-size:26px !important;
   }
 
+}
+
+@media (max-width: 1185px) {
   div.length {
     display: none !important;
   }
 }
 
-@media (max-width: 1221px) {
+@media (max-width: 1270px) {
   span.length {
     display: none;
   }
