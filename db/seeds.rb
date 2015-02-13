@@ -1,10 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-user1 = User.create({username: "amitpamin", password_digest: "asdfasdfasdfasdf", email: "asdfasdf", session_token: "Afasdasdf"})
-user2 = User.create({username: "firbran", password_digest: "asdfasdfasdfasdf", email: "asdfddddasdf", session_token: "Afasdsssasdf"})
-user3 = User.create({username: "McDonald McGee", password_digest: "asdfasdfasdfasdf", email: "asdfasddddf", session_token: "Afasdaaaasdf"})
-user4 = User.create({username: "SweePee", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
+user1 = User.create({username: "Amit Amin", password_digest: "asdfasdfasdfasdf", email: "asdfasdf", session_token: "Afasdasdf"})
+user2 = User.create({username: "Scott Nelson", password_digest: "asdfasdfasdfasdf", email: "asdfddddasdf", session_token: "Afasdsssasdf"})
+user3 = User.create({username: "Will Creager", password_digest: "asdfasdfasdfasdf", email: "asdfasddddf", session_token: "Afasdaaaasdf"})
+user4 = User.create({username: "Kush Patel", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
+user5 = User.create({username: "CJ McGee", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
 
 chapter1 = Chapter.create({work_id: 1, number: 95, link: "http://hpmor.com/chapter/95"});
 chapter2 = Chapter.create({work_id: 1, number: 96, link: "http://hpmor.com/chapter/96"});
@@ -63,6 +64,15 @@ rating21 = Rating.create({chapter_id: 9, user_id: 4, rating: 3})
 rating22 = Rating.create({chapter_id: 10, user_id: 4, rating: 2})
 rating23 = Rating.create({chapter_id: 11, user_id: 4, rating: 4})
 rating24 = Rating.create({chapter_id: 12, user_id: 4, rating: 5})
+
+comment1 = Comment.create({user_id: 2, work_id: 1, content: "This work was so inspiring!"})
+comment2 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:1, content: "Yeah, I know. I learned a lot about countering cognitive biases from Harry."})
+comment3 = Comment.create({user_id: 2, work_id: 1, parent_comment_id:2, content: "No, not that. It was Snape, and how he handled being made fun of for being gay."})
+comment4 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:3, content: "I'm sorry Scott. I didn't realize my jokes were hurting you."})
+comment5 = Comment.create({user_id: 3, work_id: 1, parent_comment_id:3, content: "Scott is gay! Run away!!!! No!!! Cooties!!"})
+comment6 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:5, content: "Will, homosexuality is biologically determined. There is no such thing as gay cooties."})
+comment7 = Comment.create({user_id: 5, work_id: 1, parent_comment_id:3, content: "I support your choice. Let's get dinner ;)"})
+
 
 # work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
 # work22 = Work.create({name: "Gate! Thus the JSDF Fought There", author: "", link: "http://bato.to/read/_/194394/gate-thus-the-jsdf-fought-there_v1_ch1v2_by_ak-scanlations", description: "", length: "Long"})
