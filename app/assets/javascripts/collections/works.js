@@ -77,6 +77,11 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     }
   },
 
+  parse: function (response) {
+    this.pages = response.pages;
+    return response.works;
+  },
+
    changeSort: function (sortProperty) {
        this.comparator = this.strategies[sortProperty];
    }

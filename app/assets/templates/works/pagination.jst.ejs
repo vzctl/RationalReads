@@ -1,0 +1,9 @@
+<div class="pagination-links">
+  <% for (var page = 1; page <= pages; page++) { %>
+    <% if (parseInt(currentPage) === page) { %>
+      <a class="current-page" href="javascript:void(0)"><%= page %></a>
+    <% } else { %>
+    <a href="javascript:void(0)"><%= page %></a>
+    <% } %>
+  <% } %>
+</div>

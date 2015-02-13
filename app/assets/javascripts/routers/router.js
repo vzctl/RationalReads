@@ -123,6 +123,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     var works = new RationalReads.Collections.Works();
 
     works.fetch({
+      data: { page: 1},
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,

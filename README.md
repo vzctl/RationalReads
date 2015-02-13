@@ -48,6 +48,7 @@ Please feel free to use a different markup language if you do not plan to run
 27. Move chapter controller to api namespace
 28. Update comment count when leave comment
 29. Move chapter show jbuilder to partial
+<!-- 30. Parse page count in collection instead of model (requires manually parsing collection) -->
 
 # Features to add
 0. Add length to work

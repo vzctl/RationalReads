@@ -32,7 +32,6 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
     var searchTerm = $(".search").val();
     var $searchItem = $(".search-item-box#" + this.keyIndex);
 
-    console.log(event.keyCode);
     if (searchTerm.length > 0) {
       if (event.keyCode === 38) {
         if (this.keyIndex > 0) {

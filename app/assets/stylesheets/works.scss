@@ -1,4 +1,26 @@
-// global index style (messes up home page styling)
+//pagination (styling of links at bottom)
+
+.pagination-links {
+  margin-left: 0px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.pagination-links a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.pagination-links a {
+  margin-right:8px;
+}
+
+.current-page {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+// global index style
 
 .inner-work {
   margin-left: 20px;
