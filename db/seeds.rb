@@ -4,8 +4,7 @@
 user1 = User.create({username: "Amit Amin", password_digest: "asdfasdfasdfasdf", email: "asdfasdf", session_token: "Afasdasdf"})
 user2 = User.create({username: "Scott Nelson", password_digest: "asdfasdfasdfasdf", email: "asdfddddasdf", session_token: "Afasdsssasdf"})
 user3 = User.create({username: "Will Creager", password_digest: "asdfasdfasdfasdf", email: "asdfasddddf", session_token: "Afasdaaaasdf"})
-user4 = User.create({username: "Kush Patel", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
-user5 = User.create({username: "CJ McGee", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
+user4 = User.create({username: "CJ", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
 
 chapter1 = Chapter.create({work_id: 1, number: 95, link: "http://hpmor.com/chapter/95"});
 chapter2 = Chapter.create({work_id: 1, number: 96, link: "http://hpmor.com/chapter/96"});
@@ -71,7 +70,7 @@ comment3 = Comment.create({user_id: 2, work_id: 1, parent_comment_id:2, content:
 comment4 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:3, content: "I'm sorry Scott. I didn't realize my jokes were hurting you."})
 comment5 = Comment.create({user_id: 3, work_id: 1, parent_comment_id:3, content: "Scott is gay! Run away!!!! No!!! Cooties!!"})
 comment6 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:5, content: "Will, homosexuality is biologically determined. There is no such thing as gay cooties."})
-comment7 = Comment.create({user_id: 5, work_id: 1, parent_comment_id:3, content: "I support your choice. Let's get dinner ;)"})
+comment7 = Comment.create({user_id: 4, work_id: 1, parent_comment_id:3, content: "I support your choice. Let's get dinner ;)"})
 
 
 # work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
