@@ -30,6 +30,10 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
         error: function (model, response) {
           response.responseJSON.forEach ( function (error) {
             $(".errors").append(this.errorTemplate({error: error}));
+            setTimeout( function () {
+              $(".alert").fadeOut();
+            }, 5000);
+
           }.bind(this));
 
         }.bind(this)

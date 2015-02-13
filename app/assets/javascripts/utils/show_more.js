@@ -5,7 +5,7 @@ RationalReads.Utils.ShowMore = function (content, type) {
   var initialCut = 383;
 
   if (type === "index") {
-    initialCut = 600;
+    initialCut = 500;
   } else if (type === "show") {
     initialCut = 2000;
   }

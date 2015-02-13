@@ -2,7 +2,7 @@ module Api
   class WorksController < ApplicationController
     def create
       @work = Work.new(work_params)
-
+      
       if @work.save
         render json: @work
       else
@@ -14,7 +14,7 @@ module Api
       @work = Work.find(params[:id])
       @comments = @work.comments
       @chapters = @work.chapters
-      
+
       render :show
     end
 

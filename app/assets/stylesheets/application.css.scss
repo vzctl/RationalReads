@@ -77,6 +77,10 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
+a.about-link:hover {
+  color: red;
+  text-decoration: none;
+}
 // fix navbar expanding too early problem
 
 @media (max-width: 1009px) {

@@ -13,6 +13,16 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
     "click li": "toggleTab"
   },
 
+  displayNewWorkProperly: function ($latest) {
+    var timeDiv = $('div:contains("less than a minute ago")');
+    var $date = $latest.find(".stats").first().find(".date");
+    if ($date.text().indexOf("less than a minute ago") > 0) {
+      $date.next().remove();
+    }
+
+    return $latest
+  },
+
   render: function () {
     this.$el.html(this.topTemplate());
 
@@ -82,7 +92,10 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
         });
 
         this.views.push(rightView);
-        this.$('#right').append(rightView.render().$el);
+        var $latest = $(rightView.render().$el);
+        $latest = this.displayNewWorkProperly($latest);
+
+        this.$('#right').append($latest);
         this.$('#right').append(this.moreTemplate({comparator: comparator}));
       }.bind(this)
     });
