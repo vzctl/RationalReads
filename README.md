@@ -33,7 +33,6 @@ Please feel free to use a different markup language if you do not plan to run
 8.  Fetch all books once for entire site, instead of multiple times for each collection
 9.  Not interested button (to filter recommendations)
 10. Not doing bayesian average
-12. Add about page
 13. Comment sort getting called in home page?
 14. Am pluralizing comments and ratings, even when there's only 1
 15. Avg rating isn't pushing based on size of object
@@ -70,7 +69,7 @@ Please feel free to use a different markup language if you do not plan to run
 1. Add works (put in all major works - 20 - 30)
 2. For new chapter form, add plus sign and hover change color
 3. Figure out filtering animation for homepage
-4. Get "more..." on homepage to somehow go down (probs have to move out of left and right) and into a page footer 
+4. Get "more..." on homepage to somehow go down (probs have to move out of left and right) and into a page footer
 10. PG backup gem
 11. Send out r post
 

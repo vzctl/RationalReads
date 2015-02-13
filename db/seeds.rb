@@ -6,6 +6,14 @@ user2 = User.create({username: "firbran", password_digest: "asdfasdfasdfasdf", e
 user3 = User.create({username: "McDonald McGee", password_digest: "asdfasdfasdfasdf", email: "asdfasddddf", session_token: "Afasdaaaasdf"})
 user4 = User.create({username: "SweePee", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
 
+chapter1 = Chapter.create({work_id: 1, number: 95, link: "http://hpmor.com/chapter/95"});
+chapter2 = Chapter.create({work_id: 1, number: 96, link: "http://hpmor.com/chapter/96"});
+chapter3 = Chapter.create({work_id: 1, number: 97, link: "http://hpmor.com/chapter/97"});
+chapter4 = Chapter.create({work_id: 1, number: 98, link: "http://hpmor.com/chapter/98"});
+chapter5 = Chapter.create({work_id: 1, number: 99, link: "http://hpmor.com/chapter/99"});
+chapter6 = Chapter.create({work_id: 1, number: 100, link: "http://hpmor.com/chapter/100"});
+chapter7 = Chapter.create({work_id: 1, number: 101, link: "http://hpmor.com/chapter/101"});
+chapter8 = Chapter.create({work_id: 1, number: 102, link: "http://hpmor.com/chapter/102"});
 
 work1 = Work.create({name: "Harry Potter and the Methods of Rationality", author: " Eliezer Yudkowsky", link: "http://hpmor.com/", description: "Petunia married a biochemist, and Harry grew up reading science and science fiction. Then came the Hogwarts letter, and a world of intriguing new possibilities to exploit. And new friends, like Hermione Granger, and Professor McGonagall, and Professor Quirrell...", length: "Epic"})
 work2 = Work.create({name: "The World of Null-A", author: "A. E. Van Vogt", link: "http://www.amazon.com/The-World-Null-A-Van-Vogt/dp/0765300974", description: "It is the year 2650 and Earth has become a world of non-Aristotelianism, or Null-A. This is the story of Gilbert Gosseyn, who lives in that future world where the Games Machine, made up of twenty-five thousand electronic brains, sets the course of people's lives. Gosseyn isn't even sure of his own identity, but realizes he has some remarkable abilities and sets out to use them to discover who has made him a pawn in an interstellar plot.", length: "Medium"})
@@ -31,14 +39,6 @@ work21 = Work.create({name: "Forging the Sword", author: "Myst Shadow", link: "h
 work22 = Work.create({name: "Gate! Thus the JSDF Fought There", author: "", link: "http://bato.to/read/_/194394/gate-thus-the-jsdf-fought-there_v1_ch1v2_by_ak-scanlations", description: "", length: "Long"})
 work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
 
-chapter1 = Chapter.create({work_id: 1, number: 95, link: "http://hpmor.com/chapter/95"});
-chapter2 = Chapter.create({work_id: 1, number: 96, link: "http://hpmor.com/chapter/96"});
-chapter3 = Chapter.create({work_id: 1, number: 97, link: "http://hpmor.com/chapter/97"});
-chapter4 = Chapter.create({work_id: 1, number: 98, link: "http://hpmor.com/chapter/98"});
-chapter5 = Chapter.create({work_id: 1, number: 99, link: "http://hpmor.com/chapter/99"});
-chapter6 = Chapter.create({work_id: 1, number: 100, link: "http://hpmor.com/chapter/100"});
-chapter7 = Chapter.create({work_id: 1, number: 101, link: "http://hpmor.com/chapter/101"});
-chapter8 = Chapter.create({work_id: 1, number: 102, link: "http://hpmor.com/chapter/102"});
 chapter9 = Chapter.create({work_id: 1, number: 103, link: "http://hpmor.com/chapter/103"});
 
 
