@@ -32,6 +32,7 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
     var searchTerm = $(".search").val();
     var $searchItem = $(".search-item-box#" + this.keyIndex);
 
+    console.log(event.keyCode);
     if (searchTerm.length > 0) {
       if (event.keyCode === 38) {
         if (this.keyIndex > 0) {
@@ -42,12 +43,13 @@ RationalReads.Views.SearchShow = Backbone.CompositeView.extend({
           this.keyIndex = this.keyIndex + 1;
         }
       } else if (event.keyCode === 13) {
-        this.clearSearchWithNoDelay();
         if (this.keyIndex > -1) {
-          Backbone.history.navigate("/works/" + $searchItem.attr("index"), {trigger: true})
+          var workIndex = $searchItem.attr("index");
+          Backbone.history.navigate("/works/" + workIndex, {trigger: true})
         } else {
           Backbone.history.navigate("/search/" + searchTerm, {trigger: true})
         }
+        this.clearSearchWithNoDelay();
       }
       this.clearHighlight();
       $searchItem = $(".search-item-box#" + this.keyIndex);

@@ -36,11 +36,8 @@ work18 = Work.create({name: "Hogwarts Battle School", author: "Kwan Li", link: "
 work19 = Work.create({name: "Lighting up the Dark", author: "Velorien", link: "https://www.fanfiction.net/s/9311012/1/Lighting-Up-the-Dark", description: "Naruto AU inspired by an omake in HPMOR. 12 years ago, the Fourth Hokage gave his life to seal Kyubey, the Nine-Brained Demon Fox, into the infant Naruto. Now, the time has come for a smarter, more creative Naruto to take on a world in which quick thinking and a solid grasp of strategy are worth a dozen rare techniques, and a brilliant mind can challenge even the deepest darkness.", length: "Medium"})
 work20 = Work.create({name: "Saruman of many Devices", author: "Saphroneth", link: "https://www.fanfiction.net/s/7568728/1/Saruman-of-many-Devices", description: "Alone of every power in Middle-Earth, Saruman innovates, notably gunpowder. But he lost. What if he had a little help? Actually a cross-over between LOTR and the General series by David Drake. Uses both book and movie elements.", length: "Long"})
 work21 = Work.create({name: "Forging the Sword", author: "Myst Shadow", link: "https://www.fanfiction.net/s/3557725/1/Forging-the-Sword", description: "Harry Potter fanfiction. ::Year 2 Divergence:: What does it take, to reshape a child? And if reshaped, what then is formed? Down in the Chamber, a choice is made. (Harry's Gryffindor traits were always so much scarier than other peoples'.)", length: "Long"})
-work22 = Work.create({name: "Gate! Thus the JSDF Fought There", author: "", link: "http://bato.to/read/_/194394/gate-thus-the-jsdf-fought-there_v1_ch1v2_by_ak-scanlations", description: "", length: "Long"})
-work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
 
 chapter9 = Chapter.create({work_id: 1, number: 103, link: "http://hpmor.com/chapter/103"});
-
 
 rating1 = Rating.create({work_id: 1, user_id: 1, rating: 5})
 rating2 = Rating.create({work_id: 1, user_id: 2, rating: 5})
@@ -54,7 +51,6 @@ rating9 = Rating.create({work_id: 3, user_id: 1, rating: 3})
 rating10 = Rating.create({work_id: 3, user_id: 3, rating: 4})
 rating11 = Rating.create({work_id: 3, user_id: 3, rating: 2})
 rating12 = Rating.create({work_id: 3, user_id: 4, rating: 4})
-
 rating13 = Rating.create({chapter_id: 1, user_id: 3, rating: 4})
 rating14 = Rating.create({chapter_id: 2, user_id: 3, rating: 2})
 rating15 = Rating.create({chapter_id: 3, user_id: 4, rating: 4})
@@ -67,3 +63,6 @@ rating21 = Rating.create({chapter_id: 9, user_id: 4, rating: 3})
 rating22 = Rating.create({chapter_id: 10, user_id: 4, rating: 2})
 rating23 = Rating.create({chapter_id: 11, user_id: 4, rating: 4})
 rating24 = Rating.create({chapter_id: 12, user_id: 4, rating: 5})
+
+# work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
+# work22 = Work.create({name: "Gate! Thus the JSDF Fought There", author: "", link: "http://bato.to/read/_/194394/gate-thus-the-jsdf-fought-there_v1_ch1v2_by_ak-scanlations", description: "", length: "Long"})
