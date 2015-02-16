@@ -1,20 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-user1 = User.create({username: "Amit Amin", password_digest: "asdfasdfasdfasdf", email: "asdfasdf", session_token: "Afasdasdf"})
-user2 = User.create({username: "Scott Nelson", password_digest: "asdfasdfasdfasdf", email: "asdfddddasdf", session_token: "Afasdsssasdf"})
-user3 = User.create({username: "Will Creager", password_digest: "asdfasdfasdfasdf", email: "asdfasddddf", session_token: "Afasdaaaasdf"})
-user4 = User.create({username: "CJ", password_digest: "asdfasdfasdfasdf", email: "asdfaaaasdf", session_token: "Afwwwwasdasdf"})
-
-chapter1 = Chapter.create({work_id: 1, number: 95, link: "http://hpmor.com/chapter/95"});
-chapter2 = Chapter.create({work_id: 1, number: 96, link: "http://hpmor.com/chapter/96"});
-chapter3 = Chapter.create({work_id: 1, number: 97, link: "http://hpmor.com/chapter/97"});
-chapter4 = Chapter.create({work_id: 1, number: 98, link: "http://hpmor.com/chapter/98"});
-chapter5 = Chapter.create({work_id: 1, number: 99, link: "http://hpmor.com/chapter/99"});
-chapter6 = Chapter.create({work_id: 1, number: 100, link: "http://hpmor.com/chapter/100"});
-chapter7 = Chapter.create({work_id: 1, number: 101, link: "http://hpmor.com/chapter/101"});
-chapter8 = Chapter.create({work_id: 1, number: 102, link: "http://hpmor.com/chapter/102"});
-
 work1 = Work.create({name: "Harry Potter and the Methods of Rationality", author: " Eliezer Yudkowsky", link: "http://hpmor.com/", description: "Petunia married a biochemist, and Harry grew up reading science and science fiction. Then came the Hogwarts letter, and a world of intriguing new possibilities to exploit. And new friends, like Hermione Granger, and Professor McGonagall, and Professor Quirrell...", length: "Epic"})
 work2 = Work.create({name: "The World of Null-A", author: "A. E. Van Vogt", link: "http://www.amazon.com/The-World-Null-A-Van-Vogt/dp/0765300974", description: "It is the year 2650 and Earth has become a world of non-Aristotelianism, or Null-A. This is the story of Gilbert Gosseyn, who lives in that future world where the Games Machine, made up of twenty-five thousand electronic brains, sets the course of people's lives. Gosseyn isn't even sure of his own identity, but realizes he has some remarkable abilities and sets out to use them to discover who has made him a pawn in an interstellar plot.", length: "Medium"})
 work3 = Work.create({name: "The Players Of Null-A", author: "A. E. Van Vogt", link: "http://www.amazon.com/The-Players-Null-A-Van-Vogt/dp/0898041546", description: "In this sequel to World of Null-A, Gilbert Gosseyn must learn to use both hisbrains and function in various bodies in order to save the universe from Enrothe Red.", length: "Medium"})
@@ -37,41 +23,4 @@ work19 = Work.create({name: "Lighting up the Dark", author: "Velorien", link: "h
 work20 = Work.create({name: "Saruman of many Devices", author: "Saphroneth", link: "https://www.fanfiction.net/s/7568728/1/Saruman-of-many-Devices", description: "Alone of every power in Middle-Earth, Saruman innovates, notably gunpowder. But he lost. What if he had a little help? Actually a cross-over between LOTR and the General series by David Drake. Uses both book and movie elements.", length: "Long"})
 work21 = Work.create({name: "Forging the Sword", author: "Myst Shadow", link: "https://www.fanfiction.net/s/3557725/1/Forging-the-Sword", description: "Harry Potter fanfiction. ::Year 2 Divergence:: What does it take, to reshape a child? And if reshaped, what then is formed? Down in the Chamber, a choice is made. (Harry's Gryffindor traits were always so much scarier than other peoples'.)", length: "Long"})
 
-chapter9 = Chapter.create({work_id: 1, number: 103, link: "http://hpmor.com/chapter/103"});
-
-rating1 = Rating.create({work_id: 1, user_id: 1, rating: 5})
-rating2 = Rating.create({work_id: 1, user_id: 2, rating: 5})
-rating3 = Rating.create({work_id: 1, user_id: 3, rating: 5})
-rating4 = Rating.create({work_id: 1, user_id: 4, rating: 5})
-rating5 = Rating.create({work_id: 2, user_id: 1, rating: 4})
-rating6 = Rating.create({work_id: 2, user_id: 2, rating: 2})
-rating7 = Rating.create({work_id: 2, user_id: 3, rating: 1})
-rating8 = Rating.create({work_id: 2, user_id: 4, rating: 1})
-rating9 = Rating.create({work_id: 3, user_id: 1, rating: 3})
-rating10 = Rating.create({work_id: 3, user_id: 3, rating: 4})
-rating11 = Rating.create({work_id: 3, user_id: 3, rating: 2})
-rating12 = Rating.create({work_id: 3, user_id: 4, rating: 4})
-rating13 = Rating.create({chapter_id: 1, user_id: 3, rating: 4})
-rating14 = Rating.create({chapter_id: 2, user_id: 3, rating: 2})
-rating15 = Rating.create({chapter_id: 3, user_id: 4, rating: 4})
-rating16 = Rating.create({chapter_id: 4, user_id: 4, rating: 5})
-rating17 = Rating.create({chapter_id: 5, user_id: 4, rating: 3})
-rating18 = Rating.create({chapter_id: 6, user_id: 4, rating: 5})
-rating19 = Rating.create({chapter_id: 7, user_id: 4, rating: 5})
-rating20 = Rating.create({chapter_id: 8, user_id: 4, rating: 2})
-rating21 = Rating.create({chapter_id: 9, user_id: 4, rating: 3})
-rating22 = Rating.create({chapter_id: 10, user_id: 4, rating: 2})
-rating23 = Rating.create({chapter_id: 11, user_id: 4, rating: 4})
-rating24 = Rating.create({chapter_id: 12, user_id: 4, rating: 5})
-
-comment1 = Comment.create({user_id: 2, work_id: 1, content: "This work was so inspiring!"})
-comment2 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:1, content: "Yeah, I know. I learned a lot about countering cognitive biases from Harry."})
-comment3 = Comment.create({user_id: 2, work_id: 1, parent_comment_id:2, content: "No, not that. It was Snape, and how he handled being made fun of for being gay."})
-comment4 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:3, content: "I'm sorry Scott. I didn't realize my jokes were hurting you."})
-comment5 = Comment.create({user_id: 3, work_id: 1, parent_comment_id:3, content: "Scott is gay! Run away!!!! No!!! Cooties!!"})
-comment6 = Comment.create({user_id: 1, work_id: 1, parent_comment_id:5, content: "Will, homosexuality is biologically determined. There is no such thing as gay cooties."})
-comment7 = Comment.create({user_id: 4, work_id: 1, parent_comment_id:3, content: "I support your choice. Let's get dinner ;)"})
-
-
-# work23 = Work.create({name: "", author: "", link: "", description: "", length: ""})
-# work22 = Work.create({name: "Gate! Thus the JSDF Fought There", author: "", link: "http://bato.to/read/_/194394/gate-thus-the-jsdf-fought-there_v1_ch1v2_by_ak-scanlations", description: "", length: "Long"})
+chapter1 = Chapter.create({work_id: 1, number: 104, link: "http://hpmor.com/chapter/104"});
