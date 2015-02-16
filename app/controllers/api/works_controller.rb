@@ -19,8 +19,13 @@ module Api
     end
 
     def index
-      @works = Work.page(params[:page]).per(10)
-      @pages = Work.all.length / 10
+      if (params[:page] === nil)
+        @works = Work.all
+      else
+        @works = Work.page(params[:page]).per(10)
+        @pages = Work.all.length / 10
+      end
+      
       render :index
     end
 

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150209225244) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",           null: false
-    t.integer  "work_id"
+    t.integer  "work_id",           null: false
     t.text     "content",           null: false
     t.integer  "parent_comment_id"
     t.datetime "created_at",        null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150209225244) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id",    null: false
-    t.integer  "work_id"
+    t.integer  "work_id",    null: false
     t.integer  "rating",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

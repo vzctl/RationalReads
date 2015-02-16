@@ -1,32 +1,3 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
 # Issues
 1.  In both work_index and work_read, many functions duplicated
 7.  Increment # of comments on show page when a user submits a comment
@@ -48,7 +19,8 @@ Please feel free to use a different markup language if you do not plan to run
 27. Move chapter controller to api namespace
 28. Update comment count when leave comment
 29. Move chapter show jbuilder to partial
-<!-- 30. Parse page count in collection instead of model (requires manually parsing collection) -->
+30. For index, fetching entire collection, and then fetching individual pages (double fetching)
+31. For my books, does it show all books, or just first 10?
 
 # Features to add
 0. Add length to work
