@@ -40,3 +40,6 @@
 3. Everything
 
 # ToDo
+1. Finish displaying tagging options
+2. Consider blocking tags into different categories (e.g. type vs genre vs completion status, etc...)
+3. Given slowing database times, add loading animation while waiting
