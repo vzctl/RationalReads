@@ -77,7 +77,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
   renderTopLevelComments: function () {
     var remainingChildren = [];
-    
+
     if (this.model.comments().length > 0) {
       this.$el.append(this.template());
       this.$el.append("<div id='comment'>")

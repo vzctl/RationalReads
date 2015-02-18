@@ -39,11 +39,7 @@
 3. Everything
 
 # ToDo
-1. Add works (put in all major works - 20 - 30)
-2. For new chapter form, add plus sign and hover change color
-3. Figure out filtering animation for homepage
-4. Get "more..." on homepage to somehow go down (probs have to move out of left and right) and into a page footer
-10. PG backup gem
-11. Send out r post
-
-transparent white background, on top of light bookshelf background
+1. Take care of newlines getting destroyed in work creation
+2. Take care of chapter bug (can't add/update chapter rating on main page, only on actual page)
+3. ?
+4.?

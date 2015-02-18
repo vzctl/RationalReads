@@ -1,3 +1,9 @@
+// avoids problem of converting newlines into seperate p tags
+
+#work-info p.description {
+  white-space: pre;
+ }
+
 //pagination (styling of links at bottom)
 
 .pagination-links {

@@ -2,7 +2,7 @@ module Api
   class WorksController < ApplicationController
     def create
       @work = Work.new(work_params)
-
+      byebug
       if @work.save
         render json: @work
       else
@@ -21,11 +21,12 @@ module Api
     def index
       if (params[:page] === nil)
         @works = Work.all
+        @pages = (@works.length / 10.0).ceil
       else
         @works = Work.page(params[:page]).per(10)
-        @pages = Work.all.length / 10
+        @pages = (Work.all.length / 10.0).ceil
       end
-      
+
       render :index
     end
 
