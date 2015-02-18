@@ -26,5 +26,9 @@
     <label class="work-form-item" >Description </label>
     <textarea class="work-submit work-form-item" name="description" size="110" height="50" rows="2"></textarea>
   </div>
+
+  <% tags.forEach( function (tag) { %>
+    <input type="checkbox" name="taggings" value="<% tag.get("name") %>">
+  <% }) %>
   <button class="work-submit-button work-form-item">Add Work!</button>
   </form>

@@ -59,9 +59,15 @@ RationalReads.Routers.Router = Backbone.Router.extend({
   },
 
   newWork: function () {
-    var workForm = new RationalReads.Views.WorkForm();
+    var tags = new RationalReads.Collections.Tags();
 
-    this._swapView(workForm);
+    tags.fetch({
+      success: function () {
+        var workForm = new RationalReads.Views.WorkForm({tags: tags});
+        this._swapView(workForm);
+      }.bind(this)
+    })
+
   },
 
   search: function (terms) {

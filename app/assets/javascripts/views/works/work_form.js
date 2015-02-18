@@ -2,8 +2,9 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
   template: JST['works/work_form'],
   errorTemplate: JST['error'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.$el = $("<div class='centered'>");
+    this.tags = options.tags
   },
 
   events: {
@@ -11,7 +12,7 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({tags: this.tags});
     this.$el.html(content);
     return this;
   },
