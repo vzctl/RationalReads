@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :ratings, only: [:create, :update], defaults: { format: :json }
   resources :comments, only: [:create, :update], defaults: { format: :json }
+  resources :tags, only: [:new, :create]
 
   namespace :api, defaults: { format: :json } do
     resources :works, only: [:create, :show, :index]

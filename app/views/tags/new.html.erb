@@ -1,0 +1,11 @@
+<div id="sign-up">
+  <h1>Create Tag</h1>
+
+  <form action="/tags" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Tag Name<br>
+      <input name="tag[name]" type="text"><br>
+    </label><br>
+    <input type="submit" value="Submit" class="button"><br>
+  </form>
+</div>

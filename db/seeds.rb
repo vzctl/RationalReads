@@ -24,3 +24,8 @@ work20 = Work.create({name: "Saruman of many Devices", author: "Saphroneth", lin
 work21 = Work.create({name: "Forging the Sword", author: "Myst Shadow", link: "https://www.fanfiction.net/s/3557725/1/Forging-the-Sword", description: "Harry Potter fanfiction. ::Year 2 Divergence:: What does it take, to reshape a child? And if reshaped, what then is formed? Down in the Chamber, a choice is made. (Harry's Gryffindor traits were always so much scarier than other peoples'.)", length: "Long"})
 
 chapter1 = Chapter.create({work_id: 1, number: 104, link: "http://hpmor.com/chapter/104"});
+
+tag1 = Tag.create({name: "RT"})
+tag2 = Tag.create({name: "Rationalist"})
+
+tagging1 = Tagging.create({work_id: 1, tag_id: 1})

@@ -21,9 +21,10 @@
 29. Move chapter show jbuilder to partial
 30. For index, fetching entire collection, and then fetching individual pages (double fetching)
 31. For my books, does it show all books, or just first 10?
+32. Instead of using pre-wrap, convert newlines to p elements, probably using a regex
+33. Pagination implemented on all pages?
 
 # Features to add
-0. Add length to work
 1. Tags
 2. Chapter Functionality
 3. Like comments
@@ -39,7 +40,3 @@
 3. Everything
 
 # ToDo
-1. Take care of newlines getting destroyed in work creation
-2. Take care of chapter bug (can't add/update chapter rating on main page, only on actual page)
-3. ?
-4.?

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209225244) do
+ActiveRecord::Schema.define(version: 20150218045031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150209225244) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",           null: false
-    t.integer  "work_id",           null: false
+    t.integer  "work_id"
     t.text     "content",           null: false
     t.integer  "parent_comment_id"
     t.datetime "created_at",        null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150209225244) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id",    null: false
-    t.integer  "work_id",    null: false
+    t.integer  "work_id"
     t.integer  "rating",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,6 +52,24 @@ ActiveRecord::Schema.define(version: 20150209225244) do
 
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
   add_index "ratings", ["work_id"], name: "index_ratings_on_work_id", using: :btree
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "work_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["work_id"], name: "index_taggings_on_work_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
