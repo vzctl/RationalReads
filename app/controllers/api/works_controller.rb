@@ -2,7 +2,7 @@ module Api
   class WorksController < ApplicationController
     def create
       @work = Work.new(work_params)
-      byebug
+      
       if @work.save
         render json: @work
       else

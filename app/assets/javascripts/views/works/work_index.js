@@ -59,7 +59,6 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   },
 
   renderPagination: function () {
-    debugger
     var content = this.paginationTemplate({pages: this.collection.pages, currentPage: this.currentPage});
     this.$el.append(content);
   },
