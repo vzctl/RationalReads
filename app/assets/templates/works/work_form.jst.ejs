@@ -1,5 +1,6 @@
-  <h1 id="new-work">Add Work</h1>
-  <form class="work-form-item work-form">
+<h1 id="new-work">Add Work</h1>
+
+<form class="work-form-item work-form">
   <label class="work-form-item">Title </label>
   <input class="work-form-item title" type="text" name="name"></input>
 
@@ -27,8 +28,37 @@
     <textarea class="work-submit work-form-item" name="description" size="110" height="50" rows="2"></textarea>
   </div>
 
-  <% tags.forEach( function (tag) { %>
-    <input type="checkbox" name="taggings" value="<% tag.get("name") %>">
-  <% }) %>
+  <div class="tags">
+    <label class="work-form-item">Tags</label>
+    <div class="tag-box">
+
+    <% var row = 1 %>
+    <% var rows = (tags.length / 7) %>
+    <% tags.forEach( function (tag) { %>
+      <% if (row === 1) { %>
+        <div class="tag-column">
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+          <% row++ %>
+      <% } else if (row < rows){ %>
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+        <% row++ %>
+      <% } else { %>
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+        </div>
+        <% row = 1 %>
+      <% } %>
+    <% }) %>
+    </div>
+  </div>
+
   <button class="work-submit-button work-form-item">Add Work!</button>
-  </form>
+</form>

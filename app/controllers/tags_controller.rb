@@ -6,7 +6,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
 
     if @tag.save
-      redirect_to root_url
+      render :new
     else
       flash.now[:errors] = @tag.errors.full_messages
       render :new

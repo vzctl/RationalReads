@@ -19,3 +19,5 @@ json.chapters @chapters do |chapter|
   json.number chapter.number
   json.avg_rating chapter.average_rating
 end
+
+json.tags @work.tag_names

@@ -12,10 +12,21 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    // var content = this.template({tags: this.tags});
-    var content = this.template({tags: []});
+    var content = this.template({tags: this.tags});
+    debugger
     this.$el.html(content);
     return this;
+  },
+
+  getTags: function () {
+    $checkedTags = $( "input:checkbox:checked" );
+    var tags = [];
+
+    $checkedTags.each( function(index, tag) {
+      tags.push($(tag).val());
+    });
+
+    return tags;
   },
 
   submitWork: function (event) {
@@ -24,6 +35,9 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
 
     var newWork = new RationalReads.Models.Work();
     newWork.set(formData);
+    var tags = this.getTags();
+    newWork.set({taggings: tags});
+
     newWork.save({},
       {
         success: function (model) {

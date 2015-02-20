@@ -7,7 +7,7 @@ class Work < ActiveRecord::Base
   has_many :chapters
   has_many :taggings
   has_many :tags, through: :taggings
-  
+
   def average_rating
     ratings = self.ratings
 
@@ -26,4 +26,15 @@ class Work < ActiveRecord::Base
    rounded_rating
  end
 
+ def tag_names
+   tag_objects = self.tags
+   tags = []
+
+   tag_objects.each do |tag|
+     tags << tag.name
+   end
+
+   tags
+ end
+ 
 end

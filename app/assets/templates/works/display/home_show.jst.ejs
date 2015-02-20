@@ -24,6 +24,12 @@
       </div>
     </div>
 
+    <div class="tag-display-box">
+      <% work.get("tags").forEach( function (tag) { %>
+        <div class="single-tag"><p><%= tag %></p></div>
+      <% }) %>
+    </div>
+
     <p class="description"><%= work.escape("description") %></p>
     <p class="link-text">Read it <a class="link-link" href="<%= work.escape("link") %>">here</a>.</p>
   </div>

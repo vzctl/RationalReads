@@ -1,3 +1,15 @@
+// tag display
+
+.single-tag {
+  float: left;
+}
+
+.single-tag p {
+  color: #FD6E6E;
+  font-size: 12px;
+  margin-right: 30px;
+}
+
 // avoids problem of converting newlines into seperate p tags
 
 #work-info p.description {
@@ -117,6 +129,10 @@ div.centered {
 
 // styling works show
 
+#work-info h1 {
+  color: #1ABDD6
+}
+
 #work-info div.avg-rating{
   padding-right:50px;
   margin-right: 10px;
@@ -210,16 +226,11 @@ div.centered {
 }
 
 // For show_more plugin
-//
+
 a.more:hover {
   cursor: pointer;
   // text-decoration: none;
 }
-
-// a.more {
-//   color: blue;
-//   margin-left:5px;
-// }
 
 .hidden-display {
   display:none;

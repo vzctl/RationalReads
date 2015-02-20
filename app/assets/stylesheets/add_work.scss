@@ -1,4 +1,35 @@
-// New Work Page
+// styling tags section
+
+div.tags {
+  padding-top:15px;
+}
+
+div.tag-box {
+  border-top: 2px solid #72ce3f;
+  border-bottom: 2px solid #72ce3f;
+  font: normal 16px/1.5em 'PT Serif', arial, sans-serif;
+  overflow: hidden;
+  width: 785px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tag-item {
+  font-weight: normal;
+  position: relative;
+  bottom: 2px;
+  height: 20px;
+}
+
+div.tag-column {
+  margin-right: 30px;
+  float: left;
+}
+
+.tag-item {
+  clear: both;
+}
+// Other
 
 .new-work {
 display:block;

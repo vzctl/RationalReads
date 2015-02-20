@@ -2,8 +2,10 @@ module Api
   class WorksController < ApplicationController
     def create
       @work = Work.new(work_params)
-      
+      @tags = params["taggings"]
+
       if @work.save
+        Tagging.save_tags(@tags, @work.id)
         render json: @work
       else
         render json: @work.errors.full_messages, status: 406

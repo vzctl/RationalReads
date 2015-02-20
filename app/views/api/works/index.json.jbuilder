@@ -13,4 +13,6 @@ json.works @works do |work|
   end
 
   json.num_comments work.comments.length
+
+  json.tags work.tag_names
 end
