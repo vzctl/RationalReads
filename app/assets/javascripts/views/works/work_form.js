@@ -13,7 +13,6 @@ RationalReads.Views.WorkForm = Backbone.CompositeView.extend({
 
   render: function () {
     var content = this.template({tags: this.tags});
-    debugger
     this.$el.html(content);
     return this;
   },

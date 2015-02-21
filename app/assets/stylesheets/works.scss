@@ -1,13 +1,55 @@
+// filter / ordering
+
+.filter-link {
+  position: relative;
+  display: block;
+  margin-top: 36px;
+  margin-left: 20px;
+}
+
+.filter-link:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.head *{
+  float: left;
+}
+
+.filter-form {
+  clear: both;
+  display: none;
+}
+
+.filter-box {
+  border: 2px solid #72ce3f;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  border-left: none;
+  border-right: none;
+}
+
+.tags div.filter-item {
+  border-bottom: none;
+  border: none;
+  padding-top: 0px;
+}
+
+.filter-box div.filter-box-item {
+  padding-top: 0px;
+}
 // tag display
 
 .single-tag {
   float: left;
+  height: 16px;
 }
 
 .single-tag p {
   color: #FD6E6E;
-  font-size: 12px;
+  font-size: 10px;
   margin-right: 30px;
+  font-weight: bold;
 }
 
 // avoids problem of converting newlines into seperate p tags
@@ -19,6 +61,7 @@
 .index p.description {
    white-space: pre-wrap;
   }
+
 //pagination (styling of links at bottom)
 
 .pagination-links {
@@ -42,6 +85,15 @@
 }
 
 // global index style
+
+.index {
+  clear: both;
+}
+
+.link-text {
+  clear: both;
+  padding-top:4px;
+}
 
 .inner-work {
   margin-left: 20px;

@@ -40,8 +40,9 @@
 3. Everything
 
 # ToDo
-1. Finish displaying tagging options
-2. Consider blocking tags into different categories (e.g. type vs genre vs completion status, etc...)
 3. Given slowing database times, add loading animation while waiting
 4. Fix duplicated search items bug
 5. Move sorting from client side to server side
+6. Add back pagination
+7. Add filtering
+8. Add mod powers / edit work abilities

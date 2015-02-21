@@ -4,9 +4,11 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   searchTemplate: JST['works/headers/search_header'],
   template: JST['works/headers/insert_location'],
   paginationTemplate: JST['works/pagination'],
+  filterFormTemplate: JST['works/filter'],
 
   events: {
-    "click .pagination-links a": "detectDesiredPage"
+    "click .pagination-links a": "detectDesiredPage",
+    "click .filter-link": "renderFilterForm"
   },
 
   initialize: function (options) {
@@ -29,6 +31,27 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
 
     this.$el.append(this.template());
 
+    this.renderWorks();
+
+    return this;
+  },
+
+  renderFilterForm: function () {
+    var tags = new RationalReads.Collections.Tags();
+
+    tags.fetch({
+      success: function (model, response) {
+        var form = this.filterFormTemplate({tags: tags});
+        var $formDiv = $(".filter-form")
+        $formDiv.html(form);
+        $formDiv.slideDown({
+          duration: "slow"
+        });
+      }.bind(this)
+    })
+  },
+
+  renderWorks: function () {
     this.collection.sort();
 
     this.collection.each( function (work, index) {
@@ -43,8 +66,6 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     if (this.type === "index") {
       // this.renderPagination();
     }
-
-    return this;
   },
 
   detectDesiredPage: function (event) {

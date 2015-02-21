@@ -1,0 +1,52 @@
+<div class="filter-box">
+  <div class="tags filter-box-item">
+    <label class="work-form-item">Order By</label>
+    <div class="tag-box filter-item">
+      <div class="tag-item">
+        <input class="tag" type="radio" name="order" value="Rating">
+        <label class="tag-item"> Rating </label>
+
+        <input class="tag" type="radio" name="order" value="Date">
+        <label class="tag-item"> Date Added </label>
+
+        <input class="tag" type="radio" name="order" value="Length">
+        <label class="tag-item"> Length </label>
+
+        <input class="tag" type="radio" name="order" value="Comments">
+        <label class="tag-item"> # of Comments </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="tags filter-box-item">
+    <label class="work-form-item">View Only</label>
+    <div class="tag-box filter-item">
+
+    <% var row = 1 %>
+    <% var rows = (tags.length / 7) %>
+    <% tags.forEach( function (tag) { %>
+      <% if (row === 1) { %>
+        <div class="tag-column">
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+          <% row++ %>
+      <% } else if (row < rows){ %>
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+        <% row++ %>
+      <% } else { %>
+          <div class="tag-item">
+            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <label class="tag-item"> <%= tag.get("name") %> </label>
+          </div>
+        </div>
+        <% row = 1 %>
+      <% } %>
+    <% }) %>
+    </div>
+  </div>
+</div>
