@@ -46,3 +46,6 @@
 6. Add back pagination
 7. Add filtering
 8. Add mod powers / edit work abilities
+
+//
+Destroy sort functionality on client-side, send appropriate data to server

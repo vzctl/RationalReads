@@ -10,9 +10,8 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     this.type = options.type;
     RationalReads.Utils.MoveTop();
     this.$el = $("<div class='centered'>");
-    this.listenTo(this.collection, "sync", this.render);
     this.currentPage = "1";
-    this.currentOrder = null;
+    this.currentOrder = "";
     this.currentFilters = [];
   },
 
@@ -50,12 +49,16 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     this.removeSubviews();
 
     newCollection.fetch({
-      data: {filters: this.currentFilters, order: this.currentOrder},
+      data: this.pageData(),
       success: function (collection, response) {
         this.collection = newCollection;
         this.renderWorks();
       }.bind(this)
     })
+  },
+
+  pageData: function () {
+    return {filters: this.currentFilters, order: this.currentOrder, page: this.currentPage}
   },
 
   render: function () {
@@ -104,9 +107,9 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     this.renderTitle();
 
     if (this.collection.length === 0) {
-      $(".index").append("<h3>No works found. Select fewer tags.</h3>");
+      $(".index").html("<h3 id='error'>No works found. Select fewer tags.</h3>");
     } else {
-      $(".index").empty();
+      $("#error").remove();
       this.collection.each( function (work, index) {
         var subItem = new RationalReads.Views.WorkItem({
           model: work,
@@ -118,7 +121,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     }
 
     if (this.type === "index") {
-      // this.renderPagination();
+      this.renderPagination();
     }
   },
 
@@ -127,13 +130,18 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     if (this.currentPage !== page) {
       RationalReads.Utils.MoveTop();
       this.currentPage = page;
-      this.collection.fetch({
-        data: {page: page}
+      this.collection.fetch(
+        {
+        data: this.pageData(),
+        success: function () {
+          this.renderWorks();
+        }.bind(this)
       })
     }
   },
 
   renderPagination: function () {
+    $(".pagination-links").remove();
     var content = this.paginationTemplate({pages: this.collection.pages, currentPage: this.currentPage});
     this.$el.append(content);
   },

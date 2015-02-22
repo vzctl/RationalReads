@@ -12,7 +12,7 @@ RationalReads.Views.WorksRead = Backbone.CompositeView.extend({
     this.$el.html(this.template());
 
     if (this.collection.length > 0) {
-      this.collection.sort();
+      this.collection.orderBy("average_rating");
       this.collection.each( function (work) {
         var subItem = new RationalReads.Views.WorkItem({
           model: work,

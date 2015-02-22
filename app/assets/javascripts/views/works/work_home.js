@@ -5,7 +5,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.views = [];
-    this.currentTab = "rating";
+    this.currentTab = "average_rating";
     this.$el = $("<div class='home-page row'>");
   },
 
@@ -77,7 +77,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
   renderRight: function () {
     if (true) {
       var firstTenWorks = this.getLatest(this.collection);
-      var comparator = "date"
+      var comparator = "created_at"
     };
 
     var chapters = new RationalReads.Collections.Chapters();

@@ -2,10 +2,6 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
   url: 'api/works',
   model: RationalReads.Models.Work,
 
-  comparator: function (work) {
-    return -work.get("average_rating");
-  },
-
   read: function () {
     filtered = this.filter( function(work) {
       return !(work.get("user_rating") === "none");
@@ -42,48 +38,48 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     }
   },
 
-  // orderBy: function (comparator) {
-  //   this.changeSort(comparator);
-  //   this.sort();
-  // },
-  //
-  // strategies: {
-  //   rating: function (work) { return -work.get("average_rating"); },
-  //   date: function (work) {
-  //     var date = new Date(work.get("created_at"))
-  //     return -date.getTime();
-  //   },
-  //   name: function (work) {
-  //     return work.get("name");
-  //   },
-  //   comments: function (work) {
-  //     return -work.get("num_comments");
-  //   },
-  //   length: function (work) {
-  //
-  //     var lengthInNum = function lengthInNum (length) {
-  //       if (length === "Short") {
-  //         return 3
-  //       } else if (length === "Medium") {
-  //         return 2
-  //       } else if (length === "Long") {
-  //         return 1
-  //       } else if (length === "Epic") {
-  //         return 0
-  //       }
-  //     }
-  //     var length = work.get("length");
-  //     return lengthInNum(length);
-  //   }
-  // },
+  orderBy: function (comparator) {
+    this.changeSort(comparator);
+    this.sort();
+  },
+
+  strategies: {
+    average_rating: function (work) { return -work.get("average_rating"); },
+    date: function (work) {
+      var date = new Date(work.get("created_at"))
+      return -date.getTime();
+    },
+    name: function (work) {
+      return work.get("name");
+    },
+    comments: function (work) {
+      return -work.get("num_comments");
+    },
+    length: function (work) {
+
+      var lengthInNum = function lengthInNum (length) {
+        if (length === "Short") {
+          return 3
+        } else if (length === "Medium") {
+          return 2
+        } else if (length === "Long") {
+          return 1
+        } else if (length === "Epic") {
+          return 0
+        }
+      }
+      var length = work.get("length");
+      return lengthInNum(length);
+    }
+  },
 
   parse: function (response) {
     this.pages = response.pages;
     return response.works;
   },
 
-  //  changeSort: function (sortProperty) {
-  //      this.comparator = this.strategies[sortProperty];
-  //  }
+   changeSort: function (sortProperty) {
+       this.comparator = this.strategies[sortProperty];
+   }
 
 });

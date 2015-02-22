@@ -28,13 +28,39 @@ class Work < ActiveRecord::Base
     filtered_works
   end
 
+  def self.page(page, works)
+    works[page.to_i*10-10..page.to_i*10]
+  end
+
   def self.order (order, works)
-    if order == "comments"
+    case order
+    when "comments"
       works.sort { |a, b| b.comments.length <=> a.comments.length }
-    elsif order == nil
+    when "length"
+      works.sort do |a, b|
+        b.length_sort_val <=> a.length_sort_val
+      end
+    when "name"
+      works.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    when ""
+      works
+    when nil
       works
     else
       works.sort { |a, b| b.send(order) <=> a.send(order) }
+    end
+  end
+
+  def length_sort_val
+    case self.length
+    when "Epic"
+      3
+    when "Long"
+      2
+    when "Medium"
+      1
+    when "Short"
+      0
     end
   end
 

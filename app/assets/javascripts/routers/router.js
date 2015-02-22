@@ -44,10 +44,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     var works = new RationalReads.Collections.Works();
 
     works.fetch({
+      data: {page: 1, order: comparator},
       success: function () {
-        works.changeSort(comparator);
-        works.sort();
-
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
             type: "index"
@@ -108,12 +106,13 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     works.fetch({
       success: function () {
         works = works.recommendedWorks();
+
         if (works === "none") {
           var $main = $("#main");
           $main.html($("<div class='centered'>"));
           $(".centered").append("<h3>Rate works to get recommendations.</h3>");
         } else {
-          works.sort();
+          works.orderBy("average_rating");
           var indexView = new RationalReads.Views.WorksIndex({
               collection: works,
               type: "recommendations"
@@ -129,7 +128,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     var works = new RationalReads.Collections.Works();
 
     works.fetch({
-      // data: { page: 1},
+      data: { page: 1},
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
