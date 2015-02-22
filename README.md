@@ -23,6 +23,7 @@
 31. For my books, does it show all books, or just first 10?
 32. Instead of using pre-wrap, convert newlines to p elements, probably using a regex
 33. Pagination implemented on all pages?
+34. Add alt text to search results (from searchForm, not filterForm)
 
 # Features to add
 1. Tags

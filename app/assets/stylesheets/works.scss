@@ -49,11 +49,15 @@
   height: 16px;
 }
 
-.single-tag p {
+div.single-tag p {
   color: #FD6E6E;
   font-size: 10px;
   margin-right: 30px;
   font-weight: bold;
+}
+
+#left div.single-tag p {
+  color: #FD6E6E;
 }
 
 // avoids problem of converting newlines into seperate p tags
