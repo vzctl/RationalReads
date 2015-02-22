@@ -1,26 +1,26 @@
 <div class="filter-box">
   <div class="tags filter-box-item">
     <label class="work-form-item">Order By</label>
-    <div class="tag-box filter-item">
+    <div class="tag-box filter-item" id="orderings">
       <div class="tag-item">
-        <input class="tag" type="radio" name="order" value="Rating">
-        <label class="tag-item"> Rating </label>
+        <input class="tag" type="radio" name="order" value="average_rating">
+        <label class="tag-item order-item"> Rating </label>
 
-        <input class="tag" type="radio" name="order" value="Date">
-        <label class="tag-item"> Date Added </label>
+        <input class="tag" type="radio" name="order" value="created_at">
+        <label class="tag-item order-item"> Date Added </label>
 
-        <input class="tag" type="radio" name="order" value="Length">
-        <label class="tag-item"> Length </label>
+        <input class="tag" type="radio" name="order" value="length">
+        <label class="tag-item order-item"> Length </label>
 
-        <input class="tag" type="radio" name="order" value="Comments">
-        <label class="tag-item"> # of Comments </label>
+        <input class="tag" type="radio" name="order" value="comments">
+        <label class="tag-item order-item"> # of Comments </label>
       </div>
     </div>
   </div>
 
   <div class="tags filter-box-item">
     <label class="work-form-item">View Only</label>
-    <div class="tag-box filter-item">
+    <div class="tag-box filter-item" id="filters">
 
     <% var row = 1 %>
     <% var rows = (tags.length / 7) %>

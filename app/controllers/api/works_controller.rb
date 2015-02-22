@@ -21,14 +21,18 @@ module Api
     end
 
     def index
-      if (params[:page] === nil)
-        @works = Work.all
-        @pages = (@works.length / 10.0).ceil
+      filtered_works = Work.filtered(params[:filters])
+      sorted_works = Work.order("comments", filtered_works)
+      # sorted_works = Work.order(params[:order], filtered_works)
+
+      if params[:page] === nil
+        @works = sorted_works
+        @pages = (filtered_works.length / 10.0).ceil
       else
         @works = Work.page(params[:page]).per(10)
         @pages = (Work.all.length / 10.0).ceil
       end
-
+    
       render :index
     end
 

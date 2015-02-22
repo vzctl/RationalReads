@@ -8,6 +8,36 @@ class Work < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  def self.filtered (filters)
+    works = Work.all
+    filtered_works = works
+
+    unless filters === nil
+      filters.each do |filter|
+        valid_works = []
+        filtered_works.each do |work|
+          if work.tag_names.include?(filter)
+            valid_works.push(work)
+          end
+        end
+
+        filtered_works = valid_works
+      end
+    end
+
+    filtered_works
+  end
+
+  def self.order (order, works)
+    if order == "comments"
+      works.sort { |a, b| b.comments.length <=> a.comments.length }
+    elsif order == nil
+      works
+    else
+      works.sort { |a, b| b.send(order) <=> a.send(order) }
+    end
+  end
+
   def average_rating
     ratings = self.ratings
 
@@ -27,14 +57,7 @@ class Work < ActiveRecord::Base
  end
 
  def tag_names
-   tag_objects = self.tags
-   tags = []
-
-   tag_objects.each do |tag|
-     tags << tag.name
-   end
-
-   tags
+   self.tags.map{ |tag| tag.name }
  end
- 
+
 end
