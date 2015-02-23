@@ -11,4 +11,11 @@ class Tagging < ActiveRecord::Base
     end
   end
 
+  def self.update_tags (tags, work_id)
+    @work = Work.find(work_id)
+    @work.taggings.map { |tag| tag.destroy }
+
+    Tagging.save_tags(tags, work_id)
+  end
+
 end

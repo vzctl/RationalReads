@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :tags, only: [:new, :create, :index]
 
   namespace :api, defaults: { format: :json } do
-    resources :works, only: [:create, :show, :index]
+    resources :works, only: [:create, :show, :index, :update]
     resources :chapters, only: [:create, :show, :index]
   end
 end

@@ -1,31 +1,57 @@
-<h1 id="new-work">Add Work</h1>
+<% if (edit === true) { %>
+  <h1 id="new-work">Edit Work</h1>
+<% } else { %>
+  <h1 id="new-work">Add Work</h1>
+<% } %>
+
 
 <form class="work-form-item work-form">
   <label class="work-form-item">Title </label>
-  <input class="work-form-item title" type="text" name="name"></input>
+  <input class="work-form-item title" type="text" name="name" value="<%= work.get("name") %>"></input>
 
   <div class="author-input input-box">
     <label class="work-form-item author-label" >Author </label>
-    <input class="work-form-item author" type="text" name="author"></input>
+    <input class="work-form-item author" type="text" name="author" value="<%= work.get("author") %>"></input>
   </div>
   <div class="length-input input-box">
     <label class="work-form-item">Length </label>
     <select class="work-form-item length" name="length">
-      <option value="Short">Short (< 25k words)</option>
-      <option value="Medium">Medium (< 100k)</option>
-      <option value="Long">Long (< 500k)</option>
-      <option value="Epic">Epic</option>
+
+      <% if (work.get("length") === "Short") { %>
+        <option value="Short" selected="selected">Short (< 25k words)</option>
+      <% } else { %>
+        <option value="Short">Short (< 25k words)</option>
+      <% } %>
+
+      <% if (work.get("length") === "Medium") { %>
+        <option value="Medium" selected="selected">Medium (< 100k)</option>
+      <% } else { %>
+        <option value="Medium">Medium (< 100k)</option>
+      <% } %>
+
+      <% if (work.get("length") === "Long") { %>
+        <option value="Long" selected="selected">Long (< 500k)</option>
+      <% } else { %>
+        <option value="Long">Long (< 500k)</option>
+      <% } %>
+
+      <% if (work.get("length") === "Epic") { %>
+        <option value="Epic" selected="selected">Epic</option>
+      <% } else { %>
+        <option value="Epic">Epic</option>
+      <% } %>
+
     </select>
   </div>
 
   <div class="link-input input-box">
     <label class="work-form-item" >Link </label>
-    <input class="work-form-item link" type="text" name="link"></input>
+    <input class="work-form-item link" type="text" name="link" value="<%= work.get("link") %>"></input>
   </div>
 
   <div class="description-input input-box">
     <label class="work-form-item" >Description </label>
-    <textarea class="work-submit work-form-item" name="description" size="110" height="50" rows="2"></textarea>
+    <textarea class="work-submit work-form-item" name="description" size="110" height="50" rows="2"><%= work.get("description") %></textarea>
   </div>
 
   <div class="tags">
@@ -35,22 +61,27 @@
     <% var row = 1 %>
     <% var rows = (tags.length / 5) %>
     <% tags.forEach( function (tag) { %>
+      <% if ( $.inArray(tag.get("name"), work.get("tags")) != -1 ) { %>
+        <% var selected = "checked" %>
+        <% } else { %>
+          <% var selected = "" %>
+        <% } %>
       <% if (row === 1) { %>
         <div class="tag-column">
           <div class="tag-item">
-            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <input class="tag" type="checkbox" name="taggings" <%= selected %> value="<%= tag.get("name") %>">
             <label class="tag-item"> <%= tag.get("name") %> </label>
           </div>
           <% row++ %>
       <% } else if (row < rows){ %>
           <div class="tag-item">
-            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <input class="tag" type="checkbox" name="taggings" <%= selected %> value="<%= tag.get("name") %>">
             <label class="tag-item"> <%= tag.get("name") %> </label>
           </div>
         <% row++ %>
       <% } else { %>
           <div class="tag-item">
-            <input class="tag" type="checkbox" name="taggings" value="<%= tag.get("name") %>">
+            <input class="tag" type="checkbox" name="taggings" <%= selected %> value="<%= tag.get("name") %>">
             <label class="tag-item"> <%= tag.get("name") %> </label>
           </div>
         </div>
@@ -60,5 +91,10 @@
     </div>
   </div>
 
-  <button class="work-submit-button work-form-item">Add Work!</button>
+  <% if (edit === true) { %>
+    <button class="work-submit-button work-form-item">Edit Work!</button>
+  <% } else { %>
+    <button class="work-submit-button work-form-item">Add Work!</button>
+  <% } %>
+
 </form>

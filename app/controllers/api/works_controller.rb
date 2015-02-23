@@ -12,6 +12,19 @@ module Api
       end
     end
 
+    def update
+      @work = Work.find(params[:id])
+      @tags = params["taggings"]
+      @work.update(work_params)
+
+      if @work.save
+        Tagging.update_tags(@tags, @work.id)
+        render json: @work
+      else
+        render json: @work.errors.full_messages, status: 406
+      end
+    end
+
     def show
       @work = Work.find(params[:id])
       @comments = @work.comments

@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   def sign_in!(user)
     @current_user = user
     session[:token] = user.reset_token!
+    if user.moderator == 1
+      cookies[:mod] = 1
+    end
   end
 
   def sign_out!

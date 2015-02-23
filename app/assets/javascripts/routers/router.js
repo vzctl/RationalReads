@@ -11,10 +11,30 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'recommendations': 'recommendations',
     'works/new' : 'newWork',
     'works/:id': 'show',
+    'works/:id/edit': 'editWork',
     'search/:terms': 'search',
     'chapters/:id': 'showChapter',
     'about': 'about',
     'contact': 'contact'
+  },
+
+  editWork: function (id) {
+    var work = new RationalReads.Models.Work({id: id});
+    var tags = new RationalReads.Collections.Tags();
+
+    tags.fetch({
+      success: function () {
+        work.fetch({
+          success: function () {
+            var workForm = new RationalReads.Views.WorkForm({tags: tags, model: work, edit: true});
+            this._swapView(workForm);
+
+          }.bind(this)
+        })
+      }.bind(this)
+    })
+
+
   },
 
   showChapter: function (id) {
@@ -58,10 +78,11 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   newWork: function () {
     var tags = new RationalReads.Collections.Tags();
+    var work = new RationalReads.Models.Work();
 
     tags.fetch({
       success: function () {
-        var workForm = new RationalReads.Views.WorkForm({tags: tags});
+        var workForm = new RationalReads.Views.WorkForm({tags: tags, edit: false, model: work});
         this._swapView(workForm);
       }.bind(this)
     })

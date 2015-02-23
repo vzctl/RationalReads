@@ -1,4 +1,13 @@
-<h1><%= work.escape("name") %></h1>
+<div class="head">
+  <h1><%= work.escape("name") %></h1>
+  <% if (mod === "1") { %>
+    <a class="filter-link" href="/#/works/<%= work.id %>/edit">Edit</a>
+  <% } %>
+</div>
+
+<div style="clear:both">
+</div>
+
 <p class="author"> by <%= work.escape("author") %> </p>
 
       <div class="stats">

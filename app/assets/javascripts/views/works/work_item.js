@@ -127,7 +127,9 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
     } else if (this.type === "latest"){
       var content = this.latestTemplate({work: this.model});
     } else if (this.type === "show") {
-      var content = this.showTemplate({work: this.model});
+      var cookie = document.cookie;
+      var mod = cookie[cookie.indexOf("mod")+4]
+      var content = this.showTemplate({work: this.model, mod: mod});
     }
 
     content = RationalReads.Utils.ShowMore.call(this, content, this.type);
