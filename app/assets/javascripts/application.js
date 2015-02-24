@@ -27,3 +27,4 @@
 //= require jquery.serializejson.min.js
 //= require jquery.scrollTo.min
 //= require jquery.tablesorter.min
+//= require spin.min.js

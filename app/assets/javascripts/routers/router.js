@@ -39,6 +39,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   showChapter: function (id) {
     var chapter = new RationalReads.Models.Chapter({id: id});
+    this._generateLoadingScreen();
+
     chapter.fetch({
       success: function () {
         var showView = new RationalReads.Views.ChaptersShow({
@@ -62,6 +64,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   allSorted: function (comparator) {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       data: {page: 1, order: comparator},
@@ -91,6 +94,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   search: function (terms) {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       success: function () {
@@ -109,6 +113,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   home: function () {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       success: function () {
@@ -123,6 +128,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   recommendations: function () {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       success: function () {
@@ -147,6 +153,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   all: function () {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       data: { page: 1},
@@ -163,6 +170,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   read: function () {
     var works = new RationalReads.Collections.Works();
+    this._generateLoadingScreen();
 
     works.fetch({
       success: function () {
@@ -178,6 +186,7 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
   show: function (id) {
     var work = new RationalReads.Models.Work({id: id});
+    this._generateLoadingScreen();
 
     work.fetch({
       success: function () {
@@ -195,5 +204,10 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     this.currentView && this.currentView.remove();
     this.currentView = view;
     this.$rootEl.html(view.render().$el);
+  },
+
+  _generateLoadingScreen: function () {
+    var loading = new RationalReads.Views.Loading();
+    this._swapView(loading);
   }
 });
