@@ -41,12 +41,9 @@
 3. Everything
 
 # ToDo
-3. Given slowing database times, add loading animation while waiting
-4. Fix duplicated search items bug
-5. Move sorting from client side to server side
-6. Add back pagination
 7. Add filtering
 8. Add mod powers / edit work abilities
-
-//
-Destroy sort functionality on client-side, send appropriate data to server
+3. Given slowing database times, add loading animation while waiting
+9. Add group id to tags, perhaps even add a group table (e.g. completion status, genre, medium, etc...)
+10. Add delete button next to edit button
+11. Password reset
