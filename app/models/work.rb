@@ -8,6 +8,10 @@ class Work < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  def self.rated_works
+    Rating.all.map { |rating| rating.work_id}.uniq.length
+  end
+
   def self.filtered (filters)
     works = Work.all
     filtered_works = works
@@ -82,10 +86,12 @@ class Work < ActiveRecord::Base
     rounded_rating
  end
 
- def bayesian_rating (average_votes, average_average, ratings)
+ def bayesian_rating (average_votes, average_average_rating)
    number_of_ratings = self.ratings.count
-   top = average_average * average_votes + self.average_rating * number_of_ratings
+   return 0 if number_of_ratings == 0
+   top = average_average_rating * average_votes + self.average_rating * number_of_ratings
    bottom = number_of_ratings + average_votes
+   (top / bottom * 100).round / 100.0
  end
 
  def tag_names

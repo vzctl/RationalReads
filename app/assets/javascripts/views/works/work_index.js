@@ -47,7 +47,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   reRenderWorks: function () {
     var newCollection = new RationalReads.Collections.Works();
     this.removeSubviews();
-    var loading = new RationalReads.Views.Loading();
+    var loading = new RationalReads.Views.Loading({top: '37%'});
     this.addSubview('.index', loading);
 
     newCollection.fetch({

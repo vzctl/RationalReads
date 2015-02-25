@@ -1,7 +1,13 @@
 RationalReads.Views.Loading = Backbone.CompositeView.extend({
   template: JST['loading'],
 
-  initialize: function () {
+  initialize: function (options) {
+    if (typeof options == "undefined") {
+      var top = '10%';
+    } else {
+      var top = options.top;
+    }
+
     this.spinnerOptions = {
       lines: 17, // The number of lines to draw
       length: 13, // The length of each line
@@ -17,7 +23,7 @@ RationalReads.Views.Loading = Backbone.CompositeView.extend({
       hwaccel: false, // Whether to use hardware acceleration
       className: 'spinner', // The CSS class to assign to the spinner
       zIndex: 2e9, // The z-index (defaults to 2000000000)
-      top: '10%', // Top position relative to parent
+      top: top, // Top position relative to parent
       left: '45%' // Left position relative to parent
     }
   },

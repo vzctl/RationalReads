@@ -15,4 +15,5 @@ json.works @works do |work|
   json.num_comments work.comments.length
 
   json.tags work.tag_names
+  # json.bayesian_average work.bayesian_rating(@average_votes, @average_average_rating)
 end
