@@ -74,12 +74,18 @@ class Work < ActiveRecord::Base
     sum = 0
     ratings.each do | rating |
      sum += rating.rating
-   end
+    end
 
-   full_rating = sum.to_f / ratings.length
-   rounded_rating = (full_rating * 100).round / 100.0
+    full_rating = sum.to_f / ratings.length
+    rounded_rating = (full_rating * 100).round / 100.0
 
-   rounded_rating
+    rounded_rating
+ end
+
+ def bayesian_rating (average_votes, average_average, ratings)
+   number_of_ratings = self.ratings.count
+   top = average_average * average_votes + self.average_rating * number_of_ratings
+   bottom = number_of_ratings + average_votes
  end
 
  def tag_names

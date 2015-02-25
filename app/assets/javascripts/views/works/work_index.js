@@ -107,6 +107,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   },
 
   renderWorks: function () {
+    this.removePastPages();
     this.renderTitle();
 
     if (this.collection.length === 0) {

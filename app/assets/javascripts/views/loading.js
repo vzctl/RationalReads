@@ -29,7 +29,7 @@ RationalReads.Views.Loading = Backbone.CompositeView.extend({
 
     setTimeout(function() {
       $target.append(spinner.el);
-    }.bind(this), 1000);
+    }.bind(this), 300);
 
 
     RationalReads.Utils.MoveTop();

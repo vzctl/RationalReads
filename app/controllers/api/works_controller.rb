@@ -36,7 +36,8 @@ module Api
     def index
       filtered_works = Work.filtered(params[:filters])
       sorted_works = Work.order(params[:order], filtered_works)
-
+      # ratings = Rating.all.length
+      
       if params[:page] === nil
         @works = sorted_works
         @pages = (filtered_works.length / 10.0).ceil

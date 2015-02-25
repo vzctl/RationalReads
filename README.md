@@ -24,21 +24,14 @@
 32. Instead of using pre-wrap, convert newlines to p elements, probably using a regex
 33. Pagination implemented on all pages?
 34. Add alt text to search results (from searchForm, not filterForm)
+35. Mention that a user must be logged in to add a work before they click the add button (so they don't waste time)
 
 # Features to add
-1. Tags
-2. Chapter Functionality
 3. Like comments
 4. Karma?
 5. Sequels / Series
 6. Author Functionality
 8. Lists
-9. Calc time on client side, auto-update, e.g. every minute (search for plugin)
-
-# Display Ideas
-1. Logo
-2. Navbar styling
-3. Everything
 
 # ToDo
 7. Add filtering
