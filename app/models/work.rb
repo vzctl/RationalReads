@@ -29,7 +29,7 @@ class Work < ActiveRecord::Base
   end
 
   def self.page(page, works)
-    works[page.to_i*10-10..page.to_i*10]
+    works[page.to_i*10-10...page.to_i*10]
   end
 
   def self.order (order, works)
