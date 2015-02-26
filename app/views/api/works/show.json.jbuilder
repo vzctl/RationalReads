@@ -1,4 +1,4 @@
-json.extract! @work, :id, :name, :author, :link, :description, :created_at, :length
+json.extract! @work, :id, :name, :author, :link, :description, :bayesian_average, :created_at, :length
 json.created_at_string @work.created_at.strftime("%B %d, %Y")
 json.average_rating @work.average_rating
 json.ratings @work.ratings.length

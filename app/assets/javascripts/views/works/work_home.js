@@ -5,7 +5,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.views = [];
-    this.currentTab = "average_rating";
+    this.currentTab = "bayesian_average";
     this.$el = $("<div class='home-page row'>");
   },
 

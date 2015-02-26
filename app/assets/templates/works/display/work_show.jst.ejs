@@ -14,8 +14,8 @@
         <div class="stars">
           <div class="raty"></div>
         </div>
-        <div class="avg-rating">
-          <span class="avg"><%= work.escape("average_rating") %></span>
+        <div class="bayesian-rating">
+          <span class="avg"><%= work.escape("bayesian_average") %></span>
         </div>
         <div class="num-ratings">
           <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
@@ -27,7 +27,10 @@
           <%= work.escape("created_at_string") %>
         </div>
         <div class="length">
-          <%= work.escape("length") %> Length
+          <%= work.escape("length") %> length
+        </div>
+        <div class="average-rating">
+          <span class="avg"><%= work.escape("average_rating") %> non-bayesian rating</span>
         </div>
       </div>
 

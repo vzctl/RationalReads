@@ -114,7 +114,7 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   render: function () {
-    var displayRating = this.model.get("average_rating");
+    var displayRating = this.model.get("bayesian_average");
 
     if (this.indexPage()) {
       var content = this.fullTemplate({work: this.model});

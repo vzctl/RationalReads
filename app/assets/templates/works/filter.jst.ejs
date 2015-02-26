@@ -3,8 +3,11 @@
     <label class="work-form-item">Order By</label>
     <div class="tag-box filter-item" id="orderings">
       <div class="tag-item">
+        <input class="tag" type="radio" name="order" value="bayesian_average">
+        <label class="tag-item order-item" title="A bayesian rating is the most accurate rating, as it considers not only the average rating of the work, but also the number of ratings as well. A work with a single 5 star rating will be given a lower rating, to adjust for the fact that only a single vote has been cast."> Bayesian Rating </label>
+
         <input class="tag" type="radio" name="order" value="average_rating">
-        <label class="tag-item order-item"> Rating </label>
+        <label class="tag-item order-item" title="An average rating is less accurate than a bayesian average, as it doesn't consider the number of votes made. Should a new work with a single 5 star vote really be considered the highest rated work on the site? I don't think so."> Average Rating </label>
 
         <input class="tag" type="radio" name="order" value="created_at">
         <label class="tag-item order-item"> Date Added </label>

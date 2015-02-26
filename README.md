@@ -23,6 +23,9 @@
 36. Add average_rating column to works table (to avoid having to re-calc average all the time)
 
 # Features to add
+1. Filter out comments functionality
+2. Edit/delete comments
+3. Show ratings distribution on work show page
 3. Like comments
 4. Karma?
 5. Sequels / Series

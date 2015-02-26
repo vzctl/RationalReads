@@ -44,7 +44,9 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
   },
 
   strategies: {
-    average_rating: function (work) { return -work.get("average_rating"); },
+    average_rating: function (work) {
+      return -work.get("average_rating");
+    },
     date: function (work) {
       var date = new Date(work.get("created_at"))
       return -date.getTime();
@@ -54,6 +56,9 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     },
     comments: function (work) {
       return -work.get("num_comments");
+    },
+    bayesian_average: function (work) {
+      return -work.get("bayesian_average");
     },
     length: function (work) {
 

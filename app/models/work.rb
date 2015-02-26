@@ -8,6 +8,18 @@ class Work < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  def self.populate_bayesian_averages
+    votes = Rating.all.length
+    works = Work.rated_works
+    average_votes = votes.to_f / works
+    average_average_rating = Rating.all.map { |rating| rating.rating}.reduce(:+) / works
+
+    Work.all.each do |work|
+      work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
+      work.save
+    end
+  end
+
   def self.rated_works
     Rating.all.map { |rating| rating.work_id}.uniq.length
   end
@@ -98,4 +110,13 @@ class Work < ActiveRecord::Base
    self.tags.map{ |tag| tag.name }
  end
 
+ def update_bayesian_average
+   votes = Rating.all.length
+   works = Work.rated_works
+   average_votes = votes.to_f / works
+   average_average_rating = Rating.all.map { |rating| rating.rating}.reduce(:+) / works
+
+   self.bayesian_average = bayesian_rating(average_votes, average_average_rating)
+   self.save
+ end
 end

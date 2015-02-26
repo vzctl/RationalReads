@@ -15,6 +15,7 @@ class RatingsController < ApplicationController
 
     if @rating
       if @rating.update(rating_params)
+        rating_parent.update_bayesian_average if parent_type == "work"
         rating_data = @rating.generate_data(rating_parent, "update", parent_type)
         render json: rating_data, status: 200
       else
@@ -25,6 +26,7 @@ class RatingsController < ApplicationController
       @rating.user_id = current_user.id
 
       if @rating.save
+        rating_parent.update_bayesian_average if parent_type == "work"
         rating_data = @rating.generate_data(rating_parent, "create", parent_type)
         render json: rating_data, status: 200
       else

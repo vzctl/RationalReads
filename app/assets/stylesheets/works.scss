@@ -1,5 +1,9 @@
 // filter / ordering
 
+div.filter-form div.tag-box {
+  width: 1000px
+}
+
 .order-item {
   margin-right: 30px;
 }
@@ -197,7 +201,7 @@ div.centered {
   color: #1ABDD6
 }
 
-#work-info div.avg-rating{
+#work-info div.bayesian-rating{
   padding-right:50px;
   margin-right: 10px;
 }
@@ -212,6 +216,15 @@ div.centered {
 
 #work-info div.date{
   padding-right:20px;
+}
+
+#work-info div.length{
+  padding-right:40px;
+}
+
+#work-info div.average-rating {
+  // color: grey;
+  // font-size: 12px;
 }
 
 #work-info p.description {
@@ -286,7 +299,7 @@ div.centered {
 }
 
 #work-info {
-  max-width:800px;
+  max-width:835px;
 }
 
 // For show_more plugin

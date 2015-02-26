@@ -1,7 +1,7 @@
 json.pages @pages
 
 json.works @works do |work|
-  json.extract! work, :id, :name, :author, :link, :description, :created_at, :length
+  json.extract! work, :id, :name, :author, :link, :description, :bayesian_average, :created_at, :length
   json.created_at_string work.created_at.strftime("%b %d, %Y")
   json.time_ago time_ago_in_words(work.created_at)
   json.average_rating work.average_rating
@@ -15,5 +15,4 @@ json.works @works do |work|
   json.num_comments work.comments.length
 
   json.tags work.tag_names
-  # json.bayesian_average work.bayesian_rating(@average_votes, @average_average_rating)
 end
