@@ -217,7 +217,12 @@ RationalReads.Views.WorkItem = Backbone.View.extend({
   },
 
   _updateStatsAfterError: function($ratingResponse, $raty, response) {
-    $ratingResponse.append(response.responseJSON[0]);
+    if (response.responseJSON[0] == "Log in first!") {
+      var $content = $("<a href='/session/new'>Log in first!</a>")
+      $ratingResponse.append($content);
+    } else {
+      $ratingResponse.append(response.responseJSON[0]);
+    }
 
     $raty.animate({'opacity': 0}, 500, function () {
         $(this).html($ratingResponse);
