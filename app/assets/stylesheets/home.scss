@@ -1,3 +1,14 @@
+//styling to get both columns equal height
+
+.row{
+    overflow: hidden;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
 //styling for different widths
 
 @media (max-width: 490px) {
@@ -103,9 +114,10 @@
   background-image: linear-gradient(left, #FAC5C5, #FAC5C5 50%, transparent 50%, transparent 100%);
 }
 
-.home-head {
+div.col-md-6 h2.home-head {
   display: block;
   margin-left: 40px;
+  margin-top: 35px;
 }
 
 .left-box {
