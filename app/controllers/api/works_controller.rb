@@ -2,6 +2,7 @@ module Api
   class WorksController < ApplicationController
     def create
       @work = Work.new(work_params)
+      @work.bayesian_average = 0
       @tags = params["taggings"]
 
       if @work.save
