@@ -115,7 +115,7 @@ class Work < ActiveRecord::Base
    votes = Rating.all.length
    works = Work.rated_works
    average_votes = votes.to_f / works
-   average_average_rating = Rating.all.map { |rating| rating.rating}.reduce(:+) / works
+   average_average_rating = Work.all.map { |work| work.average_rating}.reduce(:+) / works
 
    self.bayesian_average = bayesian_rating(average_votes, average_average_rating)
    self.save
