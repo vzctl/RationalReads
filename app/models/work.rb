@@ -7,7 +7,7 @@ class Work < ActiveRecord::Base
   has_many :chapters
   has_many :taggings
   has_many :tags, through: :taggings
-  
+
   def self.populate_bayesian_averages
     votes = Rating.all.length
     works = Work.rated_works
@@ -15,7 +15,8 @@ class Work < ActiveRecord::Base
     average_average_rating = Rating.all.map { |rating| rating.rating}.reduce(:+) / works
 
     Work.all.each do |work|
-      work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
+      # work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
+      work.bayesian_average = work.average_rating
       work.save
     end
   end
