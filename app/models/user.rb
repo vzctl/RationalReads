@@ -47,6 +47,71 @@ class User < ActiveRecord::Base
     nil
   end
 
+  def recommended_works
+    slope_one = SlopeOne.new
+    slope_one.insert(all_rating_data)
+    recommendations = slope_one.predict(user_ratings)
+    sorted_slope_one_results = recommendations.sort_by { |key, value| value }
+    works = Work.order("bayesian_average", Work.all)
+    sorted_recommendations(sorted_slope_one_results, works)
+  end
+
+  def sorted_recommendations(sorted, works)
+    ordered_predictions = []
+
+    sorted.each do |work, predicted_sore|
+      ordered_predictions << Work.find(work)
+    end
+
+    unread((ordered_predictions + works).uniq)
+  end
+
+  def unread(works)
+    new_works = []
+    read_works = read
+
+    works.each do |work|
+      unless read_works.include?(work.id)
+        new_works << work
+      end
+    end
+    
+    new_works
+  end
+
+  def read
+    read_works = []
+
+    self.ratings.each do |rating|
+      read_works << rating.work_id
+    end
+
+    read_works
+  end
+
+  def user_ratings
+    user_data = {}
+    self.ratings.each do |rating|
+      user_data[rating.work_id] = rating.rating
+    end
+
+    user_data
+  end
+
+  def all_rating_data
+    all_user_data = {}
+
+    User.all.each do |user|
+      user_data = {}
+      user.ratings.each do |rating|
+        user_data[rating.work_id] = rating.rating
+      end
+      all_user_data[user.id] = user_data
+    end
+
+    all_user_data
+  end
+
   protected
 
   def ensure_session_token

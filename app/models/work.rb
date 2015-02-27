@@ -7,7 +7,7 @@ class Work < ActiveRecord::Base
   has_many :chapters
   has_many :taggings
   has_many :tags, through: :taggings
-
+  
   def self.populate_bayesian_averages
     votes = Rating.all.length
     works = Work.rated_works

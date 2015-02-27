@@ -20,23 +20,23 @@ RationalReads.Collections.Works = Backbone.Collection.extend({
     return new RationalReads.Collections.Works(filtered);
   },
 
-  recommendedWorks: function () {
-    var ratedWorks = 0;
-    filtered = this.filter( function(work) {
-      if (work.get("user_rating") === "none") {
-        ratedWorks++;
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    if (ratedWorks === this.length) {
-      return "none";
-    } else {
-      return new RationalReads.Collections.Works(filtered);
-    }
-  },
+  // recommendedWorks: function () {
+  //   var ratedWorks = 0;
+  //   filtered = this.filter( function(work) {
+  //     if (work.get("user_rating") === "none") {
+  //       ratedWorks++;
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   });
+  // 
+  //   if (ratedWorks === this.length) {
+  //     return "none";
+  //   } else {
+  //     return new RationalReads.Collections.Works(filtered);
+  //   }
+  // },
 
   orderBy: function (comparator) {
     this.changeSort(comparator);

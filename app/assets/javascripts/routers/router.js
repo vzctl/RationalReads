@@ -131,15 +131,13 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     this._generateLoadingScreen();
 
     works.fetch({
+      data: { recommendations: "true", page: 1},
       success: function () {
-        works = works.recommendedWorks();
-
         if (works === "none") {
           var $main = $("#main");
           $main.html($("<div class='centered'>"));
           $(".centered").append("<h3>Rate works to get recommendations.</h3>");
         } else {
-          works.orderBy("average_rating");
           var indexView = new RationalReads.Views.WorksIndex({
               collection: works,
               type: "recommendations"

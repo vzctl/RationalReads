@@ -21,6 +21,7 @@
 34. Add alt text to search results (from searchForm, not filterForm)
 35. Mention that a user must be logged in to add a work before they click the add button (so they don't waste time)
 36. Add average_rating column to works table (to avoid having to re-calc average all the time)
+37. Don't send index data when user isn't logged in on recommendations page
 
 # Features to add
 1. Filter out comments functionality
@@ -36,6 +37,4 @@
 11. Password reset
 
 # ToDo
-6. Calc bayes avg every time a user adds a rating (add column to works table)
-8. Change "Log in first" text to "Log in first" link
 9. Recommendation algorithm

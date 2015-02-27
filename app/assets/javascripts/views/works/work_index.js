@@ -124,7 +124,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
       }.bind(this));
     }
 
-    if (this.type === "index") {
+    if (this.type === "index" || this.type === "recommendations") {
       this.renderPagination();
     }
   },

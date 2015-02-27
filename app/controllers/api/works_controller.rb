@@ -35,14 +35,23 @@ module Api
 
     def index
       filtered_works = Work.filtered(params[:filters])
-      sorted_works = Work.order(params[:order], filtered_works)
+
+      if params[:recommendations] == "true"
+        if current_user.nil?
+          works = Work.order(params[:order], filtered_works)
+        else
+          works = current_user.recommended_works
+        end
+      else
+        works = Work.order(params[:order], filtered_works)
+      end
 
       if params[:page] === nil
-        @works = sorted_works
+        @works = works
         @pages = (filtered_works.length / 10.0).ceil
       else
-        @works = Work.page(params[:page], sorted_works)
-        @pages = (Work.all.length / 10.0).ceil
+        @works = Work.page(params[:page], works)
+        @pages = (works.length / 10.0).ceil
       end
 
       render :index

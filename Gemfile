@@ -19,17 +19,14 @@ gem 'bcrypt'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
+# Bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-#for heroku better debugging and keeping dyno spinning
+#For heroku better debugging and keeping dyno spinning
 gem 'newrelic_rpm'
-#backbone
+#Backbone
 gem 'backbone-on-rails'
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#Recommendation algorithm
+gem 'slope_one'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
