@@ -12,11 +12,11 @@ class Work < ActiveRecord::Base
     votes = Rating.all.length
     works = Work.rated_works
     average_votes = votes.to_f / works
-    average_average_rating = Rating.all.map { |rating| rating.rating}.reduce(:+) / works
+    average_average_rating = Work.all.map { |work| work.average_rating}.reduce(:+) / works
 
     Work.all.each do |work|
-      # work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
-      work.bayesian_average = work.average_rating
+      work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
+      # work.bayesian_average = work.average_rating
       work.save
     end
   end
@@ -104,7 +104,8 @@ class Work < ActiveRecord::Base
    return 0 if number_of_ratings == 0
    top = average_average_rating * average_votes + self.average_rating * number_of_ratings
    bottom = number_of_ratings + average_votes
-   (top / bottom * 100).round / 100.0
+   
+   ((top / bottom) * 100).round / 100.0
  end
 
  def tag_names
