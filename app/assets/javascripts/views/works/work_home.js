@@ -65,7 +65,7 @@ RationalReads.Views.WorksHome = Backbone.CompositeView.extend({
 
   updateLeftHeader: function () {
     var $headerText = this.$el.find(".left-header");
-    if (this.currentTab === "rating") {
+    if (this.currentTab === "bayesian_average") {
       $headerText.text("Highest Rated");
     } else if (this.currentTab === "comments") {
       $headerText.text("Most Commented");
