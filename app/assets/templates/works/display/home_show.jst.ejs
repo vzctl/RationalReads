@@ -7,7 +7,7 @@
       <div class="stars">
         <div class="raty"></div>
       </div>
-      <div class="avg-rating">
+      <div class="avg-rating" title="Bayesian Average Rating">
         <span class="avg"><%= work.escape("bayesian_average") %></span>
       </div>
       <div class="num-ratings">
@@ -19,7 +19,7 @@
       <div class="date">
         <%= work.escape("created_at_string") %>
       </div>
-      <div class="length">
+      <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
         <%= work.escape("length") %> length
       </div>
     </div>

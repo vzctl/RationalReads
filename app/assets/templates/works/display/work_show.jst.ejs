@@ -26,11 +26,11 @@
         <div class="date">
           <%= work.escape("created_at_string") %>
         </div>
-        <div class="length">
+        <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
           <%= work.escape("length") %> length
         </div>
-        <div class="average-rating">
-          <span class="avg"><%= work.escape("average_rating") %> non-bayesian rating</span>
+        <div class="average-rating" title="This is a non-bayesian average rating, meaning that it does not take into account the number of votes this work has received.">
+          <span class="avg"><%= work.escape("average_rating") %> average rating</span>
         </div>
       </div>
 
