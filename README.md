@@ -24,6 +24,7 @@
 37. Don't send index data when user isn't logged in on recommendations page
 
 # Features to add
+0. If a comment or rating has only 1, drop the s
 1. Filter out comments functionality
 2. Edit/delete comments
 3. Show ratings distribution on work show page

@@ -16,7 +16,6 @@ class Work < ActiveRecord::Base
 
     Work.all.each do |work|
       work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
-      # work.bayesian_average = work.average_rating
       work.save
     end
   end
@@ -104,7 +103,7 @@ class Work < ActiveRecord::Base
    return 0 if number_of_ratings == 0
    top = average_average_rating * average_votes + self.average_rating * number_of_ratings
    bottom = number_of_ratings + average_votes
-   
+
    ((top / bottom) * 100).round / 100.0
  end
 
