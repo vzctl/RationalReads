@@ -1,41 +1,62 @@
-# Issues
-1.  In both work_index and work_read, many functions duplicated
-7.  Increment # of comments on show page when a user submits a comment
-8.  Fetch all books once for entire site, instead of multiple times for each collection
-9.  Not interested button on recommendation results (to filter recommendations)
-10. Not doing bayesian average
-13. Comment sort getting called in home page?
-14. Am pluralizing comments and ratings, even when there's only 1
-15. Avg rating isn't pushing based on size of object
-16. Arrow syntax defining routes, get rid of api folder, point from route to controller action
-18. If click on search item, shouldn't go to search action
-20. Search results should have links as titles
-24. Add global function to fetch and give user id / currentUser backbone model
-25. Instead of render json: comment on success, user jbuilder
-26. Need to add event for onclick, if not in searchbar, clear search items (current only mouseout)
-27. Move chapter controller to api namespace
-29. Move chapter show jbuilder to partial
-30. For index, fetching entire collection, and then fetching individual pages (double fetching)
-32. Instead of using pre-wrap, convert newlines to p elements, probably using a regex
-33. Implement pagination on recommendation and search pages
-34. Add alt text to search results (from searchForm, not filterForm)
-35. Mention that a user must be logged in to add a work before they click the add button (so they don't waste time)
-36. Add average_rating column to works table (to avoid having to re-calc average all the time)
-37. Don't send index data when user isn't logged in on recommendations page
+Welcome to the RationalReads codebase! Below, you can see a list of bugs, design flaws, features to be implemented in the next release, and possible other features which may eventually be implemented.
 
-# Features to add
-0. If a comment or rating has only 1, drop the s
-1. Filter out comments functionality
-2. Edit/delete comments
-3. Show ratings distribution on work show page
-3. Like comments
-4. Karma?
-5. Sequels / Series
-6. Author Functionality
-8. Lists
-9. Add group id to tags, perhaps even add a group table (e.g. completion status, genre, medium, etc...)
-10. Add delete button next to edit button
-11. Password reset
+Most of the code unique to this app can be found in one of two places -
+[app/assets/javascript](https://github.com/Amit-P-Amin/RationalReads/tree/master/app/assets/javascripts), which contains the majority of the client-side code, and [app/models](https://github.com/Amit-P-Amin/RationalReads/tree/master/app/models), which contains the majority of the server-side code.
 
-# ToDo
-9. Recommendation algorithm
+The entire project was written using the Ruby on Rails framework.
+
+The client side code was written using backbone, a javascript library which helps create a single-page app and more easily manage data on the client-side.
+
+Although this project uses bootstrap, 1400 lines of css were also written. However, that is the weakest part of the project - many opportunities for improvement exist in the stylesheets directory. 
+
+# Bugs
+1.  When a user clicks on more at the bottom left of home page, the sort gets reversed when clicking on the pagination link
+2.  User getting recommendation results, even when not logged in (was not happening before)
+
+# Design Flaws
+1.  The filter by tag / order works feature is not obvious
+2.  Some users think that the filled in stars represent their rating, not the bayesian average rating
+
+# Features to implement in March release
+1.  Add sign-up button on sign-in page (for new users)
+2.  Fix design flaws 1, and 2
+3.  Fix bug 1
+4.  When a user clicks on an ordering, reset the current page to 1
+5.  On the homepage, change "read it here link" to learn more, which takes user to work show page
+6.  Allow comments to be edited or deleted
+7.  Allow passwords to be reset
+8.  Show the rating distribution for a work, not just it's average rating
+
+# Feature list
+1.  In both work_index and work_read, many functions duplicated - DRY out the code
+2.  Check if comment sort getting called in home page. If so, remove.
+3.  Not interested button on recommendation results (to filter recommendations)
+4.  Stop pluralizing comments and ratings when there's only 1 (e.g. 1 comments)
+5.  Add global function to fetch and give current user id
+6.  Add an onclick event that closes the searchbar and any search items, when outside the search area (currently only on mouseout)
+7.  Move chapter controller to api namespace
+8.  Move chapter show jbuilder to a partial
+9.  For index, am currently fetching entire collection, and then fetching individual pages (double fetching). Improve.
+10.  Instead of using pre-wrap, convert newlines to p elements, possibly using a regex
+11.  Implement pagination on search pages
+12.  Add alt text to search results (from searchForm, not filterForm)
+13.  Mention that a user must be logged in to add a work before they click the add button (so they don't waste time)
+14.  Add an average_rating column to works table (to avoid having to re-calc average all the time)
+
+# Possible features
+1.  Like comments
+2.  Karma
+3.  Sequels / Series
+4.  Author Functionality
+5.  Lists
+6.  Add group id to tags, (e.g. group 1 to completion status, group 2 to genre) to help organize tag display
+7.  Work delete functionality
+8.  User pages, with information on the works they've rated and ratings they've given, and ability to recommend users to other users (based on similarity of ratings), and then also to follow the user
+9.  Follow a work, which sends a ping when a new chapter is added
+
+# Tag ideas
+1.  Free-Online
+2.  Paid-Online
+3.  Free-EBook
+4.  Paid-EBook
+5.  Hardcopy
