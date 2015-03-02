@@ -1,4 +1,4 @@
-Welcome to the RationalReads codebase! Below, you can see a list of bugs, design flaws, features to be implemented in the next release, and possible other features which may eventually be implemented.
+Welcome to the RationalReads codebase! Below, you can see a list of bugs, design flaws, features to be implemented in the next release, and possible other features which may eventually be added.
 
 Most of the code unique to this app can be found in one of two places -
 [app/assets/javascript](https://github.com/Amit-P-Amin/RationalReads/tree/master/app/assets/javascripts), which contains the majority of the client-side code, and [app/models](https://github.com/Amit-P-Amin/RationalReads/tree/master/app/models), which contains the majority of the server-side code.
@@ -7,11 +7,10 @@ The entire project was written using the Ruby on Rails framework.
 
 The client side code was written using backbone, a javascript library which helps create a single-page app and more easily manage data on the client-side.
 
-Although this project uses bootstrap, 1400 lines of css were also written. However, that is the weakest part of the project - many opportunities for improvement exist in the stylesheets directory. 
+Although this project uses bootstrap, 1400 lines of css were also written. However, that is the weakest part of the project. In the April release, I will be improving the stylesheets directory.
 
 # Bugs
-1.  When a user clicks on more at the bottom left of home page, the sort gets reversed when clicking on the pagination link
-2.  User getting recommendation results, even when not logged in (was not happening before)
+1.  User getting recommendation results, even when not logged in (was not happening before)
 
 # Design Flaws
 1.  The filter by tag / order works feature is not obvious
@@ -20,7 +19,6 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 # Features to implement in March release
 1.  Add sign-up button on sign-in page (for new users)
 2.  Fix design flaws 1, and 2
-3.  Fix bug 1
 4.  When a user clicks on an ordering, reset the current page to 1
 5.  On the homepage, change "read it here link" to learn more, which takes user to work show page
 6.  Allow comments to be edited or deleted

@@ -11,7 +11,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     RationalReads.Utils.MoveTop();
     this.$el = $("<div class='centered'>");
     this.currentPage = "1";
-    this.currentOrder = "";
+    this.currentOrder = options.currentOrder || "";
     this.currentFilters = [];
   },
 
@@ -30,6 +30,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   updateOrder: function () {
     var $order = $("#orderings input:radio:checked");
     this.currentOrder = $order.val();
+    this.currentPage = "1";
     this.reRenderWorks();
   },
 

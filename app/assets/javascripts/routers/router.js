@@ -71,7 +71,8 @@ RationalReads.Routers.Router = Backbone.Router.extend({
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
-            type: "index"
+            type: "index",
+            currentOrder: comparator
           });
 
         this._swapView(indexView);
