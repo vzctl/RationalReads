@@ -155,11 +155,12 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     this._generateLoadingScreen();
 
     works.fetch({
-      data: { page: 1},
+      data: { page: 1, order: "bayesian_average"},
       success: function () {
         var indexView = new RationalReads.Views.WorksIndex({
             collection: works,
-            type: "index"
+            type: "index",
+            currentOrder: "bayesian_average"
           });
 
         this._swapView(indexView);
