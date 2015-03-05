@@ -24,6 +24,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 6.  Allow comments to be edited or deleted
 7.  Allow passwords to be reset
 8.  Show the rating distribution for a work, not just it's average rating
+9.  Add decimal points to all rating numbers (e.g. 4.0 instead of 4)
 
 # Feature list
 1.  In both work_index and work_read, many functions duplicated - DRY out the code

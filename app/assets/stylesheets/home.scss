@@ -110,8 +110,8 @@
 }
 
 .home-page {
-  background-image: -webkit-linear-gradient(left, #FAC5C5, #FAC5C5 50%, transparent 50%, transparent 100%);
-  background-image: linear-gradient(left, #FAC5C5, #FAC5C5 50%, transparent 50%, transparent 100%);
+  background-image: -webkit-linear-gradient(left, #FAE5E5, #FAE5E5 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(left, #FAE5E5, #FAE5E5 50%, transparent 50%, transparent 100%);
 }
 
 div.col-md-6 h2.home-head {
@@ -121,7 +121,7 @@ div.col-md-6 h2.home-head {
 }
 
 .left-box {
-  background-color: #FAC5C5;
+  background-color: #FAE5E5;
 }
 
 h3.home-bottom a:hover{
@@ -267,6 +267,10 @@ background-color: #EB7C7C;
 border: thin #FF5959 solid;
 }
 
+#main div ul.custom-tabs li.activated a{
+color: white;
+}
+
 #main div ul.custom-tabs li.unactivated:hover {
 }
 
@@ -284,7 +288,7 @@ border: thin #FF5959 solid;
   padding: 0px;
   padding-top:6px;
   line-height:11px;
-  color: white;
+  color: black;
   display: block;
   vertical-align: bottom;
   text-decoration: none;
