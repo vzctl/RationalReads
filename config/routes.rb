@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :works, only: [:create, :show, :index, :update]
     resources :chapters, only: [:create, :show, :index]
   end
+
+  resources :emails, only: [:create]
 end
