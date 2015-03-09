@@ -43,14 +43,41 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
       var type = "short";
       this.$el.append("<div id='chapters'>");
     }
-    var newChapter = new RationalReads.Views.ChapterForm({
+    var chapterFormButton = new RationalReads.Views.ChapterForm({
       model: this.model,
       type: type
     });
 
-    this.addSubview('#chapters', newChapter);
+    this.addSubview('#chapters', chapterFormButton);
+
+    if (this.model.chapters().length > 0) {
+      this.renderFollowForm();
+    }
   },
 
+  renderFollowForm: function () {
+    var newFollow = new RationalReads.Models.Follow({id: this.model.id});
+
+    newFollow.fetch({
+      error: function () {
+        var followForm = new RationalReads.Views.FollowForm({
+          model: this.model,
+          followed: false
+        });
+
+        this.addSubview('#chapters', followForm);
+      }.bind(this),
+      success: function () {
+        var followForm = new RationalReads.Views.FollowForm({
+          model: this.model,
+          followed: true,
+          follow: newFollow
+        });
+
+        this.addSubview('#chapters', followForm);
+      }.bind(this)
+    });
+  },
 
   renderWork: function () {
     this.$el.append("<div id='work-info'>");

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, presence: true
 
   has_many :ratings
+  has_many :comments
+  has_many :follows
 
   attr_reader :password
   after_initialize :ensure_session_token
@@ -75,7 +77,7 @@ class User < ActiveRecord::Base
         new_works << work
       end
     end
-    
+
     new_works
   end
 

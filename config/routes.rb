@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :chapters, only: [:create, :show, :index]
   end
 
-  resources :emails, only: [:create]
+  resources :follows, only: [:create, :destroy, :show]
+  # resources :emails, only: [:create]
 end

@@ -6,7 +6,10 @@ class Work < ActiveRecord::Base
   has_many :comments
   has_many :chapters
   has_many :taggings
+  has_many :follows
+  
   has_many :tags, through: :taggings
+  has_many :users, through: :follows
 
   def self.populate_bayesian_averages
     votes = Rating.all.length

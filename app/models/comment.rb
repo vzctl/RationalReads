@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :work
   belongs_to :chapter
+  belongs_to :user
 
   has_many(
     :child_comments,

@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "amitpamin@gmail.com"
+  default from: 'Amit Amin <amit@rationalreads.com>'
 
   def send_mail (to, subject, body)
     @body = body

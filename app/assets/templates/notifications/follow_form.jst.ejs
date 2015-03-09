@@ -1,0 +1,21 @@
+<form class="follow-form">
+  <label class="main">Receive email when new chapter is added?</label>
+
+  <% if (this.followed) { %>
+    <input class="notification-button" type="radio" name="follow_status" checked="checked" value="yes">
+    <label title="Yes"> Yes </label>
+
+    <input class="notification-button" type="radio" name="follow_status" value="no">
+    <label title="No"> No </label>
+  <% } else { %>
+    <input class="notification-button" type="radio" name="follow_status" value="yes">
+    <label title="Yes"> Yes </label>
+
+    <input class="notification-button" type="radio" name="follow_status" checked="checked" value="no">
+    <label title="No"> No </label>
+  <% } %>
+
+  <span id="message1" class="hidden">You are now following this work!</span>
+  <span id="message2" class="hidden">You are no longer following this work!</span>
+
+</form>
