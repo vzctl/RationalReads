@@ -25,4 +25,10 @@ class Chapter < ActiveRecord::Base
    rounded_rating
  end
 
+ def send_notifications
+   self.work.users.each do |user|
+     NotificationMailer.send_update(user, self).deliver_now
+   end
+ end
+
 end

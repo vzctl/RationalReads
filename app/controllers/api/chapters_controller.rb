@@ -5,6 +5,7 @@ module Api
       @chapter = Chapter.new(chapter_params);
 
       if @chapter.save
+        @chapter.send_notifications
         render json: @chapter
       else
         render json: @chapter.errors.full_messages, status: 406
