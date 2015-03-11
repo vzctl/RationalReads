@@ -1,0 +1,13 @@
+<p>Your comment about <%= @parent_comment.work.name %> has received a reply.</p>
+
+<p><strong>Your comment:</strong></p>
+
+<p><%= @parent_comment.content %></p>
+
+<p><strong>The reply:</strong></p>
+
+<p><%= @child_comment.content %></p>
+
+<p>To leave a reply to this comment, go to <a href="http://rationalreads.com/#/works/<%=@parent_comment.work_id%>">http://rationalreads.com/#/works/<%=@parent_comment.work_id%></a>.
+
+<p>If you would like to stop receiving comment replies, go to <a href="http://rationalreads.com/">RationalReads.com</a> and change your settings.</p>

@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  attr_reader :user, :chapter
+  attr_reader :user, :chapter, :type
   attr_accessor :qualification
   after_action :ensure_mail_called
   default from: 'Amit Amin <amit@rationalreads.com>'
@@ -9,7 +9,7 @@ class NotificationMailer < ActionMailer::Base
     @chapter = chapter
     subject = "#{chapter.work.name} Has Updated!"
     to = user.email
-    mail(to: to, subject: subject) if qualified?(:update)
+    mail(to: to, subject: subject) if qualified?
   end
 
   def send_reply(user, parent_comment, child_comment)
@@ -17,7 +17,7 @@ class NotificationMailer < ActionMailer::Base
     @parent_comment, @child_comment = parent_comment, child_comment
     subject = "Your comment on Rational Reads has received a reply."
     to = user.email
-    mail(to: to, subject: subject) if qualified?(:reply)
+    mail(to: to, subject: subject) if qualified?
   end
 
   private
