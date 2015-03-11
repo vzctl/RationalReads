@@ -24,7 +24,7 @@ module RationalReadsApp
     config.active_record.raise_in_transactional_callbacks = true
 
     # Autoload lib/ folder including all subdirectories
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.autoload_paths += Dir["#{config.root}/app/qualifiers"]
 
     config.assets.paths << "/Users/appacademy/Desktop/RationalReads/vendor/assets/lib"
   end

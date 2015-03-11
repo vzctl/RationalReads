@@ -9,8 +9,7 @@ class NotificationQualifier
   end
 
   def qualified?
-    true
-    # qualified
+    qualified
   end
 
   def run_checks
