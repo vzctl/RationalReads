@@ -9,29 +9,29 @@ class NotificationQualifier
   end
 
   def qualified?
-    qualified
+    true
+    # qualified
   end
 
   def run_checks
     if type == :update
-      self.overwhelmed?
-      self.newest_chapter?
+      new_chapter_not_backlog?
+      newest_chapter?
     end
   end
 
-  def overwhelmed?
-    chapters = self.chapter.work.chapters
-    chapters = chapters.sort_by {|chapter| chapter.created_at}
-    latest = chapters.last.created_at.to_date
-    current = Date.today
+  private
 
-    (current - latest).to_i > 1  ? true : @qualified = false
-  end
+    def new_chapter_not_backlog?
+      latest_chapter_date = Chapter.maximum(:created_at).to_date
+      current_date = Date.today
 
-  def newest_chapter?
-    chapters = self.chapter.work.chapters
-    chapters = chapters.sort_by {|chapter| chapter.number}
+      (current_date - latest_chapter_date).to_i > 1  ? true : @qualified = false
+    end
 
-    self.chapter.number > chapters.last.number ? true : @qualified = false
-  end
+    def newest_chapter?
+      latest_chapter_number = Chapter.maximum(:number)
+
+      self.chapter.number > latest_chapter_number ? true : @qualified = false
+    end
 end

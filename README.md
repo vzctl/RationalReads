@@ -26,7 +26,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 8.  Show the rating distribution for a work, not just it's average rating
 9.  Add decimal points to all rating numbers (e.g. 4.0 instead of 4)
 
-# Feature list
+# Features/fixes to be implemented
 1.  In both work_index and work_read, many functions duplicated - DRY out the code
 2.  Check if comment sort getting called in home page. If so, remove.
 3.  Not interested button on recommendation results (to filter recommendations)

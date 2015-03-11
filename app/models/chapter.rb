@@ -26,8 +26,9 @@ class Chapter < ActiveRecord::Base
  end
 
  def send_notifications
-   self.work.users.each do |user|
-     NotificationMailer.send_update(user, self).deliver_now
+   self.work.users.find_each do |user|
+    # NotificationMailer.send_update(user, self)
+    NotificationMailer.send_update(user, self).deliver_now
    end
  end
 
