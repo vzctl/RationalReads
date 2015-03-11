@@ -41,6 +41,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 12.  Add alt text to search results (from searchForm, not filterForm)
 13.  Mention that a user must be logged in to add a work before they click the add button (so they don't waste time)
 14.  Add an average_rating column to works table (to avoid having to re-calc average all the time)
+15.  User settings page, where their password can be changed and their comment reply setting can be toggled
 
 # Possible features
 1.  Like comments

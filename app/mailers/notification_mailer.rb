@@ -1,23 +1,41 @@
 class NotificationMailer < ActionMailer::Base
   attr_reader :user, :chapter
+  attr_accessor :qualification
   after_action :ensure_mail_called
   default from: 'Amit Amin <amit@rationalreads.com>'
 
   def send_update(user, chapter)
-    @user = user
+    @type, @user = :update, user
     @chapter = chapter
     subject = "#{chapter.work.name} Has Updated!"
     to = user.email
-    mail(to: to, subject: subject) if qualified?
+    mail(to: to, subject: subject) if qualified?(:update)
+  end
+
+  def send_reply(user, parent_comment, child_comment)
+    @type, @user = :reply, user
+    @parent_comment, @child_comment = parent_comment, child_comment
+    subject = "Your comment on Rational Reads has received a reply."
+    to = user.email
+    mail(to: to, subject: subject) if qualified?(:reply)
   end
 
   private
 
     def qualified?
-      qualification = NotificationQualifier.new(:update, user)
-      qualification.chapter = chapter
+      @qualification = NotificationQualifier.new(type, user)
+      set_qualification_data
       qualification.run_checks
       qualification.qualified?
+    end
+
+    def set_qualification_data
+      if type == :update
+        qualification.chapter = chapter
+      else type == :reply
+        qualification.parent_comment = @parent_comment
+        qualification.child_comment = @child_comment
+      end
     end
 
     def ensure_mail_called

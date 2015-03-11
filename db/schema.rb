@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309184852) do
+ActiveRecord::Schema.define(version: 20150311214502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,13 +82,14 @@ ActiveRecord::Schema.define(version: 20150309184852) do
   add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+    t.string   "email",                               null: false
+    t.string   "username",                            null: false
+    t.string   "password_digest",                     null: false
+    t.string   "session_token",                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "moderator"
+    t.boolean  "get_comment_replies", default: false
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree
