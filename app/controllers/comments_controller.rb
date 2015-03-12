@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      @comment.send_notification
+      # @comment.send_notification
       render :partial => "show", locals: {comment: @comment}
     else
       render json: @comment.errors.full_messages, status: 406

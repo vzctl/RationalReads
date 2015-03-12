@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
     ordered_predictions = []
 
     sorted.each do |work, predicted_sore|
-      ordered_predictions << Work.find(work)
+      ordered_predictions << Work.find(work) if work.length > 0
     end
 
     unread((ordered_predictions + works).uniq)
