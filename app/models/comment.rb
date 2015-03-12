@@ -43,8 +43,8 @@ class Comment < ActiveRecord::Base
 
  def send_notification
    unless parent_comment_id.nil?
-     parent_comment = Comment.find(parent_comment_id)
-     parent_user = User.find(parent_comment.user)
+     parent_comment = Comment.find_by_id(parent_comment_id)
+     parent_user = parent_comment.user
      NotificationMailer.send_reply(parent_user, parent_comment, self).deliver_now
    end
  end
