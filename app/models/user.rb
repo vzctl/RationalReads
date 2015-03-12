@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
     slope_one.insert(all_rating_data)
     recommendations = slope_one.predict(user_ratings)
     sorted_slope_one_results = recommendations.sort_by { |key, value| value }
+    sorted_slope_one_results = sorted_slope_one_results.reverse()
     works = Work.order("bayesian_average", Work.all)
     sorted_recommendations(sorted_slope_one_results, works)
   end

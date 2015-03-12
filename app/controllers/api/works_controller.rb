@@ -49,7 +49,7 @@ module Api
 
       if params[:page] === nil
         @works = works
-        @pages = (filtered_works.length / 10.0).ceil
+        @pages = (works.length / 10.0).ceil
       else
         @works = Work.page(params[:page], works)
         @pages = (works.length / 10.0).ceil

@@ -62,7 +62,11 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
   },
 
   pageData: function () {
+    if (this.type == "recommendations") {
+      return {filters: this.currentFilters, order: this.currentOrder, page: this.currentPage, recommendations: "true"}
+    } else {
     return {filters: this.currentFilters, order: this.currentOrder, page: this.currentPage}
+    }
   },
 
   render: function () {
