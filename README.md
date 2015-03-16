@@ -26,6 +26,8 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 8.  Show the rating distribution for a work, not just it's average rating
 9.  Add decimal points to all rating numbers (e.g. 4.0 instead of 4)
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
+11.  An expanded comment section. The comment or review section only shows a couple of lines during input, as it is a very thin box and it would be nice if this was larger
+
 
 # Features/fixes to be implemented
 1.  In both work_index and work_read, many functions duplicated - DRY out the code
@@ -44,6 +46,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 14.  Add an average_rating column to works table (to avoid having to re-calc average all the time)
 15.  User settings page, where their password can be changed and their comment reply setting can be toggled
 16.  Instead of sending e-mails inline, add e-mails to queue and create background job to process queue
+17.  I would like others to be able to see My Books list and to be able to see others if they allow it. One of the best ways to find good stories is to come across users that share a similar value set and give the stories which they rated high a chance
 
 # Possible features
 1.  Like comments

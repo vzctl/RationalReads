@@ -1,26 +1,30 @@
 class NotificationMailer < ActionMailer::Base
-  attr_reader :user, :chapter, :type, :testing, :parent_comment, :child_comment
+  attr_reader :user, :chapter, :type, :parent_comment, :child_comment, :subject
   attr_accessor :qualification
-  before_action :prevent_delivery_if_test
+  after_action :send_if_qualified
   default from: 'Amit Amin <amit@rationalreads.com>'
 
-  def send_update(user, chapter, testing = false)
-    @type, @user, @testing = :update, user, testing
+  def send_update(user, chapter)
+    @type, @user = :update, user
     @chapter = chapter
-    subject = "#{chapter.work.name} Has Updated!"
-
-    mail(to: user.email, subject: subject) if qualified?
+    @subject = "#{chapter.work.name} Has Updated!"
   end
 
-  def send_reply(user, parent_comment, child_comment, testing = false)
-    @type, @user, @testing = :reply, user, testing
+  def send_reply(user, parent_comment, child_comment)
+    @type, @user = :reply, user
     @parent_comment, @child_comment = parent_comment, child_comment
-    subject = "Your comment on Rational Reads has received a reply"
-
-    mail(to: user.email, subject: subject) if qualified?
+    @subject = "Your comment on Rational Reads has received a reply"
   end
 
   private
+
+    def send_if_qualified
+      if qualified?
+        mail(to: user.email, subject: subject)
+      else
+        mail.perform_deliveries = false
+      end
+    end
 
     def qualified?
       @qualification = NotificationQualifier.new(type, user)
@@ -38,7 +42,7 @@ class NotificationMailer < ActionMailer::Base
       end
     end
 
-    def prevent_delivery_if_test
-      mail.perform_deliveries = false if testing
+    def prevent_delivery
+      mail.perform_deliveries = false
     end
 end
