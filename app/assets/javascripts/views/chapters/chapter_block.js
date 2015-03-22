@@ -41,7 +41,7 @@ RationalReads.Views.ChapterBlock = Backbone.View.extend({
     } else if (score > 4.00 && score < 4.51) {
       fillTag = "rating45"
     } else if (score > 4.50 && score < 5.01) {
-      fillTag = "rating45"
+      fillTag = "rating50"
     }
 
     return fillTag;

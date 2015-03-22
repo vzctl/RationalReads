@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-
+  
   def rating(work_id, chapter_id)
     if work_id == nil
       id = chapter_id

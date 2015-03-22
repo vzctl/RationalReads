@@ -6,16 +6,40 @@ class Rating < ActiveRecord::Base
   belongs_to :work
   belongs_to :chapter
 
-  def generate_data(work, type, parent_type)
-    rating_data = {}
-    rating_data[:average_rating] = work.average_rating
-    rating_data[:ratings] = work.ratings.length
-    if parent_type == "chapter"
-      rating_data[:id] = self.chapter_id
+  after_save :update_bayesian_average
+
+  def self.find_rating(user, params)
+    if params["work_id"] == nil
+      user_id, chapter_id = user.id, params["chapter_id"]
+      rating = Rating.where("user_id = ? AND chapter_id = ?", user_id, chapter_id)[0]
+      rated_item = Chapter.find_by_id(chapter_id)
+      item_type = "chapter"
     else
-      rating_data[:id] = self.work_id
+      user_id, work_id = user.id, params["work_id"]
+      rating = Rating.where("user_id = ? AND work_id = ?", user_id, work_id)[0]
+      rated_item = Work.find_by_id(work_id)
+      item_type = "work"
+    end
+    [rating, rated_item, item_type]
+  end
+
+  def update_bayesian_average
+    if chapter_id.nil?
+      work = Work.find_by_id(work_id)
+      work.update_bayesian_average
+    end
+  end
+
+  def response(rated_item, type, parent_type)
+    rating_data = {}
+
+    if parent_type == "chapter"
+      rating_data[:updated_rating] = rated_item.average_rating
+    else
+      rating_data[:updated_rating] = rated_item.bayesian_average
     end
     rating_data[:type] = type
+
     rating_data
   end
 
