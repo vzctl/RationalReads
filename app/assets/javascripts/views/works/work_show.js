@@ -11,6 +11,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
   render: function () {
     this.renderWork();
+    this.reSizeRatingBars();
     this.renderChapters();
     this.renderCommentForm();
     var remainingChildren = this.renderTopLevelComments();
@@ -25,6 +26,12 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
     }
 
     return this;
+  },
+
+  reSizeRatingBars: function () {
+    debugger
+    //this.$el.find(".ones")
+    // a.width(900)
   },
 
   renderChapters: function () {

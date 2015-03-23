@@ -29,3 +29,49 @@
   margin-right: 0px;
   margin-left: 2px;
 }
+
+// controls the rating display of the work show page
+
+.rating-bars{
+  float: left;
+}
+
+.non-rating-stats{
+  float:left;
+}
+
+.rating-bar{
+  width:225px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  height: 10px;
+  float: left;
+}
+
+.rating-bar-block span {
+  float: left;
+}
+
+.rating-bar-block {
+  clear:both;
+}
+
+.fives{
+  background-color: #00FF00;
+}
+
+.fours{
+  background-color: #CCFF00;
+}
+
+.threes{
+  background-color: #FFCC00;
+}
+
+.twos {
+  background-color: #FF8000;
+}
+
+.ones{
+  background-color: #FF3300;
+}

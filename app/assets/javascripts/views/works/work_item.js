@@ -7,7 +7,7 @@ RationalReads.Views.WorkItem = Backbone.ItemView.extend({
   },
 
   readTemplate: JST['works/display/read_show'],
-  fullTemplate: JST['works/display/index_show'],
+  indexTemplate: JST['works/display/index_show'],
   showTemplate: JST['works/display/work_show'],
   homeTemplate: JST['works/display/home_show'],
   latestTemplate: JST['works/display/latest_show'],
@@ -117,7 +117,7 @@ RationalReads.Views.WorkItem = Backbone.ItemView.extend({
     var displayRating = this.model.get("bayesian_average");
 
     if (this.indexPage()) {
-      var content = this.fullTemplate({work: this.model});
+      var content = this.indexTemplate({work: this.model});
     } else if (this.type === "read") {
       this.$el = $("<tr>")
       var content = this.readTemplate({work: this.model});
@@ -131,6 +131,7 @@ RationalReads.Views.WorkItem = Backbone.ItemView.extend({
       var cookie = document.cookie;
       var mod = cookie[cookie.indexOf("mod")+4]
       var content = this.showTemplate({work: this.model, mod: mod});
+      displayRating = this.model.get("user_rating");
     }
 
     content = RationalReads.Utils.ShowMore.call(this, content, this.type);

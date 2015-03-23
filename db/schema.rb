@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311223354) do
+ActiveRecord::Schema.define(version: 20150323212639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,14 +97,20 @@ ActiveRecord::Schema.define(version: 20150311223354) do
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "works", force: :cascade do |t|
-    t.string   "name",             null: false
-    t.string   "author",           null: false
-    t.string   "link",             null: false
-    t.string   "description",      null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "name",                           null: false
+    t.string   "author",                         null: false
+    t.string   "link",                           null: false
+    t.string   "description",                    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "length"
     t.float    "bayesian_average"
+    t.float    "average_rating",   default: 0.0, null: false
+    t.integer  "ones",             default: 0,   null: false
+    t.integer  "twos",             default: 0,   null: false
+    t.integer  "threes",           default: 0,   null: false
+    t.integer  "fours",            default: 0,   null: false
+    t.integer  "fives",            default: 0,   null: false
   end
 
 end

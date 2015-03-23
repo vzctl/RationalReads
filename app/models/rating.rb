@@ -6,7 +6,7 @@ class Rating < ActiveRecord::Base
   belongs_to :work
   belongs_to :chapter
 
-  after_save :update_bayesian_average
+  after_save :update_summary_data
 
   def self.find_rating(user, params)
     if params["work_id"] == nil
@@ -23,10 +23,11 @@ class Rating < ActiveRecord::Base
     [rating, rated_item, item_type]
   end
 
-  def update_bayesian_average
+  def update_summary_data
     if chapter_id.nil?
       work = Work.find_by_id(work_id)
       work.update_bayesian_average
+      work.update_average_and_counts
     end
   end
 

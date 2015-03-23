@@ -10,37 +10,72 @@
 
 <p class="author"> by <%= work.escape("author") %> </p>
 
-      <div class="stats">
-        <div class="stars">
-          <div class="raty"></div>
-        </div>
-        <div class="bayesian-rating">
-          <span class="avg"><%= work.escape("bayesian_average") %></span>
-        </div>
-        <div class="num-ratings">
-          <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
-        </div>
-        <div class="num-comments">
-          <span class="num-comments-number"><%= work.escape("num_comments") %></span> comments
-        </div>
-        <div class="date">
-          <%= work.escape("created_at_string") %>
-        </div>
-        <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
-          <%= work.escape("length") %> length
-        </div>
-        <div class="average-rating" title="This is a non-bayesian average rating, meaning that it does not take into account the number of votes this work has received.">
-          <span class="other-avg"><%= work.escape("average_rating") %> average rating</span>
-        </div>
-      </div>
+<div class="stats">
+  <div class="num-ratings">
+    <div class="num-ratings-number"><%= work.escape("ratings") %></div> Ratings
+  </div>
 
-    <div class="tag-display-box">
-      <% work.get("tags").forEach( function (tag) { %>
-        <div class="single-tag"><p><%= tag %></p></div>
-      <% }) %>
-    </div>
+  <div class="average-rating" title="This is a non-bayesian average rating, meaning that it does not take into account the number of votes this work has received.">
+    <span class="other-avg"><%= work.escape("average_rating") %> Average  /</span>
+  </div>
 
-    <p class="description"><%= work.escape("description") %></p>
-    Read it <a href="<%= work.escape("link") %>">here</a>.
+  <div class="bayesian-rating" title="Accounts for the number of ratings, so that a work with a single five star rating doesn't hit the top of the highest rated list.">
+    <span class="avg"><%= work.escape("bayesian_average") %> Bayesian Adjusted</span>
+  </div>
+
+  <div>
+    Your Rating:
+  </div>
+  <div class="stars">
+    <div class="raty"></div>
   </div>
 </div>
+
+<div class="rating-bars">
+  <div class="rating-bar-block">
+    <span>5 |</span>
+    <div class="rating-bar fives"></div>
+    <span><%= work.escape("fives") %></span>
+  </div>
+  <div class="rating-bar-block">
+    <span>4 |</span>
+    <div class="rating-bar fours"></div>
+    <%= work.escape("fours") %>
+  </div>
+  <div class="rating-bar-block">
+    <span>3 |</span>
+    <div class="rating-bar threes"></div>
+    <%= work.escape("threes") %>
+  </div>
+  <div class="rating-bar-block">
+    <span>2 |</span>
+    <div class="rating-bar twos"></div>
+    <%= work.escape("twos") %>
+  </div>
+  <div class="rating-bar-block">
+    <span>1 |</span>
+    <div class="rating-bar ones"></div>
+    <%= work.escape("ones") %>
+  </div>
+</div>
+
+<div class="non-rating stats">
+  <div class="num-comments">
+    <span class="num-comments-number"><%= work.escape("num_comments") %></span> comments
+  </div>
+  <div class="date">
+    <%= work.escape("created_at_string") %>
+  </div>
+  <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
+    <%= work.escape("length") %> length
+  </div>
+</div>
+
+<div class="tag-display-box">
+  <% work.get("tags").forEach( function (tag) { %>
+    <div class="single-tag"><p><%= tag %></p></div>
+  <% }) %>
+</div>
+
+<p class="description"><%= work.escape("description") %></p>
+Read it <a href="<%= work.escape("link") %>">here</a>.

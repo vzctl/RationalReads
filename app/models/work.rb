@@ -7,7 +7,7 @@ class Work < ActiveRecord::Base
   has_many :chapters
   has_many :taggings
   has_many :follows
-  
+
   has_many :tags, through: :taggings
   has_many :users, through: :follows
 
@@ -19,6 +19,20 @@ class Work < ActiveRecord::Base
 
     Work.all.each do |work|
       work.bayesian_average = work.bayesian_rating(average_votes, average_average_rating)
+      work.save
+    end
+  end
+
+  def self.populate_averages
+    Work.all.each do |work|
+      work.average_rating = work.calculate_average_rating
+      work.save
+    end
+  end
+
+  def self.populate_counts
+    Work.all.each do |work|
+      work.update_average_and_counts
       work.save
     end
   end
@@ -83,7 +97,34 @@ class Work < ActiveRecord::Base
     end
   end
 
-  def average_rating
+  def update_average_and_counts
+    ratings = self.ratings
+
+    if ratings.length > 0
+      sum = 0
+      counts = Hash.new(0)
+
+      ratings.each do | rating |
+       sum += rating.rating
+       counts[rating.rating] += 1
+      end
+
+      full_rating = sum.to_f / ratings.length
+      rounded_rating = (full_rating * 100).round / 100.0
+      self.average_rating = rounded_rating
+      update_counts(counts)
+    end
+  end
+
+  def update_counts(counts)
+    self.ones = counts[1]
+    self.twos = counts[2]
+    self.threes = counts[3]
+    self.fours = counts[4]
+    self.fives = counts[5]
+  end
+
+  def calculate_average_rating
     ratings = self.ratings
 
     if ratings.length == 0
@@ -96,6 +137,7 @@ class Work < ActiveRecord::Base
     end
 
     full_rating = sum.to_f / ratings.length
+
     rounded_rating = (full_rating * 100).round / 100.0
 
     rounded_rating
