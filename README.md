@@ -19,8 +19,6 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 # Features to implement in March release
 1.  Add sign-up button on sign-in page (for new users)
 2.  Fix design flaws 1, and 2
-4.  When a user clicks on an ordering, reset the current page to 1
-5.  On the homepage, change "read it here link" to learn more, which takes user to work show page
 6.  Allow comments to be edited or deleted
 7.  Allow passwords to be reset
 8.  Show the rating distribution for a work, not just it's average rating

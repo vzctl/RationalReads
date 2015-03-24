@@ -16,11 +16,11 @@
   </div>
 
   <div class="average-rating" title="This is a non-bayesian average rating, meaning that it does not take into account the number of votes this work has received.">
-    <span class="other-avg"><%= work.escape("average_rating") %> Average  /</span>
+    <span class="other-avg"><%= parseFloat(work.escape("average_rating")).toFixed(2) %> Average  /</span>
   </div>
 
   <div class="bayesian-rating" title="Accounts for the number of ratings, so that a work with a single five star rating doesn't hit the top of the highest rated list.">
-    <span class="avg"><%= work.escape("bayesian_average") %> Bayesian Adjusted</span>
+    <span class="avg"><%= parseFloat(work.escape("bayesian_average")).toFixed(2) %> Bayesian Adjusted</span>
   </div>
 
   <div>

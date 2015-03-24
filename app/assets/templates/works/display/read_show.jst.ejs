@@ -15,7 +15,7 @@
 </td>
 <td class="avg-rating" title="Bayesian Average Rating">
   <p class="avg">
-    <%= work.escape("bayesian_average") %>
+    <%= parseFloat(work.escape("bayesian_average")).toFixed(2) %>
   </p>
 </td>
 <td class="num-ratings">

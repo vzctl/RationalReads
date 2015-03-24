@@ -10,7 +10,7 @@
         <div class="raty"></div>
       </div>
       <div class="avg-rating" title="Bayesian Average Rating">
-        <span class="avg"><%= work.escape("bayesian_average") %></span>
+        <span class="avg"><%= parseFloat(work.escape("bayesian_average")).toFixed(2) %></span>
       </div>
       <div class="num-ratings">
         <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings

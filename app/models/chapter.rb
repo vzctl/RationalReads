@@ -22,7 +22,7 @@ class Chapter < ActiveRecord::Base
    full_rating = sum.to_f / ratings.length
    rounded_rating = (full_rating * 100).round / 100.0
 
-   rounded_rating
+   rounded_rating.to_f
  end
 
  def send_notifications

@@ -10,7 +10,7 @@
         <div class="raty"></div>
       </div>
       <div class="avg-rating">
-        <span class="avg"><%= chapter.escape("average_rating") %></span>
+        <span class="avg"><%= parseFloat(chapter.escape("average_rating")).toFixed(2) %></span>
       </div>
       <div class="num-ratings">
         <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings

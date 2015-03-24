@@ -9,8 +9,8 @@
       <div class="stars">
         <div class="raty"></div>
       </div>
-      <div class="avg-rating" title="Bayesian Average Rating">
-        <span class="avg"><%= work.escape("average_rating") %></span>
+      <div class="avg-rating" title="Average Rating">
+        <span class="avg"><%= parseFloat(work.escape("average_rating")).toFixed(2) %></span>
       </div>
       <div class="num-ratings">
         <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
