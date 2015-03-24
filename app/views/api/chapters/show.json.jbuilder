@@ -1,5 +1,5 @@
 json.extract! @chapter, :id, :work_id, :number, :link, :created_at
-
+json.description @chapter.work.description
 json.work_title @chapter.work.name
 
 json.created_at_string @chapter.created_at.strftime("%B %d, %Y")

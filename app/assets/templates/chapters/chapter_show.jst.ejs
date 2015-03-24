@@ -17,8 +17,11 @@
           <%= chapter.escape("created_at_string") %>
         </div>
       </div>
-    <div class="link-to-chapter"></div>
-      Read it <a href="<%= chapter.escape("link") %>">here</a>.
+    <br>
+    <p class="description"><%= chapter.escape("description") %></p>
+    <div class="link-to-chapter">
+      <p>Read this chapter <a href="<%= chapter.escape("link") %>">here</a>.</p>
+      <p>Learn more about <%= chapter.escape("work_title") %> <a href="#/works/<%= chapter.escape("work_id") %>">here</a>.</p>
     </div>
   </div>
 </div>
