@@ -34,6 +34,7 @@
 
 .rating-bars{
   float: left;
+  width: 380px;
 }
 
 .non-rating-stats{
@@ -46,6 +47,9 @@
   -webkit-border-radius: 3px;
   height: 10px;
   float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .rating-bar-block span {

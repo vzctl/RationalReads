@@ -193,6 +193,24 @@ div.centered {
 
 // styling works show
 
+.non-rating {
+  clear:both;
+}
+
+#work-info .non-rating{
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#work-info .non-rating .date{
+  margin-left: 28px;
+}
+
+#work-info .non-rating .length{
+  margin-left: 28px;
+}
+
 #work-info .tag-display-box {
   clear:both;
   padding-top: 7px;

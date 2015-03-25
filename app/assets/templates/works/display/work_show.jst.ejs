@@ -35,41 +35,52 @@
   <div class="rating-bar-block">
     <span>5 |</span>
     <div class="rating-bar fives"></div>
-    <span><%= work.escape("fives") %></span>
+    <% if (work.escape("fives") != "0") { %>
+      <%= work.escape("fives") %>
+    <% } %>
   </div>
   <div class="rating-bar-block">
     <span>4 |</span>
     <div class="rating-bar fours"></div>
-    <%= work.escape("fours") %>
+    <% if (work.escape("fours") != "0") { %>
+      <%= work.escape("fours") %>
+    <% } %>
   </div>
   <div class="rating-bar-block">
     <span>3 |</span>
     <div class="rating-bar threes"></div>
-    <%= work.escape("threes") %>
+    <% if (work.escape("threes") != "0") { %>
+      <%= work.escape("threes") %>
+    <% } %>
   </div>
   <div class="rating-bar-block">
     <span>2 |</span>
     <div class="rating-bar twos"></div>
-    <%= work.escape("twos") %>
+    <% if (work.escape("twos") != "0") { %>
+      <%= work.escape("twos") %>
+    <% } %>
   </div>
   <div class="rating-bar-block">
     <span>1 |</span>
     <div class="rating-bar ones"></div>
-    <%= work.escape("ones") %>
+    <% if (work.escape("ones") != "0") { %>
+      <%= work.escape("ones") %>
+    <% } %>
   </div>
 </div>
 
 <div class="non-rating stats">
   <div class="num-comments">
-    <span class="num-comments-number"><%= work.escape("num_comments") %></span> comments
+    <span class="num-comments-number"><%= work.escape("num_comments") %></span> Comments
   </div>
   <div class="date">
-    <%= work.escape("created_at_string") %>
+    Added on <%= work.escape("created_at_string") %>
   </div>
   <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
-    <%= work.escape("length") %> length
+    <%= work.escape("length") %> Length
   </div>
 </div>
+
 
 <div class="tag-display-box">
   <% work.get("tags").forEach( function (tag) { %>

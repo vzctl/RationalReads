@@ -29,9 +29,23 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   },
 
   reSizeRatingBars: function () {
-    // debugger
-    //this.$el.find(".ones")
-    // a.width(900)
+    var distribution = this.ratingDistribution()
+    for (var rating in distribution) {
+      var bar = $(this.$el.find("." + rating))
+      bar.width(350*distribution[rating])
+    };
+  },
+
+  ratingDistribution: function () {
+    var ratings = this.model.get("ratings");
+    distribution = {};
+    distribution["ones"] = this.model.get("ones") / ratings;
+    distribution["twos"] = this.model.get("twos") / ratings;
+    distribution["threes"] = this.model.get("threes") / ratings;
+    distribution["fours"] = this.model.get("fours") / ratings;
+    distribution["fives"] = this.model.get("fives") / ratings;
+
+    return distribution
   },
 
   renderChapters: function () {
