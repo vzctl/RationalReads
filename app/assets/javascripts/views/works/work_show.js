@@ -29,7 +29,7 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
   },
 
   reSizeRatingBars: function () {
-    debugger
+    // debugger
     //this.$el.find(".ones")
     // a.width(900)
   },

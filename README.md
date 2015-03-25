@@ -22,10 +22,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 6.  Allow comments to be edited or deleted
 7.  Allow passwords to be reset
 8.  Show the rating distribution for a work, not just it's average rating
-9.  Add decimal points to all rating numbers (e.g. 4.0 instead of 4)
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
-11.  An expanded comment section. The comment or review section only shows a couple of lines during input, as it is a very thin box and it would be nice if this was larger
-
 
 # Features/fixes to be implemented
 1.  In both work_index and work_read, many functions duplicated - DRY out the code
