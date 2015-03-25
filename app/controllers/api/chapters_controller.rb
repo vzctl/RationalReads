@@ -20,8 +20,9 @@ module Api
     end
 
     def index
-      @chapters = Chapter.all
-
+      @chapters = Chapter.order("created_at DESC").take(20)
+      @chapters = @chapters.uniq { |c| c.work_id }
+      @chapters = @chapters[0..10]
       render :index
     end
 

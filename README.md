@@ -21,7 +21,6 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 2.  Fix design flaws 1, and 2
 6.  Allow comments to be edited or deleted
 7.  Allow passwords to be reset
-8.  Show the rating distribution for a work, not just it's average rating
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
 
 # Features/fixes to be implemented
