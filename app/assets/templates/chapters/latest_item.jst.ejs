@@ -13,10 +13,17 @@
         <span class="avg"><%= parseFloat(chapter.escape("average_rating")).toFixed(2) %></span>
       </div>
       <div class="num-ratings">
-        <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings
+        <% if (chapter.escape("ratings") == "1")  { %>
+          <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> rating
+        <% } else { %>
+          <div class="num-ratings-number"><%= chapter.escape("ratings") %></div> ratings        <% } %>
       </div>
       <div class="num-comments">
-        <a class="blended-link" href="#/works/<%= chapter.escape("id") %>"><%= chapter.escape("num_comments") %> comments</a>
+        <% if (chapter.escape("num_comments") == "1")  { %>
+          <a class="blended-link" href="#/works/<%= chapter.escape("id") %>"><%= chapter.escape("num_comments") %> comment</a>
+        <% } else { %>
+          <a class="blended-link" href="#/works/<%= chapter.escape("id") %>"><%= chapter.escape("num_comments") %> comments</a>
+        <% } %>
       </div>
       <div class="date">
         <%= chapter.escape("time_ago") %> ago

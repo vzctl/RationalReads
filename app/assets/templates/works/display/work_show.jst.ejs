@@ -12,7 +12,11 @@
 
 <div class="stats">
   <div class="num-ratings">
-    <div class="num-ratings-number"><%= work.escape("ratings") %></div> Ratings
+    <% if (work.escape("ratings") == "1")  { %>
+      <div class="num-ratings-number"><%= work.escape("ratings") %></div> Rating
+    <% } else { %>
+      <div class="num-ratings-number"><%= work.escape("ratings") %></div> Ratings
+    <% } %>
   </div>
 
   <div class="average-rating" title="This is a non-bayesian average rating, meaning that it does not take into account the number of votes this work has received.">
@@ -36,7 +40,7 @@
     <span>5 |</span>
     <div class="rating-bar fives"></div>
     <% if (work.escape("fives") != "0") { %>
-      <%= work.escape("fives") %>
+      <span><%= work.escape("fives") %></span>
     <% } %>
   </div>
   <div class="rating-bar-block">
@@ -71,7 +75,11 @@
 
 <div class="non-rating stats">
   <div class="num-comments">
-    <span class="num-comments-number"><%= work.escape("num_comments") %></span> Comments
+    <% if (work.escape("num_comments") == "1")  { %>
+      <span class="num-comments-number"><%= work.escape("num_comments") %></span> Comment
+    <% } else { %>
+      <span class="num-comments-number"><%= work.escape("num_comments") %></span> Comments
+    <% } %>
   </div>
   <div class="date">
     Added on <%= work.escape("created_at_string") %>

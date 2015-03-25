@@ -13,10 +13,18 @@
         <span class="avg"><%= parseFloat(work.escape("bayesian_average")).toFixed(2) %></span>
       </div>
       <div class="num-ratings">
-        <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
+        <% if (work.escape("ratings") == "1")  { %>
+          <div class="num-ratings-number"><%= work.escape("ratings") %></div> rating
+        <% } else { %>
+          <div class="num-ratings-number"><%= work.escape("ratings") %></div> ratings
+        <% } %>
       </div>
       <div class="num-comments">
-        <a class="blended-link" href="#/works/<%= work.escape("id") %>"><%= work.escape("num_comments") %> comments</a>
+        <% if (work.escape("num_comments") == "1")  { %>
+          <a class="blended-link" href="#/works/<%= work.escape("id") %>"><%= work.escape("num_comments") %> comment</a>
+        <% } else { %>
+          <a class="blended-link" href="#/works/<%= work.escape("id") %>"><%= work.escape("num_comments") %> comments</a>
+        <% } %>
       </div>
       <div class="date" title="Date Added to Site">
         <%= work.escape("created_at_string") %>
