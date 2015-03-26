@@ -19,11 +19,11 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 # Features to implement in March release
 1.  Add sign-up button on sign-in page (for new users)
 2.  Fix design flaws 1, and 2
-6.  Allow comments to be edited or deleted
 7.  Allow passwords to be reset
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
 
 # Features/fixes to be implemented
+0.  Allow comments to be edited or deleted
 1.  In both work_index and work_read, many functions duplicated - DRY out the code
 2.  Check if comment sort getting called in home page. If so, remove.
 3.  Not interested button on recommendation results (to filter recommendations)
@@ -41,6 +41,7 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 15.  User settings page, where their password can be changed and their comment reply setting can be toggled
 16.  Instead of sending e-mails inline, add e-mails to queue and create background job to process queue
 17.  I would like others to be able to see My Books list and to be able to see others if they allow it. One of the best ways to find good stories is to come across users that share a similar value set and give the stories which they rated high a chance
+18.  Make it so that filtering/ordering works through the router (so that 1) users can interact with filtering/ordering through url, and so that the back button works there, and so that it's more clear that the pagination is getting new works)
 
 # Possible features
 1.  Like comments
