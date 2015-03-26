@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#sign-up-block {
+  width: 500px;
+  clear: both;
+  padding-top:20px;
+}
+
 #sign-up, #sign-in {
   margin: 0 auto;
   width: 1000px;

@@ -14,7 +14,6 @@ Although this project uses bootstrap, 1400 lines of css were also written. Howev
 
 
 # Features to implement in March release
-1.  Add sign-up button on sign-in page (for new users)
 7.  Allow passwords to be reset
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
 
