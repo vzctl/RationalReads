@@ -125,7 +125,7 @@ RationalReads.Views.WorkItem = Backbone.ItemView.extend({
     } else if (this.type === "home") {
       var content = this.homeTemplate({work: this.model, index: this.index});
     } else if (this.type === "latest"){
-      var displayRating = this.model.get("average_rating");
+      // var displayRating = this.model.get("average_rating");
       var content = this.latestTemplate({work: this.model});
     } else if (this.type === "show") {
       var cookie = document.cookie;

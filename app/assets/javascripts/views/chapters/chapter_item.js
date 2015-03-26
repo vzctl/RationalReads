@@ -9,7 +9,7 @@ RationalReads.Views.ChapterItem = Backbone.ItemView.extend({
 
     var $raty = this.$el.find(".raty")
     $raty.raty({
-      score: this.model.get("average_rating"),
+      score: this.model.get("user_rating"),
       click : function (score) {
         this.submitRating(score);
       }.bind(this)

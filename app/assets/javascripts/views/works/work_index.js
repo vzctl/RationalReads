@@ -17,7 +17,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
 
   events: {
     "click .pagination-links a": "detectDesiredPage",
-    "click .filter-link": "renderFilterForm",
+    "click .filter-button": "renderFilterForm",
     "click #filters input:checkbox": "updateFilter",
     "click #orderings input:radio": "updateOrder"
   },

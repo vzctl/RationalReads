@@ -8,6 +8,26 @@ div.filter-form div.tag-box {
   margin-right: 30px;
 }
 
+.filter-button {
+  position: relative;
+  display: block;
+  margin-top: 28px;
+  margin-left: 20px;
+  background-color: #1ABDD6;
+  color: #FFFFFF;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border: 1px solid #808080;
+}
+
+.filter-button:hover {
+  background-color: #184A52;
+  box-shadow: none;
+}
+
 .filter-link {
   position: relative;
   display: block;
