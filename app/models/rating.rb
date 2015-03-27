@@ -28,6 +28,7 @@ class Rating < ActiveRecord::Base
       work = Work.find_by_id(work_id)
       work.update_bayesian_average
       work.update_average_and_counts
+      work.save
     end
   end
 
