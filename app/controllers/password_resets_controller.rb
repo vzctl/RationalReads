@@ -35,8 +35,8 @@ class PasswordResetsController < ApplicationController
     end
 
     @user = User.find_by_id(@password_reset.user_id)
-    
-    if @password_reset.valid?(@user)
+
+    if @password_reset.valid_key?(@user)
       @user.password = params[:password]
       if @user.save
         flash[:errors] = ["Password changed."]
