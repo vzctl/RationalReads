@@ -24,10 +24,14 @@ class PasswordReset < ActiveRecord::Base
   def must_wait_five_minutes
     @user = User.find_by_id(self.user_id)
     latest_reset = @user.password_resets.order("created_at DESC").take(1)
-    time_difference = (Time.now - latest_reset[0].created_at) / 60
 
-    if time_difference < 5
-      errors.add :base, "Please wait at least five minutes before requesting another reset."
+    if latest_reset.length > 0
+      time_difference = (Time.now - latest_reset[0].created_at) / 60
+
+      if time_difference < 5
+        errors.add :base, "Please wait at least five minutes before requesting another reset."
+      end
     end
   end
+  
 end
