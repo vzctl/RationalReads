@@ -7,8 +7,7 @@ The entire project was written using the Ruby on Rails framework.
 
 The client side code was written using backbone, a javascript library which helps create a single-page app and more easily manage data on the client-side.
 
-# Bugs
-1.  User getting recommendation results, even when not logged in (was not happening before)
+If you want to contribute to this project, I will bless your soul. Or if you don't believe in souls, I will put in a good word for you with the AI god when the singularity happens.
 
 # Features to implement in March release
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
@@ -46,11 +45,3 @@ The client side code was written using backbone, a javascript library which help
 6.  Add group id to tags, (e.g. group 1 to completion status, group 2 to genre) to help organize tag display
 7.  Work delete functionality
 8.  User pages, with information on the works they've rated and ratings they've given, and ability to recommend users to other users (based on similarity of ratings), and then also to follow the user
-9.  Follow a work, which sends a ping when a new chapter is added
-
-# Tag ideas
-1.  Free-Online
-2.  Paid-Online
-3.  Free-EBook
-4.  Paid-EBook
-5.  Hardcopy
