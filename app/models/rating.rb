@@ -26,8 +26,9 @@ class Rating < ActiveRecord::Base
   def update_summary_data
     if chapter_id.nil?
       work = Work.find_by_id(work_id)
-      work.update_bayesian_average
       work.update_average_and_counts
+      #order is important here - bayesian average has to be calculated second
+      work.update_bayesian_average
       work.save
     end
   end

@@ -20,6 +20,7 @@ class RatingsController < ApplicationController
     end
   end
 
+  # gets called from create action above, not directly through url
   def update
     if @rating.update({rating: rating_params["rating"]})
       response = @rating.response(@rated_item, "update", @item_type)
