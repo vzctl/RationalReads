@@ -1,6 +1,6 @@
 class PasswordReset < ActiveRecord::Base
   validates :user_id, :key, presence: true
-  # validate :must_wait_five_minutes
+  validate :must_wait_five_minutes
   after_save :send_reset_link
 
   belongs_to :user
@@ -9,7 +9,7 @@ class PasswordReset < ActiveRecord::Base
     PasswordResetMailer.send_reset(self.user_id, self.key).deliver_now
   end
 
-  def valid?(user)
+  def valid_key?(user)
     latest_reset = user.password_resets.order("created_at DESC").take(1)
     time_difference = (Time.now - latest_reset[0].created_at) / 60
 

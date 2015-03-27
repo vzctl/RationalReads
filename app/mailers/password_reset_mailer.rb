@@ -5,7 +5,7 @@ class PasswordResetMailer < ActionMailer::Base
     @user = User.find_by_id(user_id)
     @key = key
     @subject = "Your Password Reset Link for RationalReads"
-    byebug
+    
     mail(to: @user.email, subject: @subject)
   end
 
