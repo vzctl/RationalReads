@@ -45,3 +45,4 @@ If you want to contribute to this project, I will bless your soul. Or if you don
 6.  Add group id to tags, (e.g. group 1 to completion status, group 2 to genre) to help organize tag display
 7.  Work delete functionality
 8.  User pages, with information on the works they've rated and ratings they've given, and ability to recommend users to other users (based on similarity of ratings), and then also to follow the user
+9.  When a user updates or creates a rating on the work show page, the rating bars and rating numbers get updated (not just averages and counts)

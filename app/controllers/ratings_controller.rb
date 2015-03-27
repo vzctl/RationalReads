@@ -10,7 +10,7 @@ class RatingsController < ApplicationController
       @rating.user_id = current_user.id
 
       if @rating.save
-        response = @rating.response(@rated_item, "create", @item_type)
+        response = @rating.response(@rated_item.reload, "create", @item_type)
         render json: response, status: 200
       else
         render json: @rating.errors.full_messages, status: 406
@@ -23,7 +23,7 @@ class RatingsController < ApplicationController
   # gets called from create action above, not directly through url
   def update
     if @rating.update({rating: rating_params["rating"]})
-      response = @rating.response(@rated_item, "update", @item_type)
+      response = @rating.response(@rated_item.reload, "update", @item_type)
       render json: response, status: 200
     else
       render json: @rating.errors.full_messages, status: 406

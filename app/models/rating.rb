@@ -37,9 +37,10 @@ class Rating < ActiveRecord::Base
     rating_data = {}
 
     if parent_type == "chapter"
-      rating_data[:updated_rating] = rated_item.average_rating
+      rating_data[:updated_average_rating] = rated_item.average_rating
     else
-      rating_data[:updated_rating] = rated_item.bayesian_average
+      rating_data[:updated_bayesian_rating] = rated_item.bayesian_average
+      rating_data[:updated_average_rating] = rated_item.average_rating
     end
     rating_data[:type] = type
 

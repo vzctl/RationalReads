@@ -26,21 +26,37 @@ Backbone.ItemView = Backbone.View.extend({
         $(this).text(numRatings);
     }).animate({'opacity': 1}, 10);
 
-    this.updateShownRating(response.updatedrating, response);
+    this.updateShownRating(response);
   },
 
   updateStatsAfterUpdate: function($ratingResponse, response) {
     $ratingResponse.text("Updated!");
-    this.updateShownRating(response.updatedrating, response);
+    this.updateShownRating(response);
     },
 
-  updateShownRating: function(updatedRating, response) {
-    var $avgRatings = this.$el.find("span.avg");
+  updateShownRating: function(response) {
+    var $avgBayesianRatings = this.$el.find("span.avg");
+    var $avgRatings = this.$el.find("span.other-avg");
 
-    $avgRatings.animate({'opacity': 0}, 500, function () {
-        $(this).text(updatedRating);
+    var bayesian = response.updated_bayesian_rating;
+    var bayesian_with_decimals = parseFloat(bayesian).toFixed(2);
+
+    var average = response.updated_average_rating;
+    var average_with_decimals = parseFloat(average).toFixed(2);
+
+    if (this.type === "show") {
+      bayesian_with_decimals = bayesian_with_decimals + " Bayesian Adjusted"
+      average_with_decimals = average_with_decimals + " Average Rating /"
+    }
+
+    $avgBayesianRatings.animate({'opacity': 0}, 500, function () {
+        $(this).text(bayesian_with_decimals);
     }).animate({'opacity': 1}, 10);
 
+
+    $avgRatings.animate({'opacity': 0}, 500, function () {
+        $(this).text(average_with_decimals);
+    }).animate({'opacity': 1}, 10);
   },
 
   updateStatsAfterError: function($ratingResponse, $raty, response) {
