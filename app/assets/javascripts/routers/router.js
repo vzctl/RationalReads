@@ -146,6 +146,10 @@ RationalReads.Routers.Router = Backbone.Router.extend({
 
           this._swapView(indexView);
         }
+      }.bind(this),
+      error: function (model, response) {
+        var logInFirst = new RationalReads.Views.LogInFirst()
+        this._swapView(logInFirst);
       }.bind(this)
     })
   },

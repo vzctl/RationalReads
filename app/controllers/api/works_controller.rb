@@ -39,7 +39,7 @@ module Api
 
       if params[:recommendations] == "true"
         if current_user.nil?
-          works = Work.order(params[:order], filtered_works)
+          render json: "Invalid, sign in first.", status: 406
         else
           works = current_user.recommended_works
         end

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :follows
   has_many :password_resets
-  
+
   attr_reader :password
   after_initialize :ensure_session_token
 
@@ -62,9 +62,8 @@ class User < ActiveRecord::Base
 
   def sorted_recommendations(sorted, works)
     ordered_predictions = []
-
     sorted.each do |work, predicted_sore|
-      ordered_predictions << Work.find(work) if work.to_s.length > 0
+      ordered_predictions << Work.find_by_id(work) if work.to_s.length > 0
     end
 
     unread((ordered_predictions + works).uniq)
@@ -96,7 +95,9 @@ class User < ActiveRecord::Base
   def user_ratings
     user_data = {}
     self.ratings.each do |rating|
-      user_data[rating.work_id] = rating.rating
+      if rating.chapter_id.nil?
+        user_data[rating.work_id] = rating.rating
+      end
     end
 
     user_data
@@ -108,7 +109,9 @@ class User < ActiveRecord::Base
     User.all.each do |user|
       user_data = {}
       user.ratings.each do |rating|
-        user_data[rating.work_id] = rating.rating
+        if rating.chapter_id.nil?
+          user_data[rating.work_id] = rating.rating
+        end
       end
       all_user_data[user.id] = user_data
     end
