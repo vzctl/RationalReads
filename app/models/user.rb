@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_many :comments
   has_many :follows
-
+  has_many :password_resets
+  
   attr_reader :password
   after_initialize :ensure_session_token
 
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-  
+
   def rating(work_id, chapter_id)
     if work_id == nil
       id = chapter_id

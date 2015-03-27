@@ -1,0 +1,16 @@
+<div id="sign-in">
+  <h1>Reset Your Password</h1>
+
+  <form action="/password_resets/reset" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Reset Key<br>
+      <input name="key" value="<%= @key %>" type="text"><br>
+    </label><br>
+
+    <label>New Password<br>
+      <input name="password" type="text"><br>
+    </label><br>
+
+    <input type="submit" value="Reset" class="button"><br>
+  </form>
+</div>

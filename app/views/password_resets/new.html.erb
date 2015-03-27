@@ -1,0 +1,11 @@
+<div id="sign-in">
+  <h1>Password Reset</h1>
+
+  <form action="/password_resets" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Email<br>
+      <input name="email" type="text"><br>
+    </label><br>
+    <input type="submit" value="Send Reset" class="button"><br>
+  </form>
+</div>

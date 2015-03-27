@@ -7,17 +7,16 @@ The entire project was written using the Ruby on Rails framework.
 
 The client side code was written using backbone, a javascript library which helps create a single-page app and more easily manage data on the client-side.
 
-Although this project uses bootstrap, 1400 lines of css were also written. However, that is the weakest part of the project. In the April release, I will be improving the stylesheets directory.
-
 # Bugs
 1.  User getting recommendation results, even when not logged in (was not happening before)
 
-
 # Features to implement in March release
-7.  Allow passwords to be reset
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
+11. Follow plus notification
+12. Leaderboard
 
 # Features/fixes to be implemented
+-1.  Stylesheets directory has 1400 lines of code. Too much CSS!!
 0.  Allow comments to be edited or deleted
 1.  In both work_index and work_read, many functions duplicated - DRY out the code
 2.  Check if comment sort getting called in home page. If so, remove.

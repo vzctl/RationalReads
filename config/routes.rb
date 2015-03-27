@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :follows, only: [:create, :destroy, :show]
-  # resources :emails, only: [:create]
+
+  resources :password_resets, only: [:new, :create]
+  get 'password_resets/use_reset_string' => 'password_resets#use_reset_string'
+  post 'password_resets/reset' => 'password_resets#reset'
 end
