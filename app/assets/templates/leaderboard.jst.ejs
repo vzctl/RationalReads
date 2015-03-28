@@ -1,0 +1,42 @@
+<div class="leaderboard centered">
+  <h1 id="leaderboard">Leaderboard</h1>
+
+  <p>Rankings and points get updated once a day.</p>
+
+  <p>5 points per comment, 2 points per rating, and 20 per work added.</p>
+
+  <p>For every work added after April 1st, its total rating is also added. If a work has an average rating of 3.5 and 10 ratings, its total rating is 35.</p>
+
+  <table id="read-works" class="tablesorter strapless">
+  <thead>
+  <tr>
+      <th class="ranking">Ranking</th>
+      <th class="username2">Username</th>
+      <th class="points">Points</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% users.forEach(function(user, index) { %>
+    <tr>
+      <td>
+        <p class="ranking">
+          <%= index + 1 %>
+        </p>
+      </td>
+      <td>
+        <p class="username">
+          <%= user.escape("0") %>
+        </p>
+      </td>
+      <td>
+        <p class="points">
+          <%= user.escape("1") %>
+        </p>
+      </td>
+    </tr>
+  <% }) %>
+
+  </tbody>
+  </table>
+</div>

@@ -3,6 +3,7 @@ module Api
     def create
       @work = Work.new(work_params)
       @work.bayesian_average = 0
+      @work.user_id = current_user.id
       @tags = params["taggings"]
 
       if @work.save

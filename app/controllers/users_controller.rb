@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.where("points > 0").order("points DESC").pluck(:username, :points)
+    render json: @users
+  end
+
   private
 
     def user_params

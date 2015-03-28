@@ -15,7 +15,24 @@ RationalReads.Routers.Router = Backbone.Router.extend({
     'search/:terms': 'search',
     'chapters/:id': 'showChapter',
     'about': 'about',
-    'contact': 'contact'
+    'contact': 'contact',
+    'leaderboard': 'leaderboard'
+  },
+
+  leaderboard: function () {
+    var users = new RationalReads.Collections.Users();
+    this._generateLoadingScreen();
+
+    users.fetch({
+      success: function () {
+        var leaderboard = new RationalReads.Views.Leaderboard({
+            collection: users
+          });
+
+        this._swapView(leaderboard);
+      }.bind(this)
+    })
+
   },
 
   editWork: function (id) {

@@ -19,6 +19,11 @@
  @import "jquery.raty";
  @import "tablesorter";
 
+.nav li a{
+  font-size: 12px;
+  font-weight: bold;
+}
+
 h1 {
  font-weight: bold;
  }
@@ -83,7 +88,7 @@ a.about-link:hover {
 }
 // fix navbar expanding too early problem
 
-@media (max-width: 1009px) {
+@media (max-width: 1080px) {
     .navbar-header {
         float: none;
     }

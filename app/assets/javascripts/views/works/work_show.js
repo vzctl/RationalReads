@@ -71,9 +71,9 @@ RationalReads.Views.WorksShow = Backbone.CompositeView.extend({
 
     this.addSubview('#chapters', chapterFormButton);
 
-    if (this.model.chapters().length > 0) {
-      this.renderFollowForm();
-    }
+    // if (this.model.chapters().length > 0) {
+    //   this.renderFollowForm();
+    // }
   },
 
   renderFollowForm: function () {

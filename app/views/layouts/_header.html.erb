@@ -15,8 +15,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/#/about">About</a></li>
         <li><a href="/#/works/new">Add Work</a></li>
-        <li><a href="/#/works">Browse Works</a></li>
+        <li><a href="/#/works">Browse</a></li>
         <li><a href="/#/recommendations">Recommendations</a></li>
+        <li><a href="/#/leaderboard">Top Contributors</a></li>
         <% if signed_in? %>
           <li><a href="/#/my-works">My Books</a></li>
           <li><%= link_to "Sign out", session_url, method: :delete %></li>

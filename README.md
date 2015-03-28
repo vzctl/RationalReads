@@ -9,6 +9,11 @@ The client side code was written using backbone, a javascript library which help
 
 If you want to contribute to this project, I will bless your soul. Or if you don't believe in souls, I will put in a good word for you with the AI god when the singularity happens.
 
+# Disabled Features
+1.  Replying to a comment sends an email to the parent comment author
+2.  Follow / unfollow and email notification on chapter add
+
+
 # Features to implement in March release
 10.  Instead of checking if a user hasn't followed a work by getting an error response, change the logic in the follows controller and backbone views
 11. Follow plus notification
