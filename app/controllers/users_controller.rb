@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find params[:id]
+    @ratings = @user.ratings.includes(:work => :tags).order("rating desc").limit(200).all
+  end
 
   def new
   end
@@ -22,8 +26,7 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:email, :username, :password)
-    end
-
+  def user_params
+    params.require(:user).permit(:email, :username, :password)
+  end
 end

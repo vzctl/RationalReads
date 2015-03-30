@@ -1,0 +1,10 @@
+<div id="user-ratings">
+  <h1><%= @user.username %>'s Ratings</h1>
+
+  <div id="ratings-list">
+    <% @ratings.each_with_index do |r, n| %>
+      <% if n != 0 %><hr><% end %>
+      <%= render partial: "rating", locals: { user: @user, rating: r } %>
+    <% end %>
+  </div>
+</div>

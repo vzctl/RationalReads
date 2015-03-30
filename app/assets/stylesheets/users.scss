@@ -26,3 +26,18 @@ input.button {
   border-color: #808080 !important;
   float: left;
 }
+
+#user-ratings {
+  .tag-display-box {
+    clear: both;
+    padding-top: 7px;
+  }
+  p.description {
+    margin-top: 8px;
+    white-space: pre-wrap;
+    color: black;
+  }
+  p.link-text {
+    color: black;
+  }
+}
