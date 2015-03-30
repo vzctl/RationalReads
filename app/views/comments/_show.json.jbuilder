@@ -16,6 +16,7 @@ end
 
 json.id comment.id
 json.username user.username
+json.user_id user.id
 
 if (comment.parent_comment_id)
   json.parent_comment_id comment.parent_comment_id
