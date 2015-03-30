@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where("points > 0").order("points DESC").pluck(:username, :points)
+    @users = User.where("points > 0").order("points DESC").pluck(:username, :points, :id)
     render json: @users
   end
 
