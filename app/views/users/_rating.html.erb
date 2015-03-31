@@ -9,25 +9,38 @@
 
     <div class="stats">
       <div class="stars stars-wide">
-        <%= user.username %>'s rating:
-        <span class="avg"><%= rating.rating.to_f.round(1) %></span>
-        <br>
+        <p>
+          <%= user.username.capitalize %>'s Rating -
+          <span class="avg"><%= rating.rating.to_f.round(1) %></span>
         <%= render partial: "stars", locals: { rating: rating.rating } %>
+        </p>
       </div>
 
       <div class="stars stars-wide">
-        Bayesian Average Rating:
-        <span class="avg"><%= rating.work.bayesian_average.round(2) %></span>
-        <br>
-        <%= render partial: "stars", locals: { rating: rating.work.bayesian_average.round } %>
+        <p>
+          Site Average -
+          <span class="avg"><%= rating.work.average_rating.round(2) %></span>
+
+          <%= render partial: "stars", locals: { rating: rating.work.average_rating.round } %>
+        </p>
       </div>
+
+      <div class="stars stars-wide">
+        <p>
+        Bayesian Adjusted:
+        <span class="avg"><%= rating.work.bayesian_average.round(2) %></span>
+
+        <%= render partial: "stars", locals: { rating: rating.work.bayesian_average.round } %>
+        </p>
+      </div>
+
 
       <div class="date" title="Date added to site">
         <%= rating.work.created_at.strftime("%B %d, %Y") %>
       </div>
 
       <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
-        <%= rating.work.length %>
+        <%= rating.work.length %> Length
       </div>
 
       <div class="tag-display-box">

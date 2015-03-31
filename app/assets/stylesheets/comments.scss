@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+p.comment {
+  white-space: pre-wrap;
+  font-size:18px;
+  margin-bottom: 7px;
+  width: 800px;
+}
+
 .hidden-form {
   display: none;
   border: 1px solid transparent;
@@ -54,10 +61,8 @@ button.comment-submit-button {
   margin-top:20px;
 }
 
-.comment-content {
-  font-size:18px;
-  margin-bottom: 7px;
-  width: 800px;
+.comment-content p{
+
 }
 
 .single-comment {
