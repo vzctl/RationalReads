@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
-    @ratings = @user.ratings.includes(:work => :tags).order("rating desc").limit(200).all
+    @ratings = @user.ratings.where("work_id IS NOT NULL").includes(:work => :tags).order("rating desc").limit(200).all
   end
 
   def new

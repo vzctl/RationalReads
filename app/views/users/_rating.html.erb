@@ -16,7 +16,7 @@
       </div>
 
       <div class="stars stars-wide">
-        Average rating:
+        Bayesian Average Rating:
         <span class="avg"><%= rating.work.bayesian_average.round(2) %></span>
         <br>
         <%= render partial: "stars", locals: { rating: rating.work.bayesian_average.round } %>
