@@ -126,6 +126,10 @@ class Work < ActiveRecord::Base
     self.fives = counts[5]
   end
 
+  def ratings_count
+    ones + twos + threes + fours + fives
+  end
+
   def calculate_average_rating
     ratings = self.ratings
 

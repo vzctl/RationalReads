@@ -1,0 +1,45 @@
+<div class="work index-display">
+  <div class="inner-work">
+    <div class="title-and-author">
+      <p class="title">
+        <a href="/#/works/<%= rating.work_id %>"><%= rating.work.name %></a>
+      </p>
+      <p class="author"> by <%= rating.work.author %></p>
+    </div>
+
+    <div class="stats">
+      <div class="stars stars-wide">
+        <%= user.username %>'s rating:
+        <span class="avg"><%= rating.rating.to_f.round(1) %></span>
+        <br>
+        <%= render partial: "stars", locals: { rating: rating.rating } %>
+      </div>
+
+      <div class="stars stars-wide">
+        Average rating:
+        <span class="avg"><%= rating.work.bayesian_average.round(2) %></span>
+        <br>
+        <%= render partial: "stars", locals: { rating: rating.work.bayesian_average.round } %>
+      </div>
+
+      <div class="date" title="Date added to site">
+        <%= rating.work.created_at.strftime("%B %d, %Y") %>
+      </div>
+
+      <div class="length" title="Short works have less than 25k words, medium works less than 100k, and long works less than 500k. Epic works, are well, epic.">
+        <%= rating.work.length %>
+      </div>
+
+      <div class="tag-display-box">
+        <% rating.work.tags.each do |tag| %>
+          <div class="single-tag"><p><%= tag.name %></p></div>
+        <% end %>
+      </div>
+
+      <p class="description"><%= rating.work.description %></p>
+      <p class="link-text">
+        Learn more
+        <a class="link-link" href="/#/works/<%= rating.work_id %>">here</a>.
+    </div>
+  </div>
+</div>

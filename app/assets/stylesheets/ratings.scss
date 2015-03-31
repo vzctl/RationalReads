@@ -14,6 +14,10 @@
   color: blue;
   margin-right:0px;
   margin-top:-1px;
+
+  &.stars-wide {
+    width: 200px;
+  }
 }
 
 .avg-rating {
