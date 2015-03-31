@@ -1,3 +1,5 @@
+In progress, check back soon!
+
 <div class="centered">
   <div id="user-ratings">
     <h1><%= @user.username.capitalize %>'s Ratings</h1>
@@ -5,7 +7,7 @@
     <div id="ratings-list" class="index">
       <% @ratings.each_with_index do |r, n| %>
         <% if n != 0 %><% end %>
-        <%= render partial: "rating", locals: { user: @user, rating: r } %>
+        <% render partial: "rating", locals: { user: @user, rating: r } %>
       <% end %>
     </div>
   </div>
