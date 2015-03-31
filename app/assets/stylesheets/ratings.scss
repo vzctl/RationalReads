@@ -8,16 +8,30 @@
   margin:0px;
 }
 
+.stats .user {
+  margin-right: 17px;
+}
+
+.stats .user .raty{
+  position: relative;
+  float: right;
+  margin-left: 7px;
+}
+
+.vs {
+  // margin-left: 10px;
+}
+
+.stars-wide {
+  position: relative;
+}
+
 .stars {
   width:78px;
   padding:0px;
   color: blue;
   margin-right:0px;
   margin-top:-1px;
-
-  &.stars-wide {
-    width: 200px;
-  }
 }
 
 .avg-rating {

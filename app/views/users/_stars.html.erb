@@ -1,8 +1,10 @@
 <div class="raty user-rating">
+
   <% rating.times do |n| %>
     <img src="https://s3.amazonaws.com/rationalreads/star-on.png" alt="<%= n.to_s %>">
   <% end %>
   <% (5 - rating).times do |n| %>
     <img src="https://s3.amazonaws.com/rationalreads/star-off.png" alt="<%= n.to_s %>">
   <% end %>
+  
 </div>
