@@ -28,7 +28,12 @@ gem 'backbone-on-rails'
 #Recommendation algorithm
 gem 'slope_one'
 
+# Webserver gem (to replace Webrick)
 gem 'puma'
+
+# rails-layer pagination gem
+gem 'will_paginate'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
