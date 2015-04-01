@@ -10,5 +10,7 @@ In progress, check back soon!
         <%= render partial: "rating", locals: { user: @user, rating: r } %>
       <% end %>
     </div>
+
+    <%= will_paginate @ratings %>
   </div>
 </div>

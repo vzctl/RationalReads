@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
-    @ratings = @user.ratings.where("work_id IS NOT NULL").includes(:work => :tags).order("rating desc").limit(200).all
+    @ratings = @user.ratings.
+      where("work_id IS NOT NULL").
+      includes(:work => :tags).
+      order("rating desc").
+      paginate(page: params[:page], per_page: 20)
   end
 
   def new
