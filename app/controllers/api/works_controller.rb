@@ -52,6 +52,8 @@ module Api
         works = Work.order(params[:order], filtered_works)
       end
 
+      @number_of_works = works.length
+
       if params[:page] === nil
         @works = works
         @pages = (works.length / 10.0).ceil

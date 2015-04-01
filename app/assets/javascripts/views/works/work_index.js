@@ -105,7 +105,7 @@ RationalReads.Views.WorksIndex = Backbone.CompositeView.extend({
     if (this.collection.length === 1) {
       $("#all-works").text("1 Work");
     } else if (this.currentFilters.length > 0) {
-      $("#all-works").text(this.collection.length + " Works");
+      $("#all-works").text(this.collection.numberOfWorks + " Works");
     } else {
       $("#all-works").text("All Works");
     }

@@ -1,4 +1,5 @@
 json.pages @pages
+json.number_of_works @number_of_works
 
 json.works @works do |work|
   json.extract! work, :id, :name, :author, :link, :description, :bayesian_average, :created_at, :length
