@@ -6,6 +6,10 @@ class UsersController < ApplicationController
       includes(:work => :tags).
       order("rating desc").
       paginate(page: params[:page], per_page: 20)
+
+    # TODO: turn feature on, or allow opt-ins
+    # Note - because the above query is not kicked, no db call is made at all.
+    @ratings = []
   end
 
   def new
