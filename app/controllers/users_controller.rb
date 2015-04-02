@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       where("work_id IS NOT NULL").
       includes(:work => :tags).
       order("rating desc").
-      paginate(page: params[:page], per_page: 20)
+      paginate(page: params[:page], per_page: 10)
 
     # TODO: turn feature on, or allow opt-ins
     # Note - because the above query is not kicked, no db call is made at all.
