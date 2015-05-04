@@ -1,0 +1,19 @@
+<div id="setting">
+  <h1>Settings</h1>
+
+  <form action="/users/<%= current_user.id %>" method="post">
+    <input name="_method" type="hidden" value="patch" />
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div>
+        Allow other users to browse your ratings?
+        <% if @display_ratings %>
+            <input type="radio" name="user[show_ratings]" value="yes" checked>Yes
+            <input type="radio" name="user[show_ratings]" value="no">No
+        <% else %>
+          <input type="radio" name="user[show_ratings]" value="yes">Yes
+          <input type="radio" name="user[show_ratings]" value="no" checked>No
+        <% end %>
+    </div>
+    <input type="submit" value="Submit" class="button">
+  </form>
+</div>

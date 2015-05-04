@@ -20,6 +20,7 @@
         <li><a href="/#/leaderboard">Top Contributors</a></li>
         <% if signed_in? %>
           <li><a href="/#/my-works">My Books</a></li>
+          <li><a href="/users/<%= current_user.id %>/edit">Settings</a></li>
           <li><%= link_to "Sign out", session_url, method: :delete %></li>
         <% else %>
           <li><%= link_to "Log in", new_session_url %></li>

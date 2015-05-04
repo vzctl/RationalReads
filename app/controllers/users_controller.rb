@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
-    @ratings = @user.ratings.
-      where("work_id IS NOT NULL").
-      includes(:work => :tags).
-      order("rating desc").
-      paginate(page: params[:page], per_page: 10)
 
-    # TODO: turn feature on, or allow opt-ins
-    # Note - because the above query is not kicked, no db call is made at all.
-    @ratings = []
+    if @user.display_ratings?
+      @ratings = @user.ratings.
+        where("work_id IS NOT NULL").
+        includes(:work => :tags).
+        order("rating desc").
+        paginate(page: params[:page], per_page: 10)
+      render 'show'
+    else
+      render 'noshow'
+    end
   end
 
   def new
@@ -27,6 +29,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    if signed_in? && current_user.id == params[:id].to_i
+      @display_ratings = current_user.display_ratings?
+      render 'edit'
+    else
+      redirect_to root_url
+    end
+  end
+
+  def update
+    if user_params[:show_ratings] == "yes"
+      current_user.display_ratings = true
+    else
+      current_user.display_ratings = false
+    end
+
+    current_user.save
+    redirect_to(:back)
+  end
+
   def index
     @users = User.where("points > 0").
       order("points DESC").
@@ -38,6 +60,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :username, :password)
+    params.require(:user).permit(:email, :username, :password, :show_ratings)
   end
 end

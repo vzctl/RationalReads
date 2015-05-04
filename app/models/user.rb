@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
+  def display_ratings?
+    display_ratings
+  end
+
   def self.update_points
     User.find_each do |user|
       user.recalculate_points
